@@ -1,0 +1,42 @@
+
+------ NEW LOGGER 2022-05-06 ----------------------------------------------
+17:36:16 - Reading data
+17:36:30 - Joining Data
+17:36:30 - Writing Data
+17:37:39 - Dataset Created!
+
+17:37:39 - Read Data
+17:37:50 - log transform outcome variable
+17:37:50 - IQR method
+17:37:52 - Calculate Mahalanobis Distance
+17:38:52 - Z-scores
+17:38:54 - End of data preprocess, saving data
+17:40:04 - pre_process done!
+
+
+------ NEW LOGGER 2022-05-06 ----------------------------------------------
+20:48:23 - Reading data
+20:49:06 - Joining Data
+20:49:07 - Writing Data
+20:50:51 - Reading data
+20:51:39 - Joining Data
+20:51:40 - Writing Data
+20:54:25 - Dataset Created!
+
+20:54:38 - Read Data
+21:00:45 - Z-scores
+
+------ NEW LOGGER 2022-05-06 ----------------------------------------------
+21:01:51 - Reading data
+21:02:04 - Joining Data
+21:02:04 - Writing Data
+21:03:17 - Dataset Created!
+
+21:03:17 - Read Data
+21:03:29 - log transform outcome variable
+21:03:29 - IQR method
+21:03:31 - Calculate Mahalanobis Distance
+21:04:32 - Z-scores
+21:04:34 - End of data preprocess, saving data
+21:05:45 - pre_process done!
+
