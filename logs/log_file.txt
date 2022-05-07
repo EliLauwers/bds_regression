@@ -40,3 +40,24 @@
 21:04:34 - End of data preprocess, saving data
 21:05:45 - pre_process done!
 
+
+------ NEW LOGGER 2022-05-07 ----------------------------------------------
+10:21:40 - Reading data
+------ NEW LOGGER 2022-05-07 ----------------------------------------------
+10:22:20 - Reading data
+------ NEW LOGGER 2022-05-07 ----------------------------------------------
+10:22:54 - Reading data10:23:10 - Joining Data10:23:10 - Writing Data
+------ NEW LOGGER 2022-05-07 ----------------------------------------------
+10:24:33 - Reading data
+10:24:48 - Joining Data
+10:24:48 - Writing Data
+10:26:08 - Dataset Created!
+
+10:26:09 - Read Data
+10:26:25 - log transform outcome variable
+10:26:26 - IQR method
+10:26:30 - Calculate Mahalanobis Distance
+10:27:33 - Z-scores
+10:27:34 - End of data preprocess, saving data
+10:28:52 - pre_process done!
+

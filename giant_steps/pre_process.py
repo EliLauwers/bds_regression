@@ -6,15 +6,15 @@ from GLOBAL_VARS import LOG, RANDOM_STATE
 import scipy
 
 # some custom scripts to save space
-from detect_outlying_inds_by_iqr import detect_outlying_inds_by_iqr
-from calculate_mahalanobis_distance import calculate_mahalanobis_distance_iteratevely
+from helpers.detect_outlying_inds_by_iqr import detect_outlying_inds_by_iqr
+from helpers.calculate_mahalanobis_distance import calculate_mahalanobis_distance_iteratevely
 
 def pre_process():
     LOG.process("Read Data")
     # the dataframe joined_data contains:
     # (1) music_data.csv: all information
     # (2) metadata.csv: track_listens, album_date_released, album_id, track_id
-    data = pd.read_csv("data/intermediate/joined_data.csv", index_col = "track_id")
+    data = pd.read_csv("data/intermediate/joined_data.csv", index_col ="track_id")
 
     # Next, split in relevant stuff
     X = data.drop(["track_listens","album_id","album_date_released"], axis = 1)

@@ -1,6 +1,7 @@
 import pandas as pd
-from validate_date_transformation import validate_date_transformation
+from helpers.validate_date_transformation import validate_date_transformation
 from GLOBAL_VARS import LOG
+
 def create_dataset():
     LOG.process("Reading data")
     music_data = pd.read_csv("data/raw/music_data.csv")
@@ -14,5 +15,5 @@ def create_dataset():
     joined = music_data.merge(meta, on ="track_id",how="inner")
     LOG.process("Writing Data")
     joined.to_csv("data/intermediate/joined_data.csv",index = False)
-    joined = pd.read_csv("data/intermediate/joined_data.csv", index_col = "track_id")
+    joined = pd.read_csv("data/intermediate/joined_data.csv", index_col ="track_id")
     LOG.process("Dataset Created!\n")
