@@ -1,63 +1,50 @@
 
------- NEW LOGGER 2022-05-06 ----------------------------------------------
-17:36:16 - Reading data
-17:36:30 - Joining Data
-17:36:30 - Writing Data
-17:37:39 - Dataset Created!
+------ NEW LOGGER 2022-05-09 ----------------------------------------------
+19:52:55 - Read Data before predictions
 
-17:37:39 - Read Data
-17:37:50 - log transform outcome variable
-17:37:50 - IQR method
-17:37:52 - Calculate Mahalanobis Distance
-17:38:52 - Z-scores
-17:38:54 - End of data preprocess, saving data
-17:40:04 - pre_process done!
+------ NEW LOGGER 2022-05-09 ----------------------------------------------
+19:53:55 - Read Data before predictions
 
+------ NEW LOGGER 2022-05-09 ----------------------------------------------
+19:54:23 - Read Data before predictions
+19:54:23 - Vanilla Linear Regression
 
------- NEW LOGGER 2022-05-06 ----------------------------------------------
-20:48:23 - Reading data
-20:49:06 - Joining Data
-20:49:07 - Writing Data
-20:50:51 - Reading data
-20:51:39 - Joining Data
-20:51:40 - Writing Data
-20:54:25 - Dataset Created!
+------ NEW LOGGER 2022-05-09 ----------------------------------------------
+19:54:55 - Read Data before predictions
+19:54:55 - Vanilla Linear Regression
+19:55:03 - 19:55:03 - Model fit done!
+19:55:03 - model_name with agg_func
 
-20:54:38 - Read Data
-21:00:45 - Z-scores
+------ NEW LOGGER 2022-05-09 ----------------------------------------------
+19:57:06 - Read Data before predictions
+19:57:07 - Vanilla Linear Regression
+19:57:15 - 19:57:15 - Model fit done!
+19:57:15 - model_name with agg_func
 
------- NEW LOGGER 2022-05-06 ----------------------------------------------
-21:01:51 - Reading data
-21:02:04 - Joining Data
-21:02:04 - Writing Data
-21:03:17 - Dataset Created!
+------ NEW LOGGER 2022-05-09 ----------------------------------------------
+20:01:03 - Read Data before predictions
+20:01:04 - Vanilla Linear Regression
 
-21:03:17 - Read Data
-21:03:29 - log transform outcome variable
-21:03:29 - IQR method
-21:03:31 - Calculate Mahalanobis Distance
-21:04:32 - Z-scores
-21:04:34 - End of data preprocess, saving data
-21:05:45 - pre_process done!
+------ NEW LOGGER 2022-05-09 ----------------------------------------------
+20:01:46 - Read Data before predictions
+20:01:47 - Vanilla Linear Regression
+20:01:55 - Model fit done!
+            ---------- Vanilla OLS with mean
+            ---------- Bias: -1333.32, R2: 6787.63, Std: 0.04
+20:01:55 - Model fit done!
+            ---------- Vanilla OLS with median
+            ---------- Bias: -1333.32, R2: 6787.63, Std: 0.04
+20:01:55 - Read Data before predictions
+20:01:55 - Multiprocess Start: 10 iterations
 
-
------- NEW LOGGER 2022-05-07 ----------------------------------------------
-10:21:40 - Reading data
------- NEW LOGGER 2022-05-07 ----------------------------------------------
-10:22:20 - Reading data
------- NEW LOGGER 2022-05-07 ----------------------------------------------
-10:22:54 - Reading data10:23:10 - Joining Data10:23:10 - Writing Data
------- NEW LOGGER 2022-05-07 ----------------------------------------------
-10:24:33 - Reading data
-10:24:48 - Joining Data
-10:24:48 - Writing Data
-10:26:08 - Dataset Created!
-
-10:26:09 - Read Data
-10:26:25 - log transform outcome variable
-10:26:26 - IQR method
-10:26:30 - Calculate Mahalanobis Distance
-10:27:33 - Z-scores
-10:27:34 - End of data preprocess, saving data
-10:28:52 - pre_process done!
-
+------ NEW LOGGER 2022-05-09 ----------------------------------------------
+20:03:04 - Read Data before predictions
+20:03:05 - Vanilla Linear Regression
+20:03:14 - Model fit done!
+---------- Vanilla OLS with mean
+---------- Bias: -1333.32, R2: 6787.63, Std: 0.04
+20:03:14 - Model fit done!
+---------- Vanilla OLS with median
+---------- Bias: -1333.32, R2: 6787.63, Std: 0.04
+20:03:14 - Read Data before predictions
+20:03:14 - Multiprocess Start: 10 iterations
