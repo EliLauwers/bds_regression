@@ -1,13 +1,16 @@
 from helpers.Logger import Logger
 import pandas as pd
 import pickle
+import os
 
-RANDOM_STATE = 0
+RANDOM_STATE = 1234
 LOG = Logger.create_logger("logs/log_file.txt", "logs/model_evaluative_parameters.json")
 
 # Used in Bootstrap
-with open("data/intermediate/pre_processed/y_train.pk", "rb") as infile:
-    y_true = pickle.load(infile)
 
-BOOTSTRAP_OBS = len(y_true)
-BOOTSTRAP_B = 10
+# BOOTSTRAP_OBS = 100
+if os.path.exists("data/intermediate/track_listens/no_datared/y_train.pk"):
+    with open("data/intermediate/track_listens/no_datared/y_train.pk", "rb") as infile:
+        y_train = pickle.load(infile)
+        BOOTSTRAP_OBS = len(y_train)
+BOOTSTRAP_B = 500

@@ -1,50 +1,760 @@
 
------- NEW LOGGER 2022-05-09 ----------------------------------------------
-19:52:55 - Read Data before predictions
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+20:35:16 - Read Data before predictions
 
------- NEW LOGGER 2022-05-09 ----------------------------------------------
-19:53:55 - Read Data before predictions
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+20:48:21 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
 
------- NEW LOGGER 2022-05-09 ----------------------------------------------
-19:54:23 - Read Data before predictions
-19:54:23 - Vanilla Linear Regression
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+21:15:54 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
 
------- NEW LOGGER 2022-05-09 ----------------------------------------------
-19:54:55 - Read Data before predictions
-19:54:55 - Vanilla Linear Regression
-19:55:03 - 19:55:03 - Model fit done!
-19:55:03 - model_name with agg_func
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+21:35:01 - Start of create_dataset()
+21:35:01 - Read data from csv files
+21:35:17 - Join Data
+21:35:17 - Write joined
+21:35:19 - End of create_dataset!
+21:35:19 - Start of pre_process()
+21:35:20 - Read Data
+21:35:21 - log transform outcome variable
+21:35:22 - IQR method
+21:35:24 - Calculate Mahalanobis Distance
+21:36:09 - End of data preprocess, saving data
 
------- NEW LOGGER 2022-05-09 ----------------------------------------------
-19:57:06 - Read Data before predictions
-19:57:07 - Vanilla Linear Regression
-19:57:15 - 19:57:15 - Model fit done!
-19:57:15 - model_name with agg_func
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+21:36:43 - Start of create_dataset()
+21:36:43 - Read data from csv files
+21:36:56 - Join Data
+21:36:57 - Write joined
+21:36:58 - End of create_dataset!
+21:36:59 - Start of pre_process()
+21:36:59 - Read Data
+21:37:00 - log transform outcome variable
+21:37:01 - IQR method
+21:37:03 - Calculate Mahalanobis Distance
+21:38:08 - End of data preprocess, saving data
+21:38:09 - End of pre_process_track_listens()
 
------- NEW LOGGER 2022-05-09 ----------------------------------------------
-20:01:03 - Read Data before predictions
-20:01:04 - Vanilla Linear Regression
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+21:43:20 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: 5.4030201129990996e+51, SE: 7.888039286428163e+53, R2: 0.00029906648224943723, RMSEP: 7.888224327873116e+53
 
------- NEW LOGGER 2022-05-09 ----------------------------------------------
-20:01:46 - Read Data before predictions
-20:01:47 - Vanilla Linear Regression
-20:01:55 - Model fit done!
-            ---------- Vanilla OLS with mean
-            ---------- Bias: -1333.32, R2: 6787.63, Std: 0.04
-20:01:55 - Model fit done!
-            ---------- Vanilla OLS with median
-            ---------- Bias: -1333.32, R2: 6787.63, Std: 0.04
-20:01:55 - Read Data before predictions
-20:01:55 - Multiprocess Start: 10 iterations
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+21:48:48 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: 5.4030201129990996e+51, SE: 7.888039286428163e+53, R2: 0.00029906648224943723, RMSEP: 7.888224327873116e+53
+21:48:48 - Multiprocess Start: 50 iterations
 
------- NEW LOGGER 2022-05-09 ----------------------------------------------
-20:03:04 - Read Data before predictions
-20:03:05 - Vanilla Linear Regression
-20:03:14 - Model fit done!
----------- Vanilla OLS with mean
----------- Bias: -1333.32, R2: 6787.63, Std: 0.04
-20:03:14 - Model fit done!
----------- Vanilla OLS with median
----------- Bias: -1333.32, R2: 6787.63, Std: 0.04
-20:03:14 - Read Data before predictions
-20:03:14 - Multiprocess Start: 10 iterations
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+21:49:46 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: 5.4030201129990996e+51, SE: 7.888039286428163e+53, R2: 0.00029906648224943723, RMSEP: 7.888224327873116e+53
+21:49:46 - Multiprocess Start: 50 iterations
+21:50:41 - Closing Pool
+21:50:42 - Model fit done!
+-------- - Bootstrapped OLS with mean
+-------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
+21:50:42 - Model fit done!
+-------- - Bootstrapped OLS with median
+-------- - Bias: -2336.9696602757576, SE: 9221.541545057617, R2: 1.5575598809844838e-05, RMSEP: 9513.05711431782
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+21:52:12 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: 5.4030201129990996e+51, SE: 7.888039286428163e+53, R2: 0.00029906648224943723, RMSEP: 7.888224327873116e+53
+21:52:12 - Multiprocess Start: 50 iterations
+21:53:10 - Closing Pool
+21:53:10 - Model fit done!
+-------- - Bootstrapped OLS with mean
+-------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
+21:53:10 - Model fit done!
+-------- - Bootstrapped OLS with median
+-------- - Bias: -2336.9696602757576, SE: 9221.541545057617, R2: 1.5575598809844838e-05, RMSEP: 9513.05711431782
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+21:53:58 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: 5.4030201129990996e+51, SE: 7.888039286428163e+53, R2: 0.00029906648224943723, RMSEP: 7.888224327873116e+53
+21:53:58 - Multiprocess Start: 50 iterations
+21:54:49 - Closing Pool
+21:54:50 - Model fit done!
+-------- - Bootstrapped OLS with mean
+-------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
+21:54:50 - Model fit done!
+-------- - Bootstrapped OLS with median
+-------- - Bias: -2336.9696602757576, SE: 9221.541545057617, R2: 1.5575598809844838e-05, RMSEP: 9513.05711431782
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+22:11:40 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: 5.4030201129990996e+51, SE: 7.888039286428163e+53, R2: 0.0, RMSEP: 7.888224327873116e+53
+22:11:40 - Multiprocess Start: 50 iterations
+22:12:43 - Closing Pool
+22:12:44 - Model fit done!
+-------- - Bootstrapped OLS with mean
+-------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
+22:12:44 - Model fit done!
+-------- - Bootstrapped OLS with median
+-------- - Bias: -2336.97, SE: 9221.542, R2: 0.0, RMSEP: 9513.057
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+22:16:48 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: 4.4790875031514866e+51, SE: 6.539160960590572e+53, R2: 0.0, RMSEP: 6.539314359394445e+53
+22:16:48 - Multiprocess Start: 50 iterations
+22:17:45 - Closing Pool
+22:17:46 - Model fit done!
+-------- - Bootstrapped OLS with mean
+-------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
+22:17:46 - Model fit done!
+-------- - Bootstrapped OLS with median
+-------- - Bias: -2336.967, SE: 9221.541, R2: 0.0, RMSEP: 9513.057
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+22:26:14 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: 4.4790875031514866e+51, SE: 6.539160960590572e+53, R2: 0.0, RMSEP: 6.539314359394445e+53
+22:26:14 - Multiprocess Start: 50 iterations
+22:27:10 - Closing Pool
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+22:27:56 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: 4.4790875031514866e+51, SE: 6.539160960590572e+53, R2: 0.0, RMSEP: 6.539314359394445e+53
+22:27:56 - Multiprocess Start: 50 iterations
+22:28:59 - Closing Pool
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+22:38:49 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: 4.4790875031514866e+51, SE: 6.539160960590572e+53, R2: 0.0, RMSEP: 6.539314359394445e+53
+22:38:49 - Multiprocess Start: 50 iterations
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+22:39:26 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: 4.4790875031514866e+51, SE: 6.539160960590572e+53, R2: 0.0, RMSEP: 6.539314359394445e+53
+22:39:26 - Multiprocess Start: 50 iterations
+22:40:19 - Closing Pool
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+22:43:12 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: 4.4790875031514866e+51, SE: 6.539160960590572e+53, R2: 0.0, RMSEP: 6.539314359394445e+53
+22:43:15 - Multiprocess Start: 50 iterations
+22:44:12 - Closing Pool
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+22:45:35 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: 4.4790875031514866e+51, SE: 6.539160960590572e+53, R2: 0.0, RMSEP: 6.539314359394445e+53
+22:45:35 - Multiprocess Start: 10 iterations
+22:45:48 - Closing Pool
+22:45:49 - Model fit done!
+-------- - Bootstrapped OLS with mean
+-------- - Bias: 4.1455919856345784e+281, SE: inf, R2: 0.0, RMSEP: inf
+22:45:49 - Model fit done!
+-------- - Bootstrapped OLS with median
+-------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+22:48:06 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: 4.4790875031514866e+51, SE: 6.539160960590572e+53, R2: 0.0, RMSEP: 6.539314359394445e+53
+22:48:13 - Multiprocess Start: 10 iterations
+22:48:30 - Closing Pool
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+22:51:32 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: 4.479087503152255e+51, SE: 6.539160960591692e+53, R2: 0.0, RMSEP: 6.539314359395566e+53
+22:51:32 - Multiprocess Start: 10 iterations
+22:51:46 - Closing Pool
+22:51:46 - Model fit done!
+-------- - Bootstrapped OLS with mean
+-------- - Bias: 4.212550452861913e+258, SE: inf, R2: 0.0, RMSEP: inf
+22:51:46 - Model fit done!
+-------- - Bootstrapped OLS with median
+-------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+22:52:19 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: 4.479087503152255e+51, SE: 6.539160960591692e+53, R2: 0.0, RMSEP: 6.539314359395566e+53
+22:53:02 - Multiprocess Start: 10 iterations
+22:53:19 - Closing Pool
+22:54:02 - Model fit done!
+-------- - Bootstrapped OLS with mean
+-------- - Bias: 4.212550452861913e+258, SE: inf, R2: 0.0, RMSEP: inf
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+22:55:21 - Multiprocess Start: 10 iterations
+22:55:40 - Closing Pool
+22:56:15 - Model fit done!
+-------- - Bootstrapped OLS with mean
+-------- - Bias: 4.212550452861913e+258, SE: inf, R2: 0.0, RMSEP: inf
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+22:58:11 - Multiprocess Start: 100 iterations
+23:00:10 - Closing Pool
+23:00:11 - Model fit done!
+-------- - Bootstrapped OLS with mean
+-------- - Bias: 7.020917421437175e+257, SE: inf, R2: 0.0, RMSEP: inf
+23:00:11 - Model fit done!
+-------- - Bootstrapped OLS with median
+-------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+23:02:05 - Multiprocess Start: 100 iterations
+23:04:03 - Closing Pool
+23:04:04 - Model fit done!
+-------- - Bootstrapped OLS with mean
+-------- - Bias: 7.020917421437175e+257, SE: inf, R2: 0.0, RMSEP: inf
+23:04:04 - Model fit done!
+-------- - Bootstrapped OLS with median
+-------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+23:05:54 - Multiprocess Start: 100 iterations
+23:07:59 - Closing Pool
+23:07:59 - Model fit done!
+-------- - Bootstrapped OLS with mean
+-------- - Bias: 4.091513200139676e+275, SE: inf, R2: 0.0, RMSEP: inf
+23:07:59 - Model fit done!
+-------- - Bootstrapped OLS with median
+-------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+23:08:59 - Multiprocess Start: 3 iterations
+23:09:09 - Closing Pool
+23:10:01 - Model fit done!
+-------- - Bootstrapped OLS with mean
+-------- - Bias: 1.7562731579625573e+113, SE: 2.564038515121393e+115, R2: 0.0, RMSEP: 2.5640986635788777e+115
+23:10:13 - Model fit done!
+-------- - Bootstrapped OLS with median
+-------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+23:11:20 - Multiprocess Start: 3 iterations
+23:11:27 - Closing Pool
+23:11:27 - Model fit done!
+-------- - Bootstrapped OLS with mean
+-------- - Bias: 1.7562731579625573e+113, SE: 2.564038515121393e+115, R2: 0.0, RMSEP: 2.5640986635788777e+115
+23:11:28 - Model fit done!
+-------- - Bootstrapped OLS with median
+-------- - Bias: 1.7562731579625573e+113, SE: 2.564038515121393e+115, R2: 0.0, RMSEP: 2.5640986635788777e+115
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+23:12:32 - Multiprocess Start: 100 iterations
+23:14:27 - Closing Pool
+23:14:28 - Model fit done!
+-------- - Bootstrapped OLS with mean
+-------- - Bias: 4.091513185648999e+275, SE: inf, R2: 0.0, RMSEP: inf
+23:14:28 - Model fit done!
+-------- - Bootstrapped OLS with median
+-------- - Bias: 6.803798049286791e+92, SE: 9.933079127462319e+94, R2: 0.0, RMSEP: 9.933312142443373e+94
+
+------ NEW LOGGER 2022-05-10 ----------------------------------------------
+23:15:56 - Model fit done!
+-------- - Vanilla OLS with No Aggregation
+-------- - Bias: 4.479087503152255e+51, SE: 6.539160960591692e+53, R2: 0.0, RMSEP: 6.539314359395566e+53
+23:15:56 - Multiprocess Start: 100 iterations
+23:17:35 - Closing Pool
+23:17:36 - Model fit done!
+-------- - Bootstrapped OLS with mean
+-------- - Bias: 4.091513185648999e+275, SE: inf, R2: 0.0, RMSEP: inf
+23:17:36 - Model fit done!
+-------- - Bootstrapped OLS with median
+-------- - Bias: 6.803798049286791e+92, SE: 9.933079127462319e+94, R2: 0.0, RMSEP: 9.933312142443373e+94
+
+------ NEW LOGGER 2022-05-11 ----------------------------------------------
+20:13:27 - Model fit done!
+           Vanilla OLS with mean
+           Bias: -186.0, SE: 32128.7, R2: 0.0, RMSEP: 32129.24
+
+------ NEW LOGGER 2022-05-11 ----------------------------------------------
+20:15:37 - Model fit done!
+           Vanilla OLS with mean
+           Bias: -186.0, SE: 32128.7, R2: 0.0, RMSEP: 32129.24
+20:16:16 - Model fit done!
+           Bagging OLS with mean
+           Bias: 221617733666.5, SE: 6836405094598.7, R2: 0.0, RMSEP: 6839996274657.66
+
+------ NEW LOGGER 2022-05-11 ----------------------------------------------
+20:17:38 - Model fit done!
+           Vanilla OLS with mean
+           Bias: -186.0, SE: 32128.7, R2: 0.0, RMSEP: 32129.24
+20:18:19 - Model fit done!
+           Bagging OLS with mean
+           Bias: 221616752967.07, SE: 6836374842243.07, R2: 0.0, RMSEP: 6839966006410.38
+
+------ NEW LOGGER 2022-05-11 ----------------------------------------------
+20:24:57 - Model fit done!
+           Vanilla OLS with smearing
+           Bias: -2320.77, SE: 9221.24, R2: 0.0, RMSEP: 9508.8
+
+------ NEW LOGGER 2022-05-11 ----------------------------------------------
+20:29:15 - Model fit done!
+           Vanilla OLS with smearing
+           Bias: -2320.77, SE: 9221.24, R2: 0.0, RMSEP: 9508.8
+20:29:19 - Model fit done!
+           Bagging OLS with smearing
+           Bias: -2291.89, SE: 9221.5, R2: 0.0, RMSEP: 9502.05
+
+------ NEW LOGGER 2022-05-11 ----------------------------------------------
+20:30:16 - Model fit done!
+           Vanilla OLS with smearing
+           Bias: -2320.77, SE: 9221.24, R2: 0.0, RMSEP: 9508.8
+20:37:21 - Model fit done!
+           Bagging OLS with smearing
+           Bias: -2319.74, SE: 9221.39, R2: 0.0, RMSEP: 9508.69
+20:39:38 - Model fit done!
+           Bagging OLS with smearing
+           Bias: -2330.22, SE: 9221.46, R2: 0.0, RMSEP: 9511.33
+
+------ NEW LOGGER 2022-05-11 ----------------------------------------------
+20:42:11 - Model fit done!
+           Vanilla OLS with smearing
+           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
+20:47:55 - Model fit done!
+           Bagging OLS with smearing
+           Bias: -2319.744, SE: 9221.386, R2: 0.001, RMSEP: 9508.689
+20:48:53 - Model fit done!
+           Bagging OLS with smearing
+           Bias: -2330.216, SE: 9221.465, R2: 0.003, RMSEP: 9511.326
+20:52:00 - Model fit done!
+           Bagging OLS with no smearing
+           Bias: 1805.906, SE: 17246.074, R2: 0.001, RMSEP: 17340.368
+20:52:54 - Model fit done!
+           Bagging(Tree) with smearing
+           Bias: -2319.08, SE: 9221.461, R2: 0.011, RMSEP: 9508.6
+20:53:47 - Model fit done!
+           Bagging(Tree) with no smearing
+           Bias: 701.444, SE: 9307.443, R2: 0.003, RMSEP: 9333.837
+20:54:54 - Model fit done!
+           KNN_n3 with no smearing
+           Bias: -198.869, SE: 9726.313, R2: 0.007, RMSEP: 9728.346
+
+------ NEW LOGGER 2022-05-11 ----------------------------------------------
+21:03:57 - Model fit done!
+           Vanilla OLS with smearing
+           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
+
+------ NEW LOGGER 2022-05-11 ----------------------------------------------
+21:48:53 - Model fit done!
+           Vanilla OLS with smearing
+           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
+
+------ NEW LOGGER 2022-05-11 ----------------------------------------------
+21:52:09 - Model fit done!
+           Vanilla OLS with smearing
+           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
+21:52:12 - Model fit done!
+           Vanilla OLS with no smearing
+           Bias: -186.003, SE: 32128.703, R2: 0.0, RMSEP: 32129.242
+
+------ NEW LOGGER 2022-05-11 ----------------------------------------------
+22:02:04 - Model fit done!
+           Vanilla OLS with smearing
+           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
+22:02:06 - Model fit done!
+           Vanilla OLS with no smearing
+           Bias: -186.003, SE: 32128.703, R2: 0.0, RMSEP: 32129.242
+
+------ NEW LOGGER 2022-05-11 ----------------------------------------------
+22:21:47 - Model fit done!
+           OLS with no smearing
+           Bias: -186.003, SE: 32128.703, R2: 0.0, RMSEP: 32129.242
+22:21:49 - Model fit done!
+           OLS with smearing
+           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
+
+------ NEW LOGGER 2022-05-11 ----------------------------------------------
+22:22:58 - Model fit done!
+           OLS with no smearing
+           Bias: -186.003, SE: 32128.703, R2: 0.0, RMSEP: 32129.242
+22:23:01 - Model fit done!
+           OLS with smearing
+           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
+22:23:10 - Model fit done!
+           (bootstrapped) OLS with no smearing
+           Bias: -953298790505531.5, SE: 2.9572164416248612e+16, R2: 0.0, RMSEP: 2.95875258655674e+16
+
+------ NEW LOGGER 2022-05-11 ----------------------------------------------
+22:26:05 - Model fit done!
+           OLS with no smearing
+           Bias: -186.003, SE: 32128.703, R2: 0.0, RMSEP: 32129.242
+22:26:07 - Model fit done!
+           OLS with smearing
+           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
+22:26:16 - Model fit done!
+           (bootstrapped) OLS with no smearing
+           Bias: -953298790505531.5, SE: 2.9572164416248612e+16, R2: 0.0, RMSEP: 2.95875258655674e+16
+22:26:26 - Model fit done!
+           (bootstrapped) OLS with smearing
+           Bias: inf, SE: nan, R2: nan, RMSEP: inf
+
+------ NEW LOGGER 2022-05-11 ----------------------------------------------
+22:28:00 - Model fit done!
+           OLS with no smearing
+           Bias: -186.003, SE: 32128.703, R2: 0.0, RMSEP: 32129.242
+22:28:02 - Model fit done!
+           OLS with smearing
+           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
+22:28:11 - Model fit done!
+           (bootstrapped) OLS with no smearing
+           Bias: -953298790505531.5, SE: 2.9572164416248612e+16, R2: 0.0, RMSEP: 2.95875258655674e+16
+22:28:21 - Model fit done!
+           (bootstrapped) OLS with smearing
+           Bias: -127190590949897.44, SE: 3945563662925888.5, R2: 0.0, RMSEP: 3947613211122303.0
+22:30:59 - Model fit done!
+           Decision Tree with no smearing
+           Bias: 1877.282, SE: 17520.638, R2: 0.001, RMSEP: 17620.924
+22:31:52 - Model fit done!
+           Decision Tree with smearing
+           Bias: -2330.215, SE: 9221.465, R2: 0.003, RMSEP: 9511.326
+
+------ NEW LOGGER 2022-05-11 ----------------------------------------------
+22:32:27 - Model fit done!
+           OLS with no smearing
+           Bias: -186.003, SE: 32128.703, R2: 0.0, RMSEP: 32129.242
+22:32:30 - Model fit done!
+           OLS with smearing
+           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
+22:58:33 - Model fit done!
+           (bootstrapped B: 500) OLS with no smearing
+           Bias: -5955105951536.638, SE: 2298017800763761.0, R2: 0.0, RMSEP: 2298025516810900.5
+23:26:06 - Model fit done!
+           (bootstrapped B: 500) OLS with smearing
+           Bias: -2.314339363352764e+24, SE: 2.1899444459723948e+26, R2: 0.0, RMSEP: 2.1900667325709998e+26
+23:29:33 - Model fit done!
+           Decision Tree with no smearing
+           Bias: 1877.282, SE: 17520.638, R2: 0.001, RMSEP: 17620.924
+23:30:27 - Model fit done!
+           Decision Tree with smearing
+           Bias: -2330.215, SE: 9221.465, R2: 0.003, RMSEP: 9511.326
+04:46:14 - Model fit done!
+           (bootstrapped B: 500) Decision Tree with no smearing
+           Bias: 1827.679, SE: 10492.406, R2: 0.004, RMSEP: 10650.399
+06:26:21 - Model fit done!
+           (bootstrapped B: 500) Decision Tree with smearing
+           Bias: -2326.064, SE: 9221.425, R2: 0.026, RMSEP: 9510.271
+06:26:59 - Model fit done!
+           KNN_n3 with no smearing
+           Bias: -198.869, SE: 9726.313, R2: 0.007, RMSEP: 9728.346
+06:29:44 - Model fit done!
+           KNN_n3 with smearing
+           Bias: -2325.389, SE: 9221.363, R2: 0.012, RMSEP: 9510.046
+
+------ NEW LOGGER 2022-05-12 ----------------------------------------------
+19:19:47 - Model fit done!
+           OLS with no smearing
+           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
+19:19:50 - Model fit done!
+           OLS with smearing
+           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
+19:24:59 - Model fit done!
+           (bootstrapped B: 100) OLS with no smearing
+           R2: -6.19818771253357e+22, MSE: 5.270742586509567e+30, RMSE: 2295809788834773.5, MAE: 1522.5418
+
+------ NEW LOGGER 2022-05-12 ----------------------------------------------
+22:14:46 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: True
+           R2: -0.0597, MSE: 90114290.694, RMSE: 9492.8547, MAE: 679.6347
+22:14:49 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: False
+           R2: -7.7755, MSE: 746240320.1954, RMSE: 27317.3996, MAE: 1671.2937
+22:14:52 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: True
+           R2: -0.0531, MSE: 89554880.4807, RMSE: 9463.344, MAE: 553.733
+22:14:55 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: False
+           R2: -7.7755, MSE: 746240320.1954, RMSE: 27317.3996, MAE: 1671.2937
+22:14:59 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: True
+           R2: -0.0264, MSE: 87285593.0418, RMSE: 9342.6759, MAE: 686.4905
+22:15:03 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: False
+           R2: -11.009, MSE: 1021208312.0075, RMSE: 31956.3501, MAE: 1947.2046
+22:15:08 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: True
+           R2: -0.0632, MSE: 90412620.3358, RMSE: 9508.5551, MAE: 740.5515
+22:15:11 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: False
+           R2: -11.009, MSE: 1021208312.0075, RMSE: 31956.3501, MAE: 1947.2046
+22:15:16 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: True
+           R2: -0.0632, MSE: 90408549.5723, RMSE: 9508.3411, MAE: 740.4827
+22:15:20 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: False
+           R2: -23.205, MSE: 2058317091.1471, RMSE: 45368.6796, MAE: 2050.498
+22:15:24 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: True
+           R2: -0.0503, MSE: 89311059.0164, RMSE: 9450.4528, MAE: 421.7195
+22:15:28 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: False
+           R2: -23.205, MSE: 2058317091.1471, RMSE: 45368.6796, MAE: 2050.498
+22:15:59 - Model fit done!
+           estimator: Decision Tree ,bootstrap: True ,scaler: None ,smearing: True
+           R2: -0.0631, MSE: 90405763.0197, RMSE: 9508.1945, MAE: 739.883
+22:16:53 - Model fit done!
+           estimator: Decision Tree ,bootstrap: True ,scaler: None ,smearing: False
+           R2: -1.6837, MSE: 228215644.74, RMSE: 15106.8079, MAE: 1166.0
+22:17:12 - Model fit done!
+           estimator: Decision Tree ,bootstrap: False ,scaler: None ,smearing: True
+           R2: -0.0626, MSE: 90357839.4128, RMSE: 9505.6741, MAE: 730.1352
+22:18:06 - Model fit done!
+           estimator: Decision Tree ,bootstrap: False ,scaler: None ,smearing: False
+           R2: -1.6837, MSE: 228215644.74, RMSE: 15106.8079, MAE: 1166.0
+22:18:19 - Model fit done!
+           estimator: Decision Tree ,bootstrap: True ,scaler: None ,smearing: True
+           R2: -0.0622, MSE: 90328521.3231, RMSE: 9504.1318, MAE: 722.661
+22:18:38 - Model fit done!
+           estimator: Decision Tree ,bootstrap: True ,scaler: None ,smearing: False
+           R2: -1.6225, MSE: 223009078.4495, RMSE: 14933.4885, MAE: 1179.0
+22:18:47 - Model fit done!
+           estimator: Decision Tree ,bootstrap: False ,scaler: None ,smearing: True
+           R2: -0.062, MSE: 90305462.1224, RMSE: 9502.9186, MAE: 719.111
+22:19:06 - Model fit done!
+           estimator: Decision Tree ,bootstrap: False ,scaler: None ,smearing: False
+           R2: -1.6225, MSE: 223009078.4495, RMSE: 14933.4885, MAE: 1179.0
+22:19:11 - Model fit done!
+           estimator: Decision Tree ,bootstrap: True ,scaler: None ,smearing: True
+           R2: -0.0617, MSE: 90281346.6826, RMSE: 9501.6497, MAE: 712.5653
+22:19:19 - Model fit done!
+           estimator: Decision Tree ,bootstrap: True ,scaler: None ,smearing: False
+           R2: -2.2222, MSE: 274005485.2486, RMSE: 16553.111, MAE: 1119.0
+22:19:23 - Model fit done!
+           estimator: Decision Tree ,bootstrap: False ,scaler: None ,smearing: True
+           R2: -0.0617, MSE: 90283951.8773, RMSE: 9501.7868, MAE: 714.9626
+22:19:31 - Model fit done!
+           estimator: Decision Tree ,bootstrap: False ,scaler: None ,smearing: False
+           R2: -2.2222, MSE: 274005485.2486, RMSE: 16553.111, MAE: 1119.0
+
+------ NEW LOGGER 2022-05-12 ----------------------------------------------
+22:21:39 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: True
+           R2: -0.0597, MSE: 90114290.694, RMSE: 9492.8547, MAE: 679.6347
+22:21:43 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: False
+           R2: -7.7755, MSE: 746240320.1954, RMSE: 27317.3996, MAE: 1671.2937
+
+------ NEW LOGGER 2022-05-12 ----------------------------------------------
+22:23:11 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: <class 'sklearn.preprocessing._data.StandardScaler'> ,smearing: True
+           R2: -0.0597, MSE: 90114290.694, RMSE: 9492.8547, MAE: 679.6347
+22:23:16 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: <class 'sklearn.preprocessing._data.StandardScaler'> ,smearing: False
+           R2: -7.7755, MSE: 746240320.1954, RMSE: 27317.3996, MAE: 1671.2937
+22:23:20 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: <class 'sklearn.preprocessing._data.StandardScaler'> ,smearing: True
+           R2: -0.0531, MSE: 89554880.4807, RMSE: 9463.344, MAE: 553.733
+22:23:25 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: <class 'sklearn.preprocessing._data.StandardScaler'> ,smearing: False
+           R2: -7.7755, MSE: 746240320.1954, RMSE: 27317.3996, MAE: 1671.2937
+22:23:29 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: <class 'sklearn.preprocessing._data.MinMaxScaler'> ,smearing: True
+           R2: -0.0264, MSE: 87285593.0418, RMSE: 9342.6759, MAE: 686.4905
+22:23:33 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: <class 'sklearn.preprocessing._data.MinMaxScaler'> ,smearing: False
+           R2: -11.009, MSE: 1021208312.0075, RMSE: 31956.3501, MAE: 1947.2046
+22:23:38 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: <class 'sklearn.preprocessing._data.MinMaxScaler'> ,smearing: True
+           R2: -0.0632, MSE: 90412620.3358, RMSE: 9508.5551, MAE: 740.5515
+22:23:42 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: <class 'sklearn.preprocessing._data.MinMaxScaler'> ,smearing: False
+           R2: -11.009, MSE: 1021208312.0059, RMSE: 31956.3501, MAE: 1947.2046
+
+------ NEW LOGGER 2022-05-12 ----------------------------------------------
+22:26:32 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: StandardScaler ,smearing: True
+           R2: -0.0597, MSE: 90114290.694, RMSE: 9492.8547, MAE: 679.6347
+22:26:36 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: StandardScaler ,smearing: False
+           R2: -7.7755, MSE: 746240320.1954, RMSE: 27317.3996, MAE: 1671.2937
+22:26:41 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: StandardScaler ,smearing: True
+           R2: -0.0531, MSE: 89554880.4807, RMSE: 9463.344, MAE: 553.733
+22:26:45 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: StandardScaler ,smearing: False
+           R2: -7.7755, MSE: 746240320.1954, RMSE: 27317.3996, MAE: 1671.2937
+22:26:49 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: MinMaxScaler ,smearing: True
+           R2: -0.0264, MSE: 87285593.0418, RMSE: 9342.6759, MAE: 686.4905
+22:26:54 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: MinMaxScaler ,smearing: False
+           R2: -11.009, MSE: 1021208312.0059, RMSE: 31956.3501, MAE: 1947.2046
+22:26:58 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: MinMaxScaler ,smearing: True
+           R2: -0.0632, MSE: 90412620.3358, RMSE: 9508.5551, MAE: 740.5515
+22:27:03 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: MinMaxScaler ,smearing: False
+           R2: -11.009, MSE: 1021208312.0075, RMSE: 31956.3501, MAE: 1947.2046
+22:27:07 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: True
+           R2: -0.0632, MSE: 90408549.5723, RMSE: 9508.3411, MAE: 740.4827
+22:27:12 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: False
+           R2: -23.205, MSE: 2058317091.1711, RMSE: 45368.6796, MAE: 2050.498
+22:27:17 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: True
+           R2: -0.0503, MSE: 89311059.0164, RMSE: 9450.4528, MAE: 421.7195
+22:27:21 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: False
+           R2: -23.205, MSE: 2058317091.1471, RMSE: 45368.6796, MAE: 2050.498
+22:27:55 - Model fit done!
+           estimator: Decision Tree ,bootstrap: True ,scaler: StandardScaler ,smearing: True
+           R2: -0.0631, MSE: 90405763.0197, RMSE: 9508.1945, MAE: 739.883
+22:28:52 - Model fit done!
+           estimator: Decision Tree ,bootstrap: True ,scaler: StandardScaler ,smearing: False
+           R2: -1.6837, MSE: 228215644.74, RMSE: 15106.8079, MAE: 1166.0
+22:29:14 - Model fit done!
+           estimator: Decision Tree ,bootstrap: False ,scaler: StandardScaler ,smearing: True
+           R2: -0.0626, MSE: 90357839.4128, RMSE: 9505.6741, MAE: 730.1352
+
+------ NEW LOGGER 2022-05-12 ----------------------------------------------
+22:37:55 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: standard ,smearing: True
+           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
+22:37:58 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: standard ,smearing: False
+           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
+22:38:02 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: standard ,smearing: True
+           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
+22:38:05 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: standard ,smearing: False
+           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
+22:38:56 - Model fit done!
+           estimator: Decision Tree ,bootstrap: True ,scaler: standard ,smearing: True
+           R2: -0.0638, MSE: 90465318.6146, RMSE: 9511.3258, MAE: 751.9237
+22:41:34 - Model fit done!
+           estimator: Decision Tree ,bootstrap: True ,scaler: standard ,smearing: False
+           R2: -2.536, MSE: 300688347.9601, RMSE: 17340.3676, MAE: 1158.0
+22:42:25 - Model fit done!
+           estimator: Decision Tree ,bootstrap: False ,scaler: standard ,smearing: True
+           R2: -0.0638, MSE: 90465294.5471, RMSE: 9511.3245, MAE: 751.8522
+22:45:06 - Model fit done!
+           estimator: Decision Tree ,bootstrap: False ,scaler: standard ,smearing: False
+           R2: -2.6204, MSE: 307866114.8774, RMSE: 17546.114, MAE: 1162.0
+22:48:54 - Model fit done!
+           estimator: KNN_n3 ,bootstrap: True ,scaler: standard ,smearing: True
+           R2: -0.0636, MSE: 90440973.1738, RMSE: 9510.0459, MAE: 747.2385
+22:49:48 - Model fit done!
+           estimator: KNN_n3 ,bootstrap: True ,scaler: standard ,smearing: False
+           R2: -0.1129, MSE: 94640709.3218, RMSE: 9728.3457, MAE: 915.6667
+
+------ NEW LOGGER 2022-05-12 ----------------------------------------------
+22:50:36 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: standard ,smearing: True
+           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
+22:50:40 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: standard ,smearing: False
+           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
+22:50:44 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: standard ,smearing: True
+           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
+22:50:48 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: standard ,smearing: False
+           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
+22:51:43 - Model fit done!
+           estimator: Decision Tree ,bootstrap: True ,scaler: standard ,smearing: True
+           R2: -0.0638, MSE: 90465318.6146, RMSE: 9511.3258, MAE: 751.9237
+22:54:41 - Model fit done!
+           estimator: Decision Tree ,bootstrap: True ,scaler: standard ,smearing: False
+           R2: -2.536, MSE: 300688347.9601, RMSE: 17340.3676, MAE: 1158.0
+22:55:37 - Model fit done!
+           estimator: Decision Tree ,bootstrap: False ,scaler: standard ,smearing: True
+           R2: -0.0638, MSE: 90465294.5471, RMSE: 9511.3245, MAE: 751.8522
+22:59:05 - Model fit done!
+           estimator: Decision Tree ,bootstrap: False ,scaler: standard ,smearing: False
+           R2: -2.6204, MSE: 307866114.8774, RMSE: 17546.114, MAE: 1162.0
+23:02:13 - Model fit done!
+           estimator: KNN_n3 ,bootstrap: True ,scaler: standard ,smearing: True
+           R2: -0.0636, MSE: 90440973.1738, RMSE: 9510.0459, MAE: 747.2385
+23:02:59 - Model fit done!
+           estimator: KNN_n3 ,bootstrap: True ,scaler: standard ,smearing: False
+           R2: -0.1129, MSE: 94640709.3218, RMSE: 9728.3457, MAE: 915.6667
+23:06:15 - Model fit done!
+           estimator: KNN_n3 ,bootstrap: False ,scaler: standard ,smearing: True
+           R2: -0.0636, MSE: 90440973.1738, RMSE: 9510.0459, MAE: 747.2385
+23:07:04 - Model fit done!
+           estimator: KNN_n3 ,bootstrap: False ,scaler: standard ,smearing: False
+           R2: -0.1129, MSE: 94640709.3218, RMSE: 9728.3457, MAE: 915.6667
+23:07:08 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: minmax ,smearing: True
+           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
+23:07:12 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: minmax ,smearing: False
+           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
+23:07:16 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: minmax ,smearing: True
+           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
+23:07:20 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: minmax ,smearing: False
+           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
+23:08:17 - Model fit done!
+           estimator: Decision Tree ,bootstrap: True ,scaler: minmax ,smearing: True
+           R2: -0.0638, MSE: 90465449.4772, RMSE: 9511.3327, MAE: 751.8891
+23:10:53 - Model fit done!
+           estimator: Decision Tree ,bootstrap: True ,scaler: minmax ,smearing: False
+           R2: -2.2767, MSE: 278638584.8931, RMSE: 16692.4709, MAE: 1144.0
+23:11:44 - Model fit done!
+           estimator: Decision Tree ,bootstrap: False ,scaler: minmax ,smearing: True
+           R2: -0.0638, MSE: 90465465.5062, RMSE: 9511.3335, MAE: 751.9561
+23:14:22 - Model fit done!
+           estimator: Decision Tree ,bootstrap: False ,scaler: minmax ,smearing: False
+           R2: -3.0063, MSE: 340681250.809, RMSE: 18457.5527, MAE: 1158.0
+23:17:10 - Model fit done!
+           estimator: KNN_n3 ,bootstrap: True ,scaler: minmax ,smearing: True
+           R2: -0.0636, MSE: 90441823.4229, RMSE: 9510.0906, MAE: 747.1893
+23:17:48 - Model fit done!
+           estimator: KNN_n3 ,bootstrap: True ,scaler: minmax ,smearing: False
+           R2: -0.1312, MSE: 96195366.4894, RMSE: 9807.9237, MAE: 890.0
+23:20:35 - Model fit done!
+           estimator: KNN_n3 ,bootstrap: False ,scaler: minmax ,smearing: True
+           R2: -0.0636, MSE: 90441823.4229, RMSE: 9510.0906, MAE: 747.1893
+23:21:14 - Model fit done!
+           estimator: KNN_n3 ,bootstrap: False ,scaler: minmax ,smearing: False
+           R2: -0.1312, MSE: 96195366.4894, RMSE: 9807.9237, MAE: 890.0
+23:21:16 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: True
+           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
+23:21:19 - Model fit done!
+           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: False
+           R2: -11.1393, MSE: 1032288185.0948, RMSE: 32129.2419, MAE: 1520.5405
+23:21:21 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: True
+           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
+23:21:23 - Model fit done!
+           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: False
+           R2: -11.1393, MSE: 1032288185.0948, RMSE: 32129.2419, MAE: 1520.5405
+23:22:14 - Model fit done!
+           estimator: Decision Tree ,bootstrap: True ,scaler: None ,smearing: True
+           R2: -0.0638, MSE: 90465443.5427, RMSE: 9511.3324, MAE: 751.8426
+23:24:53 - Model fit done!
+           estimator: Decision Tree ,bootstrap: True ,scaler: None ,smearing: False
+           R2: -2.68, MSE: 312931940.075, RMSE: 17689.8824, MAE: 1165.0
+23:25:44 - Model fit done!
+           estimator: Decision Tree ,bootstrap: False ,scaler: None ,smearing: True
+           R2: -0.0638, MSE: 90465404.5887, RMSE: 9511.3303, MAE: 751.8557
+23:28:21 - Model fit done!
+           estimator: Decision Tree ,bootstrap: False ,scaler: None ,smearing: False
+           R2: -3.161, MSE: 353835918.3031, RMSE: 18810.5268, MAE: 1160.0
+23:31:08 - Model fit done!
+           estimator: KNN_n3 ,bootstrap: True ,scaler: None ,smearing: True
+           R2: -0.0635, MSE: 90440228.0596, RMSE: 9510.0067, MAE: 747.0778
+23:31:46 - Model fit done!
+           estimator: KNN_n3 ,bootstrap: True ,scaler: None ,smearing: False
+           R2: -0.167, MSE: 99242102.5847, RMSE: 9962.0331, MAE: 1089.0
+23:34:31 - Model fit done!
+           estimator: KNN_n3 ,bootstrap: False ,scaler: None ,smearing: True
+           R2: -0.0635, MSE: 90440228.0596, RMSE: 9510.0067, MAE: 747.0778
+23:35:09 - Model fit done!
+           estimator: KNN_n3 ,bootstrap: False ,scaler: None ,smearing: False
+           R2: -0.167, MSE: 99242102.5847, RMSE: 9962.0331, MAE: 1089.0

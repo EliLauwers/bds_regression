@@ -1,35 +1,24 @@
-# Custom scripts
-from statistics import LinearRegression
-from giant_steps.create_dataset import create_dataset
-from giant_steps.pre_process import (
-    pre_process_album_date_released,
-    pre_process_track_listens,
-)
-
-
-from GLOBAL_VARS import BOOTSTRAP_OBS, BOOTSTRAP_B, LOG, RANDOM_STATE
-
-# Normal imports
-from sklearn.preprocessing import MinMaxScaler, StandardScaler
-from sklearn.ensemble import BaggingRegressor, RandomForestRegressor
-from sklearn.linear_model import linearRegression
-from sklearn.tree import DecisionTreeRegressor, KNeighborsRegressor
-
+from GLOBAL_VARS import BOOTSTRAP_B, BOOTSTRAP_OBS, RANDOM_STATE, LOG
 import numpy as np
-
 
 np.random.seed(RANDOM_STATE)
 
+import matplotlib.pyplot as plt
 import pickle
-import random
 
-random.seed(RANDOM_STATE)
+from sklearn.ensemble import BaggingRegressor
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
+from sklearn.compose import TransformedTargetRegressor
+from sklearn.neighbors import KNeighborsRegressor
+
+import sklearn.metrics
+
+from mlxtend.evaluate import bias_variance_decomp
+
 
 if __name__ == "__main__":
-    run_all = False
-    if run_all:
-        create_dataset()
-        pre_process_track_listens()
 
     estimators = [
         {"name": "OLS", "func": LinearRegression()},
@@ -41,10 +30,6 @@ if __name__ == "__main__":
             "name": "KNN_n3",
             "func": KNeighborsRegressor(n_neighbors=3),
         },
-        {
-            "name": "RandomForest",
-            "func" : RandomForestRegressor
-        }
     ]
 
     datareds = ["no_datared"]

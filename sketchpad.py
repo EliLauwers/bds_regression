@@ -6,7 +6,9 @@ sum(np.isnan(X_train.album_id)) / len(X_train.album_id)
 # Action: Remove tracks with missing album_id
 X_train = X_train[~np.isnan(X_train.album_id)]
 # first, we need to dataprocess the datetime to real datetime objects
-transformed_dates = pd.to_datetime(X_train['album_date_released'], format = "%Y-%m-%d %H:%M:%S")
+transformed_dates = pd.to_datetime(
+    X_train["album_date_released"], format="%Y-%m-%d %H:%M:%S"
+)
 # Next, we'll check if every date has transformed rightly
 # this function will create a logfile intermediate/dates_log.txt with everything gone wrong
 validate_date_transformation(X_train, transformed_dates)
@@ -18,12 +20,15 @@ X_train["album_date_released"] = transformed_dates
 # Question: Does every track in a given album has the same album_date_released (whether or not it is filled in)
 # Answer: yes, missing album_date_released is album specific rather than track specific
 X_train.groupby("album_id").agg(
-    no_different_values = ("album_date_released", lambda album_dates: len(album_dates.unique()))
+    no_different_values=(
+        "album_date_released",
+        lambda album_dates: len(album_dates.unique()),
+    )
 ).max()
 # Question: How many albums have no album_date_released
 # Answer: 36% of albums have missing album_date_released
 tmp = X_train.groupby("album_id").agg(
-    missing = ("album_date_released", lambda album_dates: all(np.isnan(album_dates)))
+    missing=("album_date_released", lambda album_dates: all(np.isnan(album_dates)))
 )
 sum(tmp.missing) / len(tmp.missing)
 del tmp
@@ -33,6 +38,34 @@ sum(np.isnan(X_train.album_date_released)) / len(X_train.album_date_released)
 # Note: 36% lays closely to 33%. Which would mean that the number of tracks is roughly equal per album
 # Question: Check mean and sd for the number of tracks per album
 # Answer: It seems to be the case,
-tmp = X_train.groupby("album_id").agg(number_of_tracks=("track_id","count"))
-tmp.agg(["count","mean","median","min","max","std"])
-mpl.hist(X_train.number_of_tracks[tmp.number_of_tracks<100], bins = 100)
+tmp = X_train.groupby("album_id").agg(number_of_tracks=("track_id", "count"))
+tmp.agg(["count", "mean", "median", "min", "max", "std"])
+mpl.hist(X_train.number_of_tracks[tmp.number_of_tracks < 100], bins=100)
+
+
+def evaluate(model):
+    """
+    This function can be used to evaluate a linear model. The function is quite badly written
+    """
+    # Evaluate the model
+    y_pred = model.fittedvalues
+    y_true = model.model.endog
+    model_metrics = {}
+    model_metrics["R2"] = model.rsquared
+    model_metrics["R2_adj"] = model.rsquared_adj
+    model_metrics["AIC"] = model.aic
+    model_metrics["BIC"] = model.bic
+
+    N, K = len(y_pred), len(model.params)  # number of instances, predictors
+    SST = model.centered_tss
+    SSE = model.ssr  # SS residual
+    SSR = model.ess  # SS explained => SS regression => SS model
+    MSE = SSE / (N - K - 1)
+    MSR = SSR / K
+    model_metrics["mallows_cp"] = eval.mallows_cp(SSE, MSE, N, K)
+    model_metrics["RMSE"] = np.sqrt(MSE)
+    model_metrics["RMSEA"] = None
+    LOG.model_evaluates({"meta": "Simple linear model", "metrics": model_metrics})
+    return model
+
+

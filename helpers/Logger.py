@@ -1,6 +1,7 @@
 import datetime
 import json
 import numpy as np
+import sklearn
 
 
 class Logger:
@@ -53,22 +54,17 @@ class Logger:
                 file.write(text)
         print(text[:-1])
 
-    def evaluate_predictions(self, meta, predictions, y_true):
-        predictions_exp = np.exp(predictions)
-        y_true_exp = np.exp(y_true)
-
-        preds_centered = predictions_exp - y_true_exp
-        bias = np.mean(preds_centered)
-        standard_error = np.std(preds_centered)
-        R2 = np.square(np.corrcoef(predictions_exp, y_true_exp))[0, 1]
-
+    def evaluate_predictions(self, meta, predictions, y_test):
+        MSE = sklearn.metrics.mean_squared_error(y_test, predictions)
+        RMSE = sklearn.metrics.mean_squared_error(y_test, predictions, squared = False)
+        MAE = sklearn.metrics.median_absolute_error(y_test, predictions)
+        R2 = sklearn.metrics.r2_score(y_test, predictions)
         timestamp = datetime.datetime.now().strftime("%H:%M:%S")
         eval_dict = {
             "timestamp": timestamp,
             "meta": meta,
-            "metrics": {"bias": bias, "standard_error": standard_error, "R2": R2},
+            "metrics" : {"R2" : R2, "MSE": MSE, "RMSE" : RMSE, "MAE": MAE}
         }
-        print(eval_dict)
 
         # first read, then write the data
         with open(self.model_evaluates_path, "r+") as file:
@@ -78,11 +74,12 @@ class Logger:
             cur_file.append(eval_dict)
             file.write(json.dumps(cur_file))
 
-        model_name, agg_name = eval_dict["meta"].values()
-        bias, R2, std = eval_dict["metrics"].values()
-        print(bias, R2, std)
-        self.process(
-            f"Model fit done!\n{'-' * 8} - {model_name} with {agg_name}\n{'-' * 8} - Bias: {round(bias, 2)}, R2: {round(R2,2)}, Std: {round(std,2)}"
+        # model_name, agg_name = eval_dict["meta"].values()
+        metrics_string = ", ".join(
+            [f"{k}: {round(eval_dict['metrics'][k], 4)}" for k in eval_dict["metrics"]]
         )
-        
-        
+        model_string = ' ,'.join([f"{k}: {meta[k]}" for k in meta])
+
+        self.process(
+            f"Model fit done!\n{' ' * 8}   {model_string}\n{' ' * 8}   {metrics_string}"
+        )

@@ -13,7 +13,8 @@ from helpers.calculate_mahalanobis_distance import (
 )
 
 
-def pre_process():
+def pre_process_track_listens():
+    LOG.process("Start of pre_process()")
     LOG.process("Read Data")
     # the dataframe joined_data contains:
     # (1) music_data.csv: all information
@@ -21,8 +22,9 @@ def pre_process():
     with open("data/intermediate/joined_data.pk", "rb") as infile:
         data = pickle.load(infile).set_index("track_id")
     # Next, split in relevant stuff
-    X = data.drop(["track_listens", "album_id", "album_date_released"], axis=1)
     y = data["track_listens"]
+    X = data.drop(["track_listens", "album_id", "album_date_released"], axis=1)
+
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=RANDOM_STATE
     )
@@ -43,7 +45,7 @@ def pre_process():
     plt.title("Histogram for track_listens in training set")
     plt.xlabel("track_listens")
     plt.ylabel("Frequency")
-    plt.savefig("plots/histogram_track_listens_train.png")
+    plt.savefig("plots/track_listens/histogram_track_listens_train.png")
     plt.clf()
 
     tmp = (
@@ -59,7 +61,7 @@ def pre_process():
     plt.title("Relative cumulative Frequency of track listens")
     plt.xlabel("track_listens")
     plt.ylabel("Relative Cumulative Frequency")
-    plt.savefig("plots/cumul_rel_freq_y_train.png")
+    plt.savefig("plots/track_listens/cumul_rel_freq_y_train.png")
     plt.clf()
     # Action: try log transforming
     # Question: Are there any 0 values?
@@ -81,7 +83,7 @@ def pre_process():
     plt.title("Histogram for log(track_listens) in training set")
     plt.xlabel("log(track_listens)")
     plt.ylabel("Frequency")
-    plt.savefig("plots/histogram_log_track_listens_train.png")
+    plt.savefig("plots/track_listens/histogram_log_track_listens_train.png")
     plt.clf()
 
     tmp = (
@@ -97,7 +99,7 @@ def pre_process():
     plt.title("Relative cumulative Frequency of log track listens")
     plt.xlabel("log track_listens")
     plt.ylabel("Relative Cumulative Frequency")
-    plt.savefig("plots/cumul_rel_freq_log_track_listens.png")
+    plt.savefig("plots/track_listens/cumul_rel_freq_log_track_listens.png")
     plt.clf()
     del tmp
     # Question: How many instances must be removed using IQR?
@@ -133,20 +135,31 @@ def pre_process():
     X_train = X_train.drop(data_indexes, axis=0)
     del data_indexes
     # Note: Now I'll calculate z-scores for the predictor columns
-    LOG.process("Z-scores")
+
     # Note: We need to keep the data for later processing of the other sets
-    agg_data = X_train.agg(["mean", "std"])
-    agg_data.to_csv("data/intermediate/mean_std_before_zscore_x_train.csv")
-    X_train_z = X_train.apply(scipy.stats.zscore)
-    del X_train
+    # agg_data = X_train.agg(["mean", "std"])
+    # agg_data.to_csv(
+    #     "data/intermediate/track_listens/mean_std_before_zscore_x_train.csv"
+    # )
+    # X_train_z = X_train.apply(scipy.stats.zscore)
+    # del X_train
 
     LOG.process("End of data preprocess, saving data")
-    with open("data/intermediate/pre_processed/y_train.pk", "wb") as outfile:
+    with open("data/intermediate/track_listens/no_datared/y_train.pk", "wb") as outfile:
+        pickle.dump(np.exp(y_train_log), outfile, protocol=pickle.HIGHEST_PROTOCOL)
+    with open(
+        "data/intermediate/track_listens/no_datared/y_train_log.pk", "wb"
+    ) as outfile:
         pickle.dump(y_train_log, outfile, protocol=pickle.HIGHEST_PROTOCOL)
-    with open("data/intermediate/pre_processed/y_test.pk", "wb") as outfile:
+    with open("data/intermediate/track_listens/no_datared/y_test.pk", "wb") as outfile:
         pickle.dump(y_test, outfile, protocol=pickle.HIGHEST_PROTOCOL)
-    with open("data/intermediate/pre_processed/X_train.pk", "wb") as outfile:
-        pickle.dump(X_train_z, outfile, protocol=pickle.HIGHEST_PROTOCOL)
-    with open("data/intermediate/pre_processed/X_test.pk", "wb") as outfile:
+    with open("data/intermediate/track_listens/no_datared/X_train.pk", "wb") as outfile:
+        pickle.dump(X_train, outfile, protocol=pickle.HIGHEST_PROTOCOL)
+    with open("data/intermediate/track_listens/no_datared/X_test.pk", "wb") as outfile:
         pickle.dump(X_test, outfile, protocol=pickle.HIGHEST_PROTOCOL)
-    LOG.process("pre_process done!\n")
+    LOG.process("End of pre_process_track_listens()")
+
+
+def pre_process_album_date_released():
+    pass
+
