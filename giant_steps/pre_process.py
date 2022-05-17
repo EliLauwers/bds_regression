@@ -135,31 +135,19 @@ def pre_process_track_listens():
     X_train = X_train.drop(data_indexes, axis=0)
     del data_indexes
     # Note: Now I'll calculate z-scores for the predictor columns
-
-    # Note: We need to keep the data for later processing of the other sets
-    # agg_data = X_train.agg(["mean", "std"])
-    # agg_data.to_csv(
-    #     "data/intermediate/track_listens/mean_std_before_zscore_x_train.csv"
-    # )
-    # X_train_z = X_train.apply(scipy.stats.zscore)
-    # del X_train
-
     LOG.process("End of data preprocess, saving data")
-    with open("data/intermediate/track_listens/no_datared/y_train.pk", "wb") as outfile:
+
+    output_path = "data/intermediate/track_listens/"
+    with open(output_path + "y_train.pk", "wb") as outfile:
         pickle.dump(np.exp(y_train_log), outfile, protocol=pickle.HIGHEST_PROTOCOL)
-    with open(
-        "data/intermediate/track_listens/no_datared/y_train_log.pk", "wb"
-    ) as outfile:
-        pickle.dump(y_train_log, outfile, protocol=pickle.HIGHEST_PROTOCOL)
-    with open("data/intermediate/track_listens/no_datared/y_test.pk", "wb") as outfile:
+    with open(output_path + "y_test.pk", "wb") as outfile:
         pickle.dump(y_test, outfile, protocol=pickle.HIGHEST_PROTOCOL)
-    with open("data/intermediate/track_listens/no_datared/X_train.pk", "wb") as outfile:
+    with open(output_path + "X_train.pk", "wb") as outfile:
         pickle.dump(X_train, outfile, protocol=pickle.HIGHEST_PROTOCOL)
-    with open("data/intermediate/track_listens/no_datared/X_test.pk", "wb") as outfile:
+    with open(output_path + "X_test.pk", "wb") as outfile:
         pickle.dump(X_test, outfile, protocol=pickle.HIGHEST_PROTOCOL)
     LOG.process("End of pre_process_track_listens()")
 
 
 def pre_process_album_date_released():
     pass
-

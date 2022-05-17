@@ -6,17 +6,17 @@ from giant_steps.pre_process import (
     pre_process_track_listens,
 )
 
-
 from GLOBAL_VARS import BOOTSTRAP_OBS, BOOTSTRAP_B, LOG, RANDOM_STATE
 
 # Normal imports
-from sklearn.preprocessing import MinMaxScaler, StandardScaler
+from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import BaggingRegressor, RandomForestRegressor
-from sklearn.linear_model import linearRegression
+from sklearn.linear_model import linearRegression, ElasticNetCV
 from sklearn.tree import DecisionTreeRegressor, KNeighborsRegressor
-
+from sklearn.decomposition import IncrementalPCA
+from sklearn.feature_selection import mutual_info_regression
+from sklearn.manifold import Isomap
 import numpy as np
-
 
 np.random.seed(RANDOM_STATE)
 
@@ -26,13 +26,32 @@ import random
 random.seed(RANDOM_STATE)
 
 if __name__ == "__main__":
+
     run_all = False
+
     if run_all:
         create_dataset()
         pre_process_track_listens()
 
+    input_path = "data/intermediate/track_listens/"
+
+    with open(input_path + "X_train.pk", "rb") as infile:
+        X_train = pickle.load(infile)
+        X_train_red = X_train
+    with open(input_path + "y_train.pk", "rb") as infile:
+        y_train = pickle.load(infile)
+    with open(input_path + "X_test.pk", "rb") as infile:
+        X_test = pickle.load(infile)
+        X_test_red = X_test
+    with open(input_path + "y_test.pk", "rb") as infile:
+        y_test = pickle.load(infile)
+
+    minmaxscaler = MinMaxScaler().fit(X_train)
+    X_train[:] = minmaxscaler.transform(X_train)
+    X_test[:] = minmaxscaler.transform(X_test)
+
     estimators = [
-        {"name": "OLS", "func": LinearRegression()},
+        {"name": "Ordinary Least Squares", "func": LinearRegression()},
         {
             "name": "Decision Tree",
             "func": DecisionTreeRegressor(),
@@ -41,64 +60,47 @@ if __name__ == "__main__":
             "name": "KNN_n3",
             "func": KNeighborsRegressor(n_neighbors=3),
         },
-        {
-            "name": "RandomForest",
-            "func" : RandomForestRegressor
-        }
+        {"name": "Random Forest", "func": RandomForestRegressor()},
     ]
 
-    datareds = ["no_datared"]
-    scalars = [(StandardScaler, "standard"), (MinMaxScaler, "minmax"), (None, "None")]
-    true_false = [True, False]
-    params = []
+    datareds = [None, "ipca", "mutual_information", "isomap"]
+
+    params = [
+        (d, e, b, s)  # adding a params
+        for d in datareds  # data reduction techniques
+        for e in estimators  # estimators
+        for b in [True, False]  # bootstrap
+        for s in [True, False]  # use_smearing
+    ]
+
+    """    
     for datared in datareds:
-        for scaler, scaler_name in scalars:
-            for estimator in estimators:
-                for bootstrap in true_false:
-                    for smearing in true_false:
-                        params.append(
-                            (
-                                datared,
-                                (scaler, scaler_name),
-                                estimator,
-                                bootstrap,
-                                smearing,
-                            )
+        for estimator in estimators:
+            for bootstrap in [True, False]:
+                for smearing in [True, False]:
+                    params.append(
+                        (
+                            datared,
+                            estimator,
+                            bootstrap,
+                            smearing,
                         )
+                    )
+    """
 
     # Loop over estimators to compare
 
     for row in params:
-        datared = row[0]
-        scaler, scaler_name = row[1]
-        estimator_name, estimator_func = row[2].values()
-        bootstrap = row[3]
-        use_smearing = row[4]
+        # unpack the estimator
+        datared, estimator, bootstrap, use_smearing = row
+        estimator_name, estimator_func = estimator.values()
 
-        with open(
-            f"data/intermediate/track_listens/{datared}/y_train.pk", "rb"
-        ) as infile:
-            y_train = pickle.load(infile).to_numpy()
-
-        with open(
-            f"data/intermediate/track_listens/{datared}/X_train.pk", "rb"
-        ) as infile:
-            X_train = pickle.load(infile)
-
-        with open(
-            f"data/intermediate/track_listens/{datared}/y_test.pk", "rb"
-        ) as infile:
-            y_test = pickle.load(infile).to_numpy()
-
-        with open(
-            f"data/intermediate/track_listens/{datared}/X_test.pk", "rb"
-        ) as infile:
-            X_test = pickle.load(infile)
-
-        if scaler:
-            scale_model = scaler().fit(X_train)
-            X_train = scale_model.transform(X_train)
-            X_test = scale_model.transform(X_test)
+        if datared == "ipca":
+            pass
+        elif datared == "mutual_information":
+            pass
+        elif datared == "isomap":
+            pass
 
         if bootstrap:
             estimator = BaggingRegressor(
@@ -110,7 +112,8 @@ if __name__ == "__main__":
 
         if use_smearing:
             model = estimator_func.fit(X_train, np.log(y_train))
-            resids = np.log(y_train) - model.predict(X_train)
+            train_predictions = model.predict(X_train)
+            resids = np.log(y_train) - train_predictions
             smearing_raw = np.exp(resids)
             # Some predictions will be infinite due to high exp
             smearing_raw[np.where(np.isinf(smearing_raw))] = max(y_train)
@@ -124,7 +127,6 @@ if __name__ == "__main__":
         meta = {
             "estimator": estimator_name,
             "bootstrap": bootstrap,
-            "scaler": scaler_name,
             "smearing": use_smearing,
         }
 
