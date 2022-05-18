@@ -54,16 +54,16 @@ class Logger:
                 file.write(text)
         print(text[:-1])
 
-    def evaluate_predictions(self, meta, predictions, y_test):
+    def evaluate_predictions(self, meta, predictions, y_test, current_model, no_models):
         MSE = sklearn.metrics.mean_squared_error(y_test, predictions)
-        RMSE = sklearn.metrics.mean_squared_error(y_test, predictions, squared = False)
+        RMSE = sklearn.metrics.mean_squared_error(y_test, predictions, squared=False)
         MAE = sklearn.metrics.median_absolute_error(y_test, predictions)
         R2 = sklearn.metrics.r2_score(y_test, predictions)
         timestamp = datetime.datetime.now().strftime("%H:%M:%S")
         eval_dict = {
             "timestamp": timestamp,
             "meta": meta,
-            "metrics" : {"R2" : R2, "MSE": MSE, "RMSE" : RMSE, "MAE": MAE}
+            "metrics": {"R2": R2, "MSE": MSE, "RMSE": RMSE, "MAE": MAE},
         }
 
         # first read, then write the data
@@ -78,8 +78,14 @@ class Logger:
         metrics_string = ", ".join(
             [f"{k}: {round(eval_dict['metrics'][k], 4)}" for k in eval_dict["metrics"]]
         )
-        model_string = ' ,'.join([f"{k}: {meta[k]}" for k in meta])
+        model_string = ", ".join([f"{k}: {meta[k]}" for k in meta])
 
         self.process(
-            f"Model fit done!\n{' ' * 8}   {model_string}\n{' ' * 8}   {metrics_string}"
+            "\n".join(
+                [
+                    f"Model fit {current_model} of {no_models} done!",
+                    " " * 11 + model_string,
+                    " " * 11 + metrics_string,
+                ]
+            )
         )

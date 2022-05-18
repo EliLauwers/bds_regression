@@ -758,3 +758,95 @@
 23:35:09 - Model fit done!
            estimator: KNN_n3 ,bootstrap: False ,scaler: None ,smearing: False
            R2: -0.167, MSE: 99242102.5847, RMSE: 9962.0331, MAE: 1089.0
+
+------ NEW LOGGER 2022-05-17 ----------------------------------------------
+22:35:19 - Model fit done!
+           estimator: Ordinary Least Squares ,bootstrap: True ,smearing: True
+           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
+22:35:22 - Model fit done!
+           estimator: Ordinary Least Squares ,bootstrap: True ,smearing: False
+           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
+22:35:25 - Model fit done!
+           estimator: Ordinary Least Squares ,bootstrap: False ,smearing: True
+           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
+22:35:27 - Model fit done!
+           estimator: Ordinary Least Squares ,bootstrap: False ,smearing: False
+           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
+22:37:39 - Model fit done!
+           estimator: Decision Tree ,bootstrap: True ,smearing: True
+           R2: -0.0638, MSE: 90465477.3032, RMSE: 9511.3341, MAE: 751.9642
+
+------ NEW LOGGER 2022-05-17 ----------------------------------------------
+22:45:50 - Model fit done!
+           data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: True ,smearing: True
+           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
+22:45:52 - Model fit done!
+           data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: True ,smearing: False
+           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
+22:45:54 - Model fit done!
+           data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: False ,smearing: True
+           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
+22:45:56 - Model fit done!
+           data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: False ,smearing: False
+           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
+22:46:50 - Model fit done!
+           data reduction: None ,estimator: Decision Tree ,bootstrap: True ,smearing: True
+           R2: -0.0638, MSE: 90465477.3032, RMSE: 9511.3341, MAE: 751.9642
+22:49:32 - Model fit done!
+           data reduction: None ,estimator: Decision Tree ,bootstrap: True ,smearing: False
+           R2: -2.181, MSE: 270502584.0327, RMSE: 16446.9628, MAE: 1159.0
+22:50:24 - Model fit done!
+           data reduction: None ,estimator: Decision Tree ,bootstrap: False ,smearing: True
+           R2: -0.0638, MSE: 90465412.1653, RMSE: 9511.3307, MAE: 751.824
+22:53:13 - Model fit done!
+           data reduction: None ,estimator: Decision Tree ,bootstrap: False ,smearing: False
+           R2: -3.4371, MSE: 377319013.3037, RMSE: 19424.7011, MAE: 1157.0
+22:55:57 - Model fit done!
+           data reduction: None ,estimator: KNN_n3 ,bootstrap: True ,smearing: True
+           R2: -0.0636, MSE: 90441057.1964, RMSE: 9510.0503, MAE: 747.0022
+22:56:36 - Model fit done!
+           data reduction: None ,estimator: KNN_n3 ,bootstrap: True ,smearing: False
+           R2: -0.1312, MSE: 96195366.4894, RMSE: 9807.9237, MAE: 890.0
+22:59:19 - Model fit done!
+           data reduction: None ,estimator: KNN_n3 ,bootstrap: False ,smearing: True
+           R2: -0.0636, MSE: 90441057.1964, RMSE: 9510.0503, MAE: 747.0022
+22:59:56 - Model fit done!
+           data reduction: None ,estimator: KNN_n3 ,bootstrap: False ,smearing: False
+           R2: -0.1312, MSE: 96195366.4894, RMSE: 9807.9237, MAE: 890.0
+00:08:07 - Model fit done!
+           data reduction: None ,estimator: Random Forest ,bootstrap: True ,smearing: True
+           R2: -0.0638, MSE: 90461167.8476, RMSE: 9511.1076, MAE: 751.3878
+04:42:37 - Model fit done!
+           data reduction: None ,estimator: Random Forest ,bootstrap: True ,smearing: False
+           R2: -0.3952, MSE: 118642564.6629, RMSE: 10892.3168, MAE: 1728.39
+06:10:32 - Model fit done!
+           data reduction: None ,estimator: Random Forest ,bootstrap: False ,smearing: True
+           R2: -0.0638, MSE: 90461173.3916, RMSE: 9511.1079, MAE: 751.5053
+
+------ NEW LOGGER 2022-05-18 ----------------------------------------------
+09:00:55 - Model fit 0 of 64 done!
+        data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: True ,smearing: True
+        R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
+09:00:58 - Model fit 1 of 64 done!
+        data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: True ,smearing: False
+        R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
+09:01:01 - Model fit 2 of 64 done!
+        data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: False ,smearing: True
+        R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
+09:01:03 - Model fit 3 of 64 done!
+        data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: False ,smearing: False
+        R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
+
+------ NEW LOGGER 2022-05-18 ----------------------------------------------
+09:02:18 - Model fit 0 of 64 done!
+           data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: True ,smearing: True
+           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
+09:02:21 - Model fit 1 of 64 done!
+           data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: True ,smearing: False
+           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
+09:02:24 - Model fit 2 of 64 done!
+           data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: False ,smearing: True
+           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
+09:02:26 - Model fit 3 of 64 done!
+           data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: False ,smearing: False
+           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
