@@ -7,10 +7,9 @@ LOG = Logger.create_logger("logs/log_file.txt", "logs/model_evaluative_parameter
 
 # Used in Bootstrap
 
-# BOOTSTRAP_OBS = 100
 if os.path.exists("data/intermediate/track_listens/y_train.pk"):
     with open("data/intermediate/track_listens/y_train.pk", "rb") as infile:
         y_train = pickle.load(infile)
         BOOTSTRAP_OBS = len(y_train)
 BOOTSTRAP_OBS = 100
-BOOTSTRAP_B = 2
+BOOTSTRAP_B = 200

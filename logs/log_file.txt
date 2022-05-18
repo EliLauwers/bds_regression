@@ -850,3 +850,53 @@
 09:02:26 - Model fit 3 of 64 done!
            data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: False ,smearing: False
            R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
+
+------ NEW LOGGER 2022-05-18 ----------------------------------------------
+22:01:08 - Start of create_dataset()
+22:01:08 - Read data from csv files
+22:01:21 - Join Data
+22:01:22 - Write joined
+22:01:25 - End of create_dataset!
+22:01:25 - Start of pre_process()
+22:01:25 - Read Data
+22:01:28 - log transform outcome variable
+22:01:28 - IQR method
+22:01:30 - Calculate Mahalanobis Distance
+22:02:25 - End of data preprocess, saving data
+22:02:28 - End of pre_process_track_listens()
+22:02:31 - Model fit 0 of 64 done!
+           data reduction: None, estimator: Ordinary Least Squares, bootstrap: True, smearing: True
+           R2: -0.0721, MSE: 80395500.9652, RMSE: 8966.3538, MAE: 751.7082
+22:02:33 - Model fit 1 of 64 done!
+           data reduction: None, estimator: Ordinary Least Squares, bootstrap: True, smearing: False
+           R2: -26.7923, MSE: 2084190510.3608, RMSE: 45652.9354, MAE: 1562.2822
+22:02:35 - Model fit 2 of 64 done!
+           data reduction: None, estimator: Ordinary Least Squares, bootstrap: False, smearing: True
+           R2: -0.0721, MSE: 80395500.9652, RMSE: 8966.3538, MAE: 751.7082
+22:02:37 - Model fit 3 of 64 done!
+           data reduction: None, estimator: Ordinary Least Squares, bootstrap: False, smearing: False
+           R2: -26.7923, MSE: 2084190510.3608, RMSE: 45652.9354, MAE: 1562.2822
+22:03:26 - Model fit 4 of 64 done!
+           data reduction: None, estimator: Decision Tree, bootstrap: True, smearing: True
+           R2: -0.0727, MSE: 80442733.0166, RMSE: 8968.9873, MAE: 760.1836
+22:06:00 - Model fit 5 of 64 done!
+           data reduction: None, estimator: Decision Tree, bootstrap: True, smearing: False
+           R2: -4.3234, MSE: 399214235.2292, RMSE: 19980.3462, MAE: 1160.0
+22:06:50 - Model fit 6 of 64 done!
+           data reduction: None, estimator: Decision Tree, bootstrap: False, smearing: True
+           R2: -0.0727, MSE: 80442777.0782, RMSE: 8968.9897, MAE: 760.2306
+22:10:46 - Model fit 7 of 64 done!
+           data reduction: None, estimator: Decision Tree, bootstrap: False, smearing: False
+           R2: -6.6007, MSE: 569987309.769, RMSE: 23874.407, MAE: 1175.0
+22:14:07 - Model fit 8 of 64 done!
+           data reduction: None, estimator: KNN_n3, bootstrap: True, smearing: True
+           R2: -0.0724, MSE: 80419402.2677, RMSE: 8967.6866, MAE: 755.8476
+22:14:55 - Model fit 9 of 64 done!
+           data reduction: None, estimator: KNN_n3, bootstrap: True, smearing: False
+           R2: -0.0695, MSE: 80205912.4915, RMSE: 8955.7754, MAE: 924.3333
+22:17:24 - Model fit 10 of 64 done!
+           data reduction: None, estimator: KNN_n3, bootstrap: False, smearing: True
+           R2: -0.0724, MSE: 80419402.2677, RMSE: 8967.6866, MAE: 755.8476
+22:17:59 - Model fit 11 of 64 done!
+           data reduction: None, estimator: KNN_n3, bootstrap: False, smearing: False
+           R2: -0.0695, MSE: 80205912.4915, RMSE: 8955.7754, MAE: 924.3333

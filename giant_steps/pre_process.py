@@ -8,9 +8,7 @@ import pickle
 
 # some custom scripts to save space
 from helpers.detect_outlying_inds_by_iqr import detect_outlying_inds_by_iqr
-from helpers.calculate_mahalanobis_distance import (
-    calculate_mahalanobis_distance_iteratevely,
-)
+from helpers.calculate_mahalanobis_distance import mahalanobis_iterative
 
 
 def pre_process_track_listens():
@@ -125,12 +123,12 @@ def pre_process_track_listens():
     # Question: How many rows exceed mahal d on alpha = .001
     # Answer: 12888 rows, 15% of the data
     # Note: Mahal D was to large an algorithm to do in one take so the function does some work-arounds
-    mahal_distances = calculate_mahalanobis_distance_iteratevely(y_train_log, X_train)
+    mahal_distances = mahalanobis_iterative(X_train)
     p_values = 1 - scipy.stats.chi2.cdf(mahal_distances, X_train.shape[1] - 1)
-    len(np.where(p_values < 0.001)[0]) / len(y_train)
-    len(np.where(p_values < 0.001)[0])
+    len(np.where(p_values < 0.05)[0]) / len(y_train)
+    len(np.where(p_values < 0.05)[0])
     # Action: Remove those rows
-    data_indexes = y_train_log.iloc[np.where(p_values < 0.001)[0]].index
+    data_indexes = y_train_log.iloc[np.where(p_values < 0.05)[0]].index
     y_train_log = y_train_log.drop(data_indexes, axis=0)
     X_train = X_train.drop(data_indexes, axis=0)
     del data_indexes
