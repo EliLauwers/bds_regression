@@ -67,6 +67,7 @@ if __name__ == "__main__":
     ]
 
     datareds = [None, "ipca", "mutual_information", "isomap"]
+    datareds = ["mutual_information", "isomap"]
 
     params = [
         (d, e, b, s)  # adding a params tuple
@@ -74,6 +75,13 @@ if __name__ == "__main__":
         for e in estimators  # estimators
         for b in [True, False]  # bootstrap
         for s in [True, False]  # use_smearing
+    ]
+    params = [
+        (d, e, b, s)  # adding a params tuple
+        for d in datareds  # data reduction techniques
+        for e in estimators  # estimators
+        for b in [True]  # bootstrap
+        for s in [True]  # use_smearing
     ]
     # Loop over estimators to compare
 
@@ -90,8 +98,8 @@ if __name__ == "__main__":
             if datared == "ipca":
 
                 reducer = IncrementalPCA(n_components=158).fit(X_train)
-                X_train_used[:] = reducer.transform(X_train_used)
-                X_test_used[:] = reducer.transform(X_test_used)
+                X_train_used = reducer.transform(X_train_used)
+                X_test_used = reducer.transform(X_test_used)
 
             elif datared == "mutual_information":
 
@@ -102,8 +110,8 @@ if __name__ == "__main__":
                     random_state=RANDOM_STATE,
                 )
                 mi_logvec = np.where(mi >= 0.005)
-                X_train_used = X_train_used.iloc[:, mi_logvec]
-                X_test_used = X_test_used.iloc[:, mi_logvec]
+                X_train_used = X_train_used.iloc[:, mi_logvec[0]]
+                X_test_used = X_test_used.iloc[:, mi_logvec[0]]
 
             elif datared == "isomap":
                 reducer = Isomap(n_neighbors=5).fit(X_train_used)
@@ -141,7 +149,7 @@ if __name__ == "__main__":
                 "smearing": use_smearing,
             }
 
-            LOG.evaluate_predictions(meta, y_predictions, y_test, i, len(params))
+            LOG.evaluate_predictions(meta, y_predictions, y_test, i + 1, len(params))
         except Exception as e:
             print("\n\nSomething went wrong\n\n")
             print(e)

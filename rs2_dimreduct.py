@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 from matplotlib import pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
-from sklearn.decomposition import IncrementalPCA
+from sklearn.decomposition import IncrementalPCA, KernelPCA
 from sklearn.feature_selection import mutual_info_regression
 from sklearn.linear_model import LinearRegression, ElasticNetCV
 from sklearn.manifold import Isomap
@@ -73,6 +73,41 @@ if __name__ == "__main__":
     X_train[:] = scaler.transform(X_train)
     X_test[:] = scaler.transform(X_test)
 
+    # Elastic net?
+    RMSES = []
+    R2S = []
+    iS = np.arange(50, 1000, 50)
+
+    for i, n_alpha in enumerate(iS):
+
+        print(f"\rn_alphas {i + 1} of {len(iS)}", end=" " * 10)
+
+        model = ElasticNetCV(
+            l1_ratio=[0.1, 0.5, 0.7, 0.9, 0.95, 0.99, 1],
+            n_alphas=n_alpha,
+            cv=10,
+            random_state=RANDOM_STATE,
+            max_iter = 1000000
+        ).fit(X_train, np.log(y_train))
+        predictions = model.predict(X_test)
+        RMSE = sklearn.metrics.mean_squared_error(
+            np.log(y_test), predictions, squared=False
+        )
+        R2 = sklearn.metrics.r2_score(np.log(y_test), predictions)
+        RMSES.append(RMSE)
+        R2S.append(R2)
+        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(28, 6))
+
+        plot_is = iS[: len(R2S)]
+        ax1.plot(plot_is, R2S)
+        ax1.set_xlabel("n_alpha")
+        ax1.set_ylabel("R2")
+
+        ax2.plot(plot_is, RMSES)
+        ax2.set_xlabel("n_alpha")
+        ax2.set_ylabel("RMSE")
+        plt.savefig("plots/rs2_dimreduct/elastic_net.png")
+
     # Incremental PCA
     ipca = IncrementalPCA().fit(X_train)
     fig, ax = plt.subplots(figsize=(12, 6))
@@ -132,16 +167,3 @@ if __name__ == "__main__":
     ax2.legend()
     plt.savefig("plots/rs2_dimreduct/mutual_information.png")
     plt.clf()
-
-    # Elastic net?
-    model = ElasticNetCV(cv=10, random_state=RANDOM_STATE).fit(X_train, np.log(y_train))
-    predictions = model.predict(X_test)
-    RMSE = sklearn.metrics.mean_squared_error(
-        np.log(y_test), predictions, squared=False
-    )
-    R2 = sklearn.metrics.r2_score(np.log(y_test), predictions)
-    print(model.coef_)
-    print(np.where(abs(model.coef_) > 0))
-    print(model.feature_names_in_)
-    print("RMSE Elastic Net ", RMSE)
-    print("R2 Elastic Net ", R2)

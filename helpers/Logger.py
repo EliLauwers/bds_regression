@@ -55,6 +55,7 @@ class Logger:
         print(text[:-1])
 
     def evaluate_predictions(self, meta, predictions, y_test, current_model, no_models):
+        # https://towardsdatascience.com/what-are-the-best-metrics-to-evaluate-your-regression-model-418ca481755b
         MSE = sklearn.metrics.mean_squared_error(y_test, predictions)
         RMSE = sklearn.metrics.mean_squared_error(y_test, predictions, squared=False)
         MAE = sklearn.metrics.median_absolute_error(y_test, predictions)
