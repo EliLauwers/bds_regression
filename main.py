@@ -1,7 +1,7 @@
 # Custom scripts
 from statistics import LinearRegression
-from giant_steps.create_dataset import create_dataset
-from giant_steps.pre_process import (
+from helpers.create_dataset import create_dataset
+from rs1_preprocess import (
     pre_process_album_date_released,
     pre_process_track_listens,
 )

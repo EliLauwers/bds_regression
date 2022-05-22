@@ -1014,3 +1014,63 @@
 13:42:20 - Model fit 4 of 8 done!
            data reduction: mutual_information, estimator: Random Forest, bootstrap: True, smearing: True
            R2: -0.0726, MSE: 80438599.6716, RMSE: 8968.7569, MAE: 760.0391
+
+------ NEW LOGGER 2022-05-22 ----------------------------------------------
+09:48:33 - Start of album date released
+09:48:41 - Start of album date released
+
+------ NEW LOGGER 2022-05-22 ----------------------------------------------
+09:56:37 - Start of album date released
+
+------ NEW LOGGER 2022-05-22 ----------------------------------------------
+10:14:22 - Start of album date released
+10:14:23 - 36280 missing dates, that is 0.34042074051832527
+
+------ NEW LOGGER 2022-05-22 ----------------------------------------------
+10:29:12 - Start of album date released
+10:29:12 - 36280 missing dates, that is 0.34042074051832527
+
+------ NEW LOGGER 2022-05-22 ----------------------------------------------
+10:33:39 - Start of album date released
+10:33:39 - 36280 missing dates, that is 0.34042074051832527
+
+------ NEW LOGGER 2022-05-22 ----------------------------------------------
+10:42:42 - Start of album date released
+10:42:43 - 36280 missing dates, that is 0.34042074051832527
+
+------ NEW LOGGER 2022-05-22 ----------------------------------------------
+10:43:44 - Start of album date released
+10:43:45 - 36280 missing dates, that is 0.34042074051832527
+
+------ NEW LOGGER 2022-05-22 ----------------------------------------------
+10:44:36 - Start of album date released
+10:44:37 - 36280 missing dates, that is 0.34042074051832527
+
+------ NEW LOGGER 2022-05-22 ----------------------------------------------
+10:45:37 - Start of album date released
+10:45:38 - 36280 missing dates, that is 0.34042074051832527
+
+------ NEW LOGGER 2022-05-22 ----------------------------------------------
+10:48:54 - Start of album date released
+10:48:55 - 36280 missing dates, that is 0.34042074051832527
+
+------ NEW LOGGER 2022-05-22 ----------------------------------------------
+10:49:46 - Start of album date released
+10:49:47 - 36280 missing dates, that is 0.34042074051832527
+
+------ NEW LOGGER 2022-05-22 ----------------------------------------------
+10:51:28 - Start of album date released
+10:51:29 - 36280 missing dates, that is 0.34042074051832527
+
+------ NEW LOGGER 2022-05-22 ----------------------------------------------
+10:52:17 - Start of album date released
+10:52:17 - 36280 missing dates, that is 0.34042074051832527
+10:55:39 - test size of .2
+
+------ NEW LOGGER 2022-05-22 ----------------------------------------------
+10:56:11 - Start of album date released
+10:56:12 - 36280 missing dates, that is 0.34042074051832527
+
+------ NEW LOGGER 2022-05-22 ----------------------------------------------
+10:59:39 - Start of album date released
+10:59:40 - 36280 missing dates, that is 0.34042074051832527

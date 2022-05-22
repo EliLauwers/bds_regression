@@ -43,7 +43,6 @@ if __name__ == "__main__":
     # https://analyticsindiamag.com/guide-to-hyperparameters-tuning-using-gridsearchcv-and-randomizedsearchcv/
     # https://towardsdatascience.com/how-to-tune-a-decision-tree-f03721801680
 
-    """
     RMSES = []
     R2S = []
     iS = range(1, 30)
@@ -57,7 +56,7 @@ if __name__ == "__main__":
         R2 = sklearn.metrics.r2_score(np.log(y_test), predictions)
         RMSES.append(RMSE)
         R2S.append(R2)
-        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(28, 6))
+        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(30,30))
 
         plot_is = iS[: len(R2S)]
         ax1.plot(plot_is, R2S)
@@ -69,7 +68,36 @@ if __name__ == "__main__":
         ax2.set_ylabel("RMSE")
         plt.savefig("plots/rs4_estimators/Decision_tree_depth.png")
         plt.clf()
-    """
+
+
+    # Decision tree min samples split
+
+    RMSES = []
+    R2S = []
+    iS = range(100, 10000, 500)
+    for min_samples in iS:
+        print(f"\rTrying min samples {min_samples} with max {max(iS)}", end=" " * 8)
+        model = DecisionTreeRegressor(min_samples_split=min_samples).fit(X_train, np.log(y_train))
+        predictions = model.predict(X_test)
+        RMSE = sklearn.metrics.mean_squared_error(
+            np.log(y_test), predictions, squared=False
+        )
+        R2 = sklearn.metrics.r2_score(np.log(y_test), predictions)
+        RMSES.append(RMSE)
+        R2S.append(R2)
+        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(30,30))
+
+        plot_is = iS[: len(R2S)]
+        ax1.plot(plot_is, R2S)
+        ax1.set_xlabel("min_samples_split")
+        ax1.set_ylabel("R2")
+
+        ax2.plot(plot_is, RMSES)
+        ax2.set_xlabel("min_samples_split")
+        ax2.set_ylabel("RMSE")
+        plt.savefig("plots/rs4_estimators/Decision_tree_min_samples_split.png")
+        plt.clf()
+    xxx
 
     # Decision tree grid search
     param_grid = {
@@ -79,8 +107,9 @@ if __name__ == "__main__":
         "min_samples_leaf": [2, 4, 10, 20, 50, 100, 500, 1000],
         "max_depth": [None, 5],
         "random_state": [RANDOM_STATE],
-        "max_features" : [.1, .25, .5, .75, 1.0],
+        "max_features": [0.1, 0.25, 0.5, 0.75, 1.0],
     }
-    model = GridSearchCV(estimator=DecisionTreeRegressor(), param_grid = param_grid, cv = 10, verbose=3).fit(X_train, np.log(y_train))
+    model = GridSearchCV(
+        estimator=DecisionTreeRegressor(), param_grid=param_grid, cv=10, verbose=3
+    ).fit(X_train, np.log(y_train))
     print(model.best_params)
-    
