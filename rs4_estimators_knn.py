@@ -41,7 +41,7 @@ if __name__ == "__main__":
     # sample neighbors
     RMSES = []
     R2S = []
-    iS = range(1, 25)
+    iS = range(1, 16)
     for i, n in enumerate(iS):
         print(f"\rTrying {i+1} neighbors, max of {max(iS)}", end=" " * 8)
         model = KNeighborsRegressor(n_neighbors=n).fit(X_train, np.log(y_train))
@@ -52,7 +52,7 @@ if __name__ == "__main__":
         R2 = sklearn.metrics.r2_score(np.log(y_test), predictions)
         RMSES.append(RMSE)
         R2S.append(R2)
-        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(28, 6))
+        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(30, 30))
 
         plot_is = iS[: len(R2S)]
         ax1.plot(plot_is, R2S)
@@ -62,5 +62,5 @@ if __name__ == "__main__":
         ax2.plot(plot_is, RMSES)
         ax2.set_xlabel("n_neighbors")
         ax2.set_ylabel("RMSE")
-        plt.savefig("plots/rs4_estimators/knn.png")
+        plt.savefig("plots/rs4_estimators/knn.png", dpi=300)
         plt.clf()

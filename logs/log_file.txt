@@ -1074,3 +1074,242 @@
 ------ NEW LOGGER 2022-05-22 ----------------------------------------------
 10:59:39 - Start of album date released
 10:59:40 - 36280 missing dates, that is 0.34042074051832527
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+18:53:02 - Start of album date released
+18:53:08 - 36280 missing dates, that is 0.34042074051832527
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+18:59:52 - Start of album date released
+18:59:52 - 36280 missing dates, that is 0.34042074051832527
+18:59:53 - 9450 albums have missing dates, that is 0.6361922714420358
+18:59:57 - test size of .2
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+19:00:36 - Start of album date released
+19:00:37 - 36280 missing dates, that is 0.34042074051832527
+19:00:37 - 9450 albums have missing dates, that is 0.6361922714420358
+19:01:09 - test size of .2
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+20:44:36 - Start of album date released
+20:44:37 - 36280 missing dates, that is 0.34042074051832527
+20:44:38 - 9450 albums have missing dates, that is 0.6361922714420358
+20:44:40 - test size of .2
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+20:53:27 - Start of album date released
+20:53:28 - 36280 missing dates, that is 0.34042074051832527
+20:53:29 - 9450 albums have missing dates, that is 0.6361922714420358
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+20:54:31 - Start of album date released
+20:54:33 - 36280 missing dates, that is 0.34042074051832527
+20:54:33 - 9450 albums have missing dates, that is 0.6361922714420358
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+20:55:18 - Start of album date released
+20:55:19 - 36280 missing dates, that is 0.34042074051832527
+20:55:20 - 9450 albums have missing dates, that is 0.6361922714420358
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+21:00:24 - Start of album date released
+21:00:25 - 36280 missing dates, that is 0.34042074051832527
+21:00:26 - 9450 albums have missing dates, that is 0.6361922714420358
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+21:13:11 - Start of album date released
+21:13:12 - 36280 missing dates, that is 0.34042074051832527
+21:13:13 - 9450 albums have missing dates, that is 0.6361922714420358
+21:13:30 - test size of .2
+21:16:25 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+21:30:35 - Start of album date released
+21:30:36 - 36280 missing dates, that is 0.34042074051832527
+21:30:36 - 9450 albums have missing dates, that is 0.6361922714420358
+21:30:38 - test size of .2
+21:30:39 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
+21:30:39 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+21:39:59 - Start of album date released
+21:40:00 - 36280 missing dates, that is 0.34042074051832527
+21:40:01 - 9450 albums have missing dates, that is 0.6361922714420358
+21:40:02 - test size of .2
+21:40:03 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
+21:40:03 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+21:45:11 - Start of album date released
+21:45:12 - 36280 missing dates, that is 0.34042074051832527
+21:45:12 - 9450 albums have missing dates, that is 0.6361922714420358
+21:45:13 - test size of .2
+21:45:14 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
+21:45:14 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+21:48:18 - Start of album date released
+21:48:19 - 36280 missing dates, that is 0.34042074051832527
+21:48:19 - 9450 albums have missing dates, that is 0.6361922714420358
+21:48:20 - test size of .2
+21:48:21 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
+21:48:21 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+21:52:17 - Start of album date released
+21:52:17 - 36280 missing dates, that is 0.34042074051832527
+21:52:18 - 9450 albums have missing dates, that is 0.6361922714420358
+21:52:19 - test size of .2
+21:52:20 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
+21:52:20 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+21:53:28 - Start of pre_process_track_listens()
+21:53:28 - Read Data
+21:53:29 - test size of .2
+21:53:29 - 0 cells have missing data
+21:53:29 - mean: 2326.232456397565, skew: 24.797295548817253, kurt: 1089.9536671595145
+21:53:30 - plot 1 in track listens folder
+21:53:30 - plot 2 in track listens folder
+21:53:30 - 1 rows have 0 track_listens, cannot be np.log(x)
+21:53:30 - log transform outcome variable
+21:53:30 - After np.log() => mean: 6.657756811337761, skew: 0.07578713081775797, kurt: 0.16198503358400984
+21:53:30 - plot 3 in track listens folder
+21:53:31 - plot 4 in track listens folder
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+21:54:46 - Start of album date released
+21:54:46 - 36280 missing dates, that is 0.34042074051832527
+21:54:47 - 9450 albums have missing dates, that is 0.6361922714420358
+21:54:48 - test size of .2
+21:54:49 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
+21:54:49 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+21:56:10 - Start of album date released
+21:56:11 - 36280 missing dates, that is 0.34042074051832527
+21:56:11 - 9450 albums have missing dates, that is 0.6361922714420358
+21:56:12 - test size of .2
+21:56:13 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
+21:56:13 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+21:56:51 - Start of album date released
+21:56:52 - 36280 missing dates, that is 0.34042074051832527
+21:56:52 - 9450 albums have missing dates, that is 0.6361922714420358
+21:56:54 - test size of .2
+21:56:55 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
+21:56:55 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+21:56:57 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
+21:56:57 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+22:00:44 - Start of album date released
+22:00:45 - 36280 missing dates, that is 0.34042074051832527
+22:00:45 - 9450 albums have missing dates, that is 0.6361922714420358
+22:00:47 - test size of .2
+22:00:48 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
+22:00:48 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+22:00:50 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
+22:00:50 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
+22:01:19 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+22:02:36 - Start of album date released
+22:02:37 - 36280 missing dates, that is 0.34042074051832527
+22:02:37 - 9450 albums have missing dates, that is 0.6361922714420358
+22:02:38 - test size of .2
+22:02:39 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
+22:02:39 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+22:02:41 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
+22:02:41 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
+22:03:09 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+22:04:26 - Start of album date released
+22:04:27 - 36280 missing dates, that is 0.34042074051832527
+22:04:28 - 9450 albums have missing dates, that is 0.6361922714420358
+22:04:29 - test size of .2
+22:04:30 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
+22:04:30 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+22:04:32 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
+22:04:32 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
+22:05:00 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+22:07:27 - Start of album date released
+22:07:27 - 36280 missing dates, that is 0.34042074051832527
+22:07:28 - 9450 albums have missing dates, that is 0.6361922714420358
+22:07:29 - test size of .2
+22:07:30 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
+22:07:30 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+22:07:32 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
+22:07:32 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
+22:08:00 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+22:09:27 - Start of album date released
+22:09:28 - 36280 missing dates, that is 0.34042074051832527
+22:09:28 - 9450 albums have missing dates, that is 0.6361922714420358
+22:09:29 - test size of .2
+22:09:31 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
+22:09:31 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+22:09:32 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
+22:09:32 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
+22:10:03 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+22:12:06 - Start of album date released
+22:12:07 - 36280 missing dates, that is 0.34042074051832527
+22:12:07 - 9450 albums have missing dates, that is 0.6361922714420358
+22:12:08 - test size of .2
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+22:14:26 - Start of album date released
+22:14:27 - 36280 missing dates, that is 0.34042074051832527
+22:14:27 - 9450 albums have missing dates, that is 0.6361922714420358
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+22:16:19 - Start of album date released
+22:16:19 - 36280 missing dates, that is 0.34042074051832527
+22:16:20 - 9450 albums have missing dates, that is 0.6361922714420358
+22:16:21 - test size of .2
+22:16:22 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
+22:16:22 - mean: 1654306535.1682048, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+22:16:24 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
+22:16:24 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
+22:16:53 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
+22:17:48 - End of data preprocess, saving data
+22:17:50 - End of pre_process_track_listens()
+
+------ NEW LOGGER 2022-05-23 ----------------------------------------------
+22:18:30 - Start of pre_process_track_listens()
+22:18:30 - Read Data
+22:18:30 - test size of .2
+22:18:31 - 0 cells have missing data
+22:18:31 - mean: 2326.232456397565, skew: 24.797295548817253, kurt: 1089.9536671595145
+22:18:31 - plot 1 in track listens folder
+22:18:31 - plot 2 in track listens folder
+22:18:31 - 1 rows have 0 track_listens, cannot be np.log(x)
+22:18:31 - log transform outcome variable
+22:18:31 - After np.log() => mean: 6.657756811337761, skew: 0.07578713081775797, kurt: 0.16198503358400984
+22:18:32 - plot 3 in track listens folder
+22:18:32 - plot 4 in track listens folder
+22:18:33 - 84415 instances exceed at least one column by IQR, that's 0.9901123648220694
+22:18:33 - On average, an instance fails 21.2319848368181 columns, with std of 19.56132547891326
+22:18:33 - Calculate Mahalanobis Distance
+22:19:35 - 15401 instances fail Mahalanobis on .05, that is 0.18063993994698443 of data
+22:19:35 - End of data preprocess, saving data
+22:19:37 - End of pre_process_track_listens()
+22:19:37 - Start of album date released
+22:19:38 - 36280 missing dates, that is 0.34042074051832527
+22:19:38 - 9450 albums have missing dates, that is 0.6361922714420358
+22:19:39 - test size of .2
+22:19:40 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
+22:19:40 - mean: 1654306535.1682048, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+22:19:42 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
+22:19:42 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
+22:20:11 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
+22:20:30 - End of data preprocess, saving data
+22:20:31 - End of pre_process_album_date_released()
