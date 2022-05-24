@@ -15,3 +15,4 @@ if os.path.exists("data/intermediate/track_listens/y_train.pk"):
 # BOOTSTRAP_OBS = 100
 BOOTSTRAP_B = 300
 SMALLEST_DATE = datetime(1900, 1, 1)
+HYPERCV = 2
