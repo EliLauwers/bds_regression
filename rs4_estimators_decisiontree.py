@@ -1,5 +1,5 @@
 from tkinter import Grid
-from GLOBAL_VARS import RANDOM_STATE, HYPERCV
+from GLOBAL_VARS import RANDOM_STATE, HYPERCV, LOG, NUM_CORES
 
 # Normal imports
 from sklearn.preprocessing import MinMaxScaler
@@ -13,6 +13,7 @@ import joblib
 
 import pickle
 import random
+
 np.random.seed(RANDOM_STATE)
 random.seed(RANDOM_STATE)
 
@@ -23,9 +24,9 @@ if __name__ == "__main__":
     # - Decision tree with depth of 5
 
     min_samples_leaf = False
-    min_samples_split = True
-    max_depth = True
-    gridsearch = True
+    max_depth = False
+    min_samples_split = False
+    full_model = False
 
     input_path = "data/intermediate/track_listens/"
 
@@ -38,7 +39,6 @@ if __name__ == "__main__":
     # Scale data with minmax scaler
     minmaxscaler = MinMaxScaler().fit(X_train)
     X_train[:] = minmaxscaler.transform(X_train)
-    
 
     # Decision tree min samples leaf
 
@@ -49,17 +49,26 @@ if __name__ == "__main__":
             estimator=DecisionTreeRegressor(),
             param_grid=param_grid,
             cv=HYPERCV,
+            n_jobs=NUM_CORES,
             verbose=3,
-            scoring=["neg_root_mean_squared_error", "neg_median_absolute_error", "r2"],
+            scoring=[
+                "neg_root_mean_squared_error",
+                "neg_median_absolute_error",
+                "r2",
+            ],
             refit=False,
         ).fit(X_train, np.log(y_train))
 
-        joblib.dump(model.cv_results_, "logs/rs4_estimators/dt_min_samples_leaf.pkl")
+        joblib.dump(
+            model.cv_results_, "logs/rs4_estimators/dt_min_samples_leaf.pkl"
+        )
 
     # open results
-    results = pd.DataFrame(joblib.load("logs/rs4_estimators/dt_min_samples_leaf.pkl"))
+    results = pd.DataFrame(
+        joblib.load("logs/rs4_estimators/dt_min_samples_leaf.pkl")
+    )
 
-    fig, axes = plt.subplots(3, 1, figsize=(16, 16), sharex=True)
+    fig, axes = plt.subplots(3, 1, figsize=(16, 16), sharex=False)
 
     metric_cols = [
         "test_r2",
@@ -77,8 +86,8 @@ if __name__ == "__main__":
         if i == 0:
             ax.set_title("Evaluative Measures for min_samples_leaf")
         elif i == 2:
-            ax.set_xlabel(x_label)            
-        
+            ax.set_xlabel(x_label)
+
         interval = 500
         mean_ = results["mean_" + col]
         std_ = results["std_" + col]
@@ -96,11 +105,11 @@ if __name__ == "__main__":
         ax.set_xlim(0, max(results[x_param]) + interval)
         start, end = ax.get_xlim()
         ax.xaxis.set_ticks(np.arange(start, end, interval))
-        
+
     plt.savefig(f"plots/rs4_estimators/knn_{x_label}.png", dpi=300)
     save_html(fig, f"plots/rs4_estimators/knn_{x_label}.html")
     plt.clf()
-
+    
     # Decision tree max depth
     # https://analyticsindiamag.com/guide-to-hyperparameters-tuning-using-gridsearchcv-and-randomizedsearchcv/
     # https://towardsdatascience.com/how-to-tune-a-decision-tree-f03721801680
@@ -110,17 +119,22 @@ if __name__ == "__main__":
             estimator=DecisionTreeRegressor(),
             param_grid=param_grid,
             cv=HYPERCV,
+            n_jobs=NUM_CORES,
             verbose=3,
-            scoring=["neg_root_mean_squared_error", "neg_median_absolute_error", "r2"],
+            scoring=[
+                "neg_root_mean_squared_error",
+                "neg_median_absolute_error",
+                "r2",
+            ],
             refit=False,
         ).fit(X_train, np.log(y_train))
 
         joblib.dump(model.cv_results_, "logs/rs4_estimators/dt_max_depth.pkl")
 
-    results = joblib.load("logs/rs4_estimators/dt_max_depth.pkl")
+    results = pd.DataFrame(joblib.load("logs/rs4_estimators/dt_max_depth.pkl"))
 
-     # start plot
-    fig, axes = plt.subplots(3, 1, figsize=(16, 16), sharex=True)
+    # start plot
+    fig, axes = plt.subplots(3, 1, figsize=(16, 16), sharex=False)
 
     metric_cols = [
         "test_r2",
@@ -130,7 +144,6 @@ if __name__ == "__main__":
     metric_names = ["R2", "Neg RMSE", "Neg MAE"]
     collection = zip(axes, metric_cols, metric_names)
     for i, (ax, col, name) in enumerate(collection):
-
         x_label = "max_depth"
         x_param = "param_" + x_label
 
@@ -138,8 +151,8 @@ if __name__ == "__main__":
         if i == 0:
             ax.set_title("Evaluative Measures for Decision Tree Depth")
         elif i == 2:
-            ax.set_xlabel(x_label)            
-        
+            ax.set_xlabel(x_label)
+
         interval = 5
         mean_ = results["mean_" + col]
         std_ = results["std_" + col]
@@ -154,31 +167,41 @@ if __name__ == "__main__":
             capsize=2.5,
         )
         ax.set_ylabel(name)
-        ax.set_xlim(0, max(results[x_param]) + interval)
+        ax.set_xlim(0, max(results[x_param]) + 1)
         start, end = ax.get_xlim()
         ax.xaxis.set_ticks(np.arange(start, end, interval))
-        
+
     plt.savefig(f"plots/rs4_estimators/dt_{x_label}.png", dpi=300)
     save_html(fig, f"plots/rs4_estimators/dt_{x_label}.html")
     plt.clf()
 
     # Decision tree min samples split
+
     if min_samples_split:
         param_grid = {"min_samples_split": range(100, 10001, 100)}
         model = GridSearchCV(
             estimator=DecisionTreeRegressor(),
             param_grid=param_grid,
             cv=HYPERCV,
+            n_jobs=NUM_CORES,
             verbose=3,
-            scoring=["neg_root_mean_squared_error", "neg_median_absolute_error", "r2"],
+            scoring=[
+                "neg_root_mean_squared_error",
+                "neg_median_absolute_error",
+                "r2",
+            ],
             refit=False,
         ).fit(X_train, np.log(y_train))
 
-        joblib.dump(model.cv_results_, "logs/rs4_estimators/dt_min_samples_split.pkl")
+        joblib.dump(
+            model.cv_results_, "logs/rs4_estimators/dt_min_samples_split.pkl"
+        )
 
-    results = joblib.load("logs/rs4_estimators/dt_min_samples_split.pkl")
+    results = pd.DataFrame(
+        joblib.load("logs/rs4_estimators/dt_min_samples_split.pkl")
+    )
     # start plot
-    fig, axes = plt.subplots(3, 1, figsize=(16, 16), sharex=True)
+    fig, axes = plt.subplots(3, 1, figsize=(16, 16), sharex=False)
 
     metric_cols = [
         "test_r2",
@@ -194,11 +217,11 @@ if __name__ == "__main__":
 
         ax.set_xlabel("")
         if i == 0:
-            ax.set_title("Evaluative Measures for Decision Tree")
+            ax.set_title("Evaluative Measures for Decision Tree min_samples_split")
         elif i == 2:
-            ax.set_xlabel(x_label)            
-        
-        interval = 100
+            ax.set_xlabel(x_label)
+
+        interval = 500
         mean_ = results["mean_" + col]
         std_ = results["std_" + col]
 
@@ -215,13 +238,12 @@ if __name__ == "__main__":
         ax.set_xlim(0, max(results[x_param]) + interval)
         start, end = ax.get_xlim()
         ax.xaxis.set_ticks(np.arange(start, end, interval))
-        
+
     plt.savefig(f"plots/rs4_estimators/dt_{x_label}.png", dpi=300)
     save_html(fig, f"plots/rs4_estimators/dt_{x_label}.html")
     plt.clf()
 
-
-    if gridsearch:
+    if full_model:
         # Decision tree grid search
         param_grid = {
             "criterion": ["squared_error", "absolute_error"],

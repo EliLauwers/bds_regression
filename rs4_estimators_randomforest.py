@@ -28,12 +28,6 @@ if __name__ == "__main__":
     with open(input_path + "y_train.pk", "rb") as infile:
         y_train = pickle.load(infile)
 
-    with open(input_path + "X_test.pk", "rb") as infile:
-        X_test = pickle.load(infile)
-
-    with open(input_path + "y_test.pk", "rb") as infile:
-        y_test = pickle.load(infile)
-
     # Scale data with minmax scaler
     minmaxscaler = MinMaxScaler().fit(X_train)
     X_train[:] = minmaxscaler.transform(X_train)

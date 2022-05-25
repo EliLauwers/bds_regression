@@ -1,4 +1,4 @@
-from GLOBAL_VARS import RANDOM_STATE
+from GLOBAL_VARS import RANDOM_STATE, HYPERCV, NUM_CORES
 
 # Normal imports
 from sklearn.preprocessing import MinMaxScaler
@@ -38,6 +38,7 @@ if __name__ == "__main__":
             estimator=KNeighborsRegressor(),
             param_grid=param_grid,
             cv=HYPERCV,
+            n_jobs=NUM_CORES,
             verbose=3,
             scoring=["neg_root_mean_squared_error", "neg_median_absolute_error", "r2"],
             refit=False,
@@ -49,7 +50,7 @@ if __name__ == "__main__":
     results = pd.DataFrame(joblib.load("logs/rs4_estimators/knn.pkl"))
 
     # start plot
-    fig, axes = plt.subplots(3, 1, figsize=(16, 16), sharex=True)
+    fig, axes = plt.subplots(3, 1, figsize=(16, 16), sharex=False)
 
     metric_cols = [
         "test_r2",
@@ -67,8 +68,8 @@ if __name__ == "__main__":
         if i == 0:
             ax.set_title("Evaluative Measures for KNN")
         elif i == 2:
-            ax.set_xlabel(x_label)            
-        
+            ax.set_xlabel(x_label)
+
         interval = 2
         mean_ = results["mean_" + col]
         std_ = results["std_" + col]
@@ -86,7 +87,7 @@ if __name__ == "__main__":
         ax.set_xlim(0, max(results[x_param]) + interval)
         start, end = ax.get_xlim()
         ax.xaxis.set_ticks(np.arange(start, end, interval))
-        
+
     plt.savefig(f"plots/rs4_estimators/knn_{x_label}.png", dpi=300)
     save_html(fig, f"plots/rs4_estimators/knn_{x_label}.html")
     plt.clf()

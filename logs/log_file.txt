@@ -1313,3 +1313,8 @@
 22:20:11 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
 22:20:30 - End of data preprocess, saving data
 22:20:31 - End of pre_process_album_date_released()
+
+------ NEW LOGGER 2022-05-24 ----------------------------------------------
+23:16:11 - min_samples_leaf didn't run
+23:16:37 - max depth didn't run
+23:18:08 - min_samples_split didn't work
