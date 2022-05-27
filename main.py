@@ -5,19 +5,18 @@ from rs1_preprocess import (
     pre_process_album_date_released,
     pre_process_track_listens,
 )
+from rs2_reduct_datasets import reduct_datasets
 
-from GLOBAL_VARS import BOOTSTRAP_OBS, BOOTSTRAP_B, LOG, RANDOM_STATE
+from GLOBAL_VARS import BOOTSTRAP_OBS, BOOTSTRAP_B, LOG, NUM_CORES, RANDOM_STATE
 
 # Normal imports
-from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import BaggingRegressor, RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.tree import DecisionTreeRegressor
-from sklearn.decomposition import IncrementalPCA
-from sklearn.feature_selection import mutual_info_regression
-from sklearn.manifold import Isomap
 import numpy as np
+import pandas as pd
+import os
 
 np.random.seed(RANDOM_STATE)
 
@@ -26,132 +25,216 @@ import random
 
 random.seed(RANDOM_STATE)
 
+def group_predictions(preds, tids, conversion):
+    preds = pd.DataFrame({"preds":preds,"track_id":tids}).set_index("track_id")
+    preds["album_id"] = conversion.loc[preds.index,:]
+    album_dates = preds.groupby("album_id")["preds"].apply(lambda albumpreds: np.median(albumpreds)).reset_index()
+    preds_joined = preds.merge(album_dates, on = "album_id",how="left")
+    return preds_joined["preds_y"]
+
 if __name__ == "__main__":
 
-    run_all = False
+    run_create_dataset = False
+    run_pre_process = False
+    run_reduct_datasets = False
+    estimate_track_listens = True 
+    estimate_album_date_released = True
+    estimate_bagged_album = True
 
-    if run_all:
+    if run_create_dataset:
         create_dataset()
+    if run_pre_process:
         pre_process_track_listens()
-
-    input_path = "data/intermediate/track_listens/"
-
-    with open(input_path + "X_train.pk", "rb") as infile:
-        X_train = pickle.load(infile)
-
-    with open(input_path + "y_train.pk", "rb") as infile:
-        y_train = pickle.load(infile)
-
-    with open(input_path + "X_test.pk", "rb") as infile:
-        X_test = pickle.load(infile)
-
-    with open(input_path + "y_test.pk", "rb") as infile:
-        y_test = pickle.load(infile)
-
-    # Scale data with minmax scaler
-    minmaxscaler = MinMaxScaler().fit(X_train)
-    X_train[:] = minmaxscaler.transform(X_train)
-    X_test[:] = minmaxscaler.transform(X_test)
+        pre_process_album_date_released()
+    if run_reduct_datasets:         
+        reduct_datasets()
 
     estimators = [
-        {"name": "Ordinary Least Squares", "func": LinearRegression()},
-        {
-            "name": "Decision Tree",
-            "func": DecisionTreeRegressor(),
-        },
-        {
-            "name": "KNN_n3",
-            "func": KNeighborsRegressor(n_neighbors=3),
-        },
-        {"name": "Random Forest", "func": RandomForestRegressor()},
+        ("Ordinary Least Squares", LinearRegression()),
+        ("Decision Tree", DecisionTreeRegressor(criterion="squared_error",splitter = "best", max_depth = None, min_samples_split=1300, min_samples_leaf = 700)),
+        ("KNN", KNeighborsRegressor(n_neighbors=16)),
+        ("Random Forest", RandomForestRegressor(criterion="squared_error",
+                n_estimators = 50,
+                max_depth = 7,
+                max_features = .25,
+                random_state=RANDOM_STATE)),
     ]
 
-    datareds = [None, "ipca", "mutual_information", "isomap"]
-    datareds = ["mutual_information", "isomap"]
+    datareds = ["no_datared","pca99","pca95","elasticnet","lle"]
+
 
     params = [
         (d, e, b, s)  # adding a params tuple
-        for d in datareds  # data reduction techniques
+        for d in datareds
         for e in estimators  # estimators
-        for b in [True, False]  # bootstrap
-        for s in [True, False]  # use_smearing
+        for b in [True, False]
+        for s in [True, False]
     ]
-    params = [
-        (d, e, b, s)  # adding a params tuple
-        for d in datareds  # data reduction techniques
-        for e in estimators  # estimators
-        for b in [True]  # bootstrap
-        for s in [True]  # use_smearing
-    ]
-    # Loop over estimators to compare
 
-    for i, row in enumerate(params):
-        try:
-            # unpack the params row
-            datared, estimator, bootstrap, use_smearing = row
-            # further unpack the estimator value
-            estimator_name, estimator_func = estimator.values()
+    # Estimate track listens
+    if estimate_track_listens:
+        for i, row in enumerate(params):
+            try:
+                # unpack the params row
+                datared, estimator, bootstrap, use_smearing = row
+                # further unpack the estimator value
+                estimator_name, estimator_func = estimator
 
-            X_train_used = X_train
-            X_test_used = X_test
+                # Read in the datareducted data
+                with open("data/reducted/track_listens/" + datared + "/X_train.pk", "rb") as infile:
+                    X_train = pickle.load(infile)
+                with open("data/reducted/track_listens/" + datared + "/X_test.pk", "rb") as infile:
+                    X_test = pickle.load(infile)
+                
+                with open("data/intermediate/track_listens/y_train.pk", "rb") as infile:
+                    y_train = pickle.load(infile)
+                with open("data/intermediate/track_listens/y_test.pk", "rb") as infile:
+                    y_test = pickle.load(infile)
 
-            if datared == "ipca":
+                if bootstrap:
+                    estimator = BaggingRegressor(
+                        estimator,
+                        n_estimators=BOOTSTRAP_B,
+                        max_samples=BOOTSTRAP_OBS,
+                        random_state=RANDOM_STATE,
+                        n_jobs = NUM_CORES
+                    )
 
-                reducer = IncrementalPCA(n_components=158).fit(X_train)
-                X_train_used = reducer.transform(X_train_used)
-                X_test_used = reducer.transform(X_test_used)
+                if use_smearing:
+                    model = estimator_func.fit(X_train, np.log(y_train))
+                    train_predictions = model.predict(X_train)
+                    resids = np.log(y_train) - train_predictions
+                    smearing_raw = np.exp(resids)
+                    # Some predictions will be infinite due to high exp
+                    if np.isinf(smearing_raw).any():
+                        smearing_raw[np.where(np.isinf(smearing_raw))] = max(y_train)
+                    y_predictions = model.predict(X_test) * np.mean(smearing_raw)
+                    # Some predictions will be infinite due to high exp
+                    if np.isinf(y_predictions).any():
+                        y_predictions[np.where(np.isinf(y_predictions))] = max(y_train)
+                else:
+                    model = estimator_func.fit(X_train, y_train)
+                    y_predictions = model.predict(X_test)
 
-            elif datared == "mutual_information":
+                meta = {
+                    "var": "track_listens",
+                    "data reduction": datared,
+                    "estimator": estimator_name,
+                    "bootstrap": bootstrap,
+                    "smearing": use_smearing,
+                }
 
-                mi = mutual_info_regression(
-                    X_train_used,
-                    np.log(y_train),
-                    n_neighbors=5,
-                    random_state=RANDOM_STATE,
-                )
-                mi_logvec = np.where(mi >= 0.005)
-                X_train_used = X_train_used.iloc[:, mi_logvec[0]]
-                X_test_used = X_test_used.iloc[:, mi_logvec[0]]
+                LOG.evaluate_predictions(meta, y_predictions, y_test, i + 1, len(params))
+            except Exception as e:
+                LOG.process(e)
+                LOG.process("Track listens: Following params did not work")
+                LOG.process(row)
+    
+    if estimate_album_date_released:
+        # Estimate album_date_released
+        for i, row in enumerate(params):
+            try:
+                # unpack the params row
+                datared, estimator, bootstrap, square = row
+                # further unpack the estimator value
+                estimator_name, estimator_func = estimator
 
-            elif datared == "isomap":
-                reducer = Isomap(n_neighbors=5).fit(X_train_used)
-                X_train_used[:] = reducer.transform(X_train_used)
-                X_test_used[:] = reducer.transform(X_test_used)
+                # Read in the datareducted data
+                with open("data/reducted/album_date_released/" + datared + "/X_train.pk", "rb") as infile:
+                    X_train = pickle.load(infile)
+                with open("data/reducted/album_date_released/" + datared + "/X_test.pk", "rb") as infile:
+                    X_test = pickle.load(infile)
+                
+                with open("data/intermediate/album_date_released/y_train.pk", "rb") as infile:
+                    y_train = pickle.load(infile)
+                with open("data/intermediate/album_date_released/y_test.pk", "rb") as infile:
+                    y_test = pickle.load(infile)
 
-            if bootstrap:
-                estimator = BaggingRegressor(
-                    estimator,
-                    n_estimators=BOOTSTRAP_B,
-                    max_samples=BOOTSTRAP_OBS,
-                    random_state=RANDOM_STATE,
-                )
+                if bootstrap:
+                    estimator = BaggingRegressor(
+                        estimator,
+                        n_estimators=BOOTSTRAP_B,
+                        max_samples=BOOTSTRAP_OBS,
+                        random_state=RANDOM_STATE,
+                    )
 
-            if use_smearing:
-                model = estimator_func.fit(X_train, np.log(y_train))
-                train_predictions = model.predict(X_train)
-                resids = np.log(y_train) - train_predictions
-                smearing_raw = np.exp(resids)
-                # Some predictions will be infinite due to high exp
-                if np.isinf(smearing_raw).any():
-                    smearing_raw[np.where(np.isinf(smearing_raw))] = max(y_train)
-                y_predictions = model.predict(X_test) * np.mean(smearing_raw)
-                # Some predictions will be infinite due to high exp
-                if np.isinf(y_predictions).any():
-                    y_predictions[np.where(np.isinf(y_predictions))] = max(y_train)
-            else:
-                model = estimator_func.fit(X_train, y_train)
-                y_predictions = model.predict(X_test)
+                if square:
+                    model = estimator_func.fit(X_train, np.power(y_train, 2))
+                    preds_raw = model.predict(X_test)
+                    preds_raw[np.where(preds_raw < 0)] = 0
+                    y_predictions = np.sqrt(preds_raw)
 
-            meta = {
-                "data reduction": datared,
-                "estimator": estimator_name,
-                "bootstrap": bootstrap,
-                "smearing": use_smearing,
-            }
+                else:
+                    model = estimator_func.fit(X_train, y_train)
+                    y_predictions = model.predict(X_test)
 
-            LOG.evaluate_predictions(meta, y_predictions, y_test, i + 1, len(params))
-        except Exception as e:
-            print("\n\nSomething went wrong\n\n")
-            print(e)
-            print(row)
-            print("\n\n")
+                meta = {
+                    "var": "album date_released",
+                    "data reduction": datared,
+                    "estimator": estimator_name,
+                    "bootstrap": bootstrap,
+                    "square": square,
+                }
+
+                LOG.evaluate_predictions(meta, y_predictions, y_test, i + 1, len(params))
+            except Exception as e:
+                LOG.process(e)
+                LOG.process("Album dates: Following params did not work")
+                LOG.process(row)
+    
+    if estimate_bagged_album:
+        with open("data/intermediate/joined_data.pk", "rb") as infile:
+            album_track = pickle.load(infile)[["album_id","track_id"]].set_index("track_id")
+        
+        # Estimate bagged album
+        for i, row in enumerate(params):
+            try:
+                # unpack the params row
+                datared, estimator, bootstrap, square = row
+                # further unpack the estimator value
+                estimator_name, estimator_func = estimator
+
+                # Read in the datareducted data
+                with open("data/reducted/album_date_released/" + datared + "/X_train.pk", "rb") as infile:
+                    X_train = pickle.load(infile)
+                with open("data/reducted/album_date_released/" + datared + "/X_test.pk", "rb") as infile:
+                    X_test = pickle.load(infile)
+                
+                with open("data/intermediate/album_date_released/y_train.pk", "rb") as infile:
+                    y_train = pickle.load(infile)
+                with open("data/intermediate/album_date_released/y_test.pk", "rb") as infile:
+                    y_test = pickle.load(infile)
+
+                if bootstrap:
+                    estimator = BaggingRegressor(
+                        estimator,
+                        n_estimators=BOOTSTRAP_B,
+                        max_samples=BOOTSTRAP_OBS,
+                        random_state=RANDOM_STATE,
+                    )
+
+                if square:
+                    model = estimator_func.fit(X_train, np.power(y_train, 2))
+                    preds_raw = model.predict(X_test)
+                    preds_raw[np.where(preds_raw < 0)] = 0
+                    y_predictions = np.sqrt(preds_raw)
+                else:
+                    model = estimator_func.fit(X_train, y_train)
+                    y_predictions = model.predict(X_test)
+                
+                y_predictions=group_predictions(y_predictions, y_test.index, album_track)
+
+                meta = {
+                    "var": "album date_released bagged",
+                    "data reduction": datared,
+                    "estimator": estimator_name,
+                    "bootstrap": bootstrap,
+                    "square": square,
+                }
+
+                LOG.evaluate_predictions(meta, y_predictions, y_test, i + 1, len(params))
+            except Exception as e:
+                LOG.process(e)
+                LOG.process("album_date released bag Following params did not work")
+                LOG.process(row)
+        

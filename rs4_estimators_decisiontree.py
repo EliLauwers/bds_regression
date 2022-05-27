@@ -1,5 +1,6 @@
+from matplotlib import pyplot as plt
 from tkinter import Grid
-from GLOBAL_VARS import RANDOM_STATE, HYPERCV, LOG, NUM_CORES
+from GLOBAL_VARS import FHEIGHT, FWIDTH, RANDOM_STATE, HYPERCV, LOG, NUM_CORES
 
 # Normal imports
 from sklearn.preprocessing import MinMaxScaler
@@ -17,7 +18,6 @@ import random
 np.random.seed(RANDOM_STATE)
 random.seed(RANDOM_STATE)
 
-from matplotlib import pyplot as plt
 
 if __name__ == "__main__":
     # Conclusions
@@ -109,7 +109,7 @@ if __name__ == "__main__":
     plt.savefig(f"plots/rs4_estimators/knn_{x_label}.png", dpi=300)
     save_html(fig, f"plots/rs4_estimators/knn_{x_label}.html")
     plt.clf()
-    
+
     # Decision tree max depth
     # https://analyticsindiamag.com/guide-to-hyperparameters-tuning-using-gridsearchcv-and-randomizedsearchcv/
     # https://towardsdatascience.com/how-to-tune-a-decision-tree-f03721801680
@@ -217,7 +217,8 @@ if __name__ == "__main__":
 
         ax.set_xlabel("")
         if i == 0:
-            ax.set_title("Evaluative Measures for Decision Tree min_samples_split")
+            ax.set_title(
+                "Evaluative Measures for Decision Tree min_samples_split")
         elif i == 2:
             ax.set_xlabel(x_label)
 
@@ -246,15 +247,95 @@ if __name__ == "__main__":
     if full_model:
         # Decision tree grid search
         param_grid = {
-            "criterion": ["squared_error", "absolute_error"],
             "splitter": ["best", "random"],
-            "min_samples_split": [2000, 3000, 5000],
-            "min_samples_leaf": [500, 900],
-            "max_depth": [None, 5],
-            "random_state": [RANDOM_STATE],
-            "max_features": [0.1, 0.25, 0.5, 0.75, 1.0],
+            "max_depth": [None, 6],
+            "max_features": [0.25, 0.5, 0.75, 1.0],
         }
         model = GridSearchCV(
-            estimator=DecisionTreeRegressor(), param_grid=param_grid, cv=10, verbose=3
+            estimator=DecisionTreeRegressor(
+                criterion="squared_error",
+                min_samples_split=1300,
+                min_samples_leaf=700,
+                random_state=RANDOM_STATE
+            ),
+            param_grid=param_grid,
+            cv=10,
+            verbose=3,
+            scoring=[
+                "neg_root_mean_squared_error",
+                "neg_median_absolute_error",
+                "r2",
+            ],
+            n_jobs=NUM_CORES,
+            refit=False
         ).fit(X_train, np.log(y_train))
-        print(model.best_params)
+
+        joblib.dump(
+            model, "logs/rs4_estimators/dt_full_model.pkl"
+        )
+
+    with open("logs/rs4_estimators/dt_full_model.pkl", "rb") as infile:
+        results = pd.DataFrame(joblib.load(infile).cv_results_)
+    fig, axes = plt.subplots(3, 2, figsize=(
+        FHEIGHT * 3, FWIDTH * 2), sharex=False, sharey="row")
+
+    metric_cols = [
+        "test_r2",
+        "test_neg_root_mean_squared_error",
+        "test_neg_median_absolute_error",
+    ]
+    metric_names = ["R2", "Neg RMSE", "Neg MAE"]
+    collection = zip(axes, metric_cols, metric_names)
+    for i, (row, col, name) in enumerate(collection):
+        for splitter, ax in zip(["random", "best"], row):
+
+            x_label = "max_features"
+            x_param = "param_" + x_label
+
+            ax.set_xlabel("")
+            if i == 0:
+                ax.set_title("Splitter: " + splitter)
+            elif i == 2:
+                ax.set_xlabel(x_label)
+
+            interval = .25
+            for depth in [None, 6]:
+                # import ipdb; ipdb.set_trace()
+                logvec = []
+                for par in results.params:
+                    if par["splitter"] != splitter:
+                        logvec.append(False)
+                        continue
+                    if depth:
+                        if par["max_depth"] != depth:
+                            logvec.append(False)
+                            continue
+                    else:
+                        if par["max_depth"]:
+                            logvec.append(False)
+                            continue
+                    logvec.append(True)
+
+                mean_ = results.iloc[logvec, :]["mean_" + col]
+                std_ = results.iloc[logvec, :]["std_" + col]
+
+                # TODO color every line
+                ax.errorbar(
+                    results.iloc[logvec, :][x_param],
+                    mean_,
+                    yerr=std_,
+                    ecolor="r" if depth else "gray",
+                    elinewidth=1,
+                    capsize=2.5,
+                    label=f"depth: {depth if depth is not None else 'None'}"
+                )
+                ax.set_ylabel(name)
+                ax.set_xlim(0, 1.25)
+                start, end = ax.get_xlim()
+                ax.xaxis.set_ticks(np.arange(start, end, interval))
+                if i == 0 and splitter == "random":
+                    ax.legend()
+
+    plt.savefig(f"plots/rs4_estimators/dt_full_model.png", dpi=300)
+    save_html(fig, f"plots/rs4_estimators/dt_full_model.html")
+    plt.clf()

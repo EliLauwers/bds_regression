@@ -6,6 +6,8 @@ from GLOBAL_VARS import LOG, RANDOM_STATE, SMALLEST_DATE
 import scipy
 import pickle
 from datetime import datetime
+import json
+
 
 # some custom scripts to save space
 from helpers.detect_outlying_inds_by_iqr import detect_outlying_inds_by_iqr
@@ -42,7 +44,8 @@ def pre_process_track_listens():
     skew = scipy.stats.skew(y_train)  # Skew > 0, skew to the right
     kurt = scipy.stats.kurtosis(y_train)  # Large kurtosis, fine tail
     mean = np.mean(y_train)
-    LOG.process(f"mean: {mean}, skew: {skew}, kurt: {kurt}")
+    median = np.median(y_train)
+    LOG.process(f"mean: {mean}, skew: {skew}, kurt: {kurt} median: {median}")
 
     plt.hist(y_train, bins=100)
     plt.title("Histogram for track_listens in training set")
@@ -84,7 +87,8 @@ def pre_process_track_listens():
     skew = scipy.stats.skew(y_train_log)  # Skew > 0, skew to the right
     kurt = scipy.stats.kurtosis(y_train_log)  # Large kurtosis, fine tail
     mean = np.mean(y_train_log)
-    LOG.process(f"After np.log() => mean: {mean}, skew: {skew}, kurt: {kurt}")
+    median = np.median(y_train_log)
+    LOG.process(f"After np.log() => mean: {mean}, skew: {skew}, kurt: {kurt}, median: {median}")
 
     plt.hist(y_train_log, bins=100)
     plt.title("Histogram for log(track_listens) in training set")
@@ -140,6 +144,8 @@ def pre_process_track_listens():
     # Question: How many rows exceed mahal d on alpha = .05
     # Note: Mahal D was to large an algorithm to do in one take so the function does some work-arounds
     mahal_distances = mahalanobis_iterative(X_train)
+    with open("logs/track_listens/mahal.json", "w") as outfile:
+        outfile.write(json.dumps(mahal_distances.tolist()))
     p_values = 1 - scipy.stats.chi2.cdf(mahal_distances, X_train.shape[1] - 1)
     len(np.where(p_values < 0.05)[0]) / len(y_train)
     len(np.where(p_values < 0.05)[0])
@@ -215,7 +221,7 @@ def pre_process_album_date_released():
     plt.clf()
 
     LOG.process(
-        f"mean: {np.mean(y_train)}, median: {np.median(y_train)}, std: {np.std(y_train)}, skewness: {scipy.stats.skew(y_train)}, kurt: {scipy.stats.kurtosis(y_train)}"
+        f"mean: {np.mean(y_train)}, median: {np.median(y_train)}, std: {np.std(y_train)}, skewness: {scipy.stats.skew(y_train)}, kurt: {scipy.stats.kurtosis(y_train)}, min: {np.min(y_train)}, max: {np.max(y_train)}"
     )
 
     y_train_sq = np.power(y_train, 2)
@@ -256,6 +262,9 @@ def pre_process_album_date_released():
     # Question: How many rows exceed mahal d on alpha = .05
     # Note: Mahal D was to large an algorithm to do in one take so the function does some work-arounds
     mahal_distances = mahalanobis_iterative(X_train)
+    
+    with open("logs/album_date_released/mahal.json", "w") as outfile:
+        outfile.write(json.dumps(mahal_distances.tolist()))
     p_values = 1 - scipy.stats.chi2.cdf(mahal_distances, X_train.shape[1] - 1)
     len(np.where(p_values < 0.05)[0]) / len(y_train)
     len(np.where(p_values < 0.05)[0])
@@ -284,6 +293,6 @@ def pre_process_album_date_released():
 
 
 if __name__ == "__main__":
-    # pre_process_track_listens()
-    # pre_process_album_date_released()
+    pre_process_track_listens()
+    pre_process_album_date_released()
     pass

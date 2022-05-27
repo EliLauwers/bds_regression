@@ -1,1320 +1,879 @@
 
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-20:35:16 - Read Data before predictions
+------ NEW LOGGER 2022-05-26 ----------------------------------------------
+20:09:57 - Start of create_dataset()
+20:09:57 - Read data from csv files
+20:10:12 - Join Data
+20:10:12 - Write joined
+20:10:15 - End of create_dataset!
+20:10:15 - Start of pre_process_track_listens()
+20:10:15 - Read Data
+20:10:15 - test size of .2
+20:10:16 - 0 cells have missing data
+20:10:16 - mean: 2326.232456397565, skew: 24.797295548817253, kurt: 1089.9536671595145
+20:10:17 - plot 1 in track listens folder
+20:10:17 - plot 2 in track listens folder
+20:10:17 - 1 rows have 0 track_listens, cannot be np.log(x)
+20:10:17 - log transform outcome variable
+20:10:17 - After np.log() => mean: 6.657756811337761, skew: 0.07578713081775797, kurt: 0.16198503358400984
+20:10:17 - plot 3 in track listens folder
+20:10:17 - plot 4 in track listens folder
+20:10:19 - 84415 instances exceed at least one column by IQR, that's 0.9901123648220694
+20:10:19 - On average, an instance fails 21.2319848368181 columns, with std of 19.56132547891326
+20:10:19 - Calculate Mahalanobis Distance
+20:11:29 - 15401 instances fail Mahalanobis on .05, that is 0.18063993994698443 of data
+20:11:29 - End of data preprocess, saving data
+20:11:31 - End of pre_process_track_listens()
+20:11:31 - Start of album date released
+20:11:32 - 36280 missing dates, that is 0.34042074051832527
+20:11:33 - 9450 albums have missing dates, that is 0.6361922714420358
+20:11:34 - test size of .2
+20:11:35 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
+20:11:35 - mean: 1654306535.1682048, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+20:11:37 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
+20:11:37 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
+20:12:06 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
+20:12:06 - End of data preprocess, saving data
+20:12:08 - End of pre_process_album_date_released()
+20:12:08 - Reducing datasets ...
+20:26:48 - no. cols of X_train for track_listens after lle: 2
+20:28:44 - no. cols of X_train for track_listens after elasticnet: 176
+20:28:49 - no. cols of X_train for track_listens after pca99: 293
+20:28:54 - no. cols of X_train for track_listens after pca95: 160
+20:33:08 - no. cols of X_train for album_date_released after lle: 2
+20:34:03 - no. cols of X_train for album_date_released after elasticnet: 163
+20:34:07 - no. cols of X_train for album_date_released after pca99: 297
+20:34:10 - no. cols of X_train for album_date_released after pca95: 164
+20:34:10 - Reducing datasets done!
 
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-20:48:21 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-21:15:54 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-21:35:01 - Start of create_dataset()
-21:35:01 - Read data from csv files
-21:35:17 - Join Data
-21:35:17 - Write joined
-21:35:19 - End of create_dataset!
-21:35:19 - Start of pre_process()
-21:35:20 - Read Data
-21:35:21 - log transform outcome variable
-21:35:22 - IQR method
-21:35:24 - Calculate Mahalanobis Distance
-21:36:09 - End of data preprocess, saving data
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-21:36:43 - Start of create_dataset()
-21:36:43 - Read data from csv files
-21:36:56 - Join Data
-21:36:57 - Write joined
-21:36:58 - End of create_dataset!
-21:36:59 - Start of pre_process()
-21:36:59 - Read Data
-21:37:00 - log transform outcome variable
-21:37:01 - IQR method
-21:37:03 - Calculate Mahalanobis Distance
-21:38:08 - End of data preprocess, saving data
-21:38:09 - End of pre_process_track_listens()
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-21:43:20 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: 5.4030201129990996e+51, SE: 7.888039286428163e+53, R2: 0.00029906648224943723, RMSEP: 7.888224327873116e+53
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-21:48:48 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: 5.4030201129990996e+51, SE: 7.888039286428163e+53, R2: 0.00029906648224943723, RMSEP: 7.888224327873116e+53
-21:48:48 - Multiprocess Start: 50 iterations
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-21:49:46 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: 5.4030201129990996e+51, SE: 7.888039286428163e+53, R2: 0.00029906648224943723, RMSEP: 7.888224327873116e+53
-21:49:46 - Multiprocess Start: 50 iterations
-21:50:41 - Closing Pool
-21:50:42 - Model fit done!
--------- - Bootstrapped OLS with mean
--------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
-21:50:42 - Model fit done!
--------- - Bootstrapped OLS with median
--------- - Bias: -2336.9696602757576, SE: 9221.541545057617, R2: 1.5575598809844838e-05, RMSEP: 9513.05711431782
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-21:52:12 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: 5.4030201129990996e+51, SE: 7.888039286428163e+53, R2: 0.00029906648224943723, RMSEP: 7.888224327873116e+53
-21:52:12 - Multiprocess Start: 50 iterations
-21:53:10 - Closing Pool
-21:53:10 - Model fit done!
--------- - Bootstrapped OLS with mean
--------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
-21:53:10 - Model fit done!
--------- - Bootstrapped OLS with median
--------- - Bias: -2336.9696602757576, SE: 9221.541545057617, R2: 1.5575598809844838e-05, RMSEP: 9513.05711431782
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-21:53:58 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: 5.4030201129990996e+51, SE: 7.888039286428163e+53, R2: 0.00029906648224943723, RMSEP: 7.888224327873116e+53
-21:53:58 - Multiprocess Start: 50 iterations
-21:54:49 - Closing Pool
-21:54:50 - Model fit done!
--------- - Bootstrapped OLS with mean
--------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
-21:54:50 - Model fit done!
--------- - Bootstrapped OLS with median
--------- - Bias: -2336.9696602757576, SE: 9221.541545057617, R2: 1.5575598809844838e-05, RMSEP: 9513.05711431782
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-22:11:40 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: 5.4030201129990996e+51, SE: 7.888039286428163e+53, R2: 0.0, RMSEP: 7.888224327873116e+53
-22:11:40 - Multiprocess Start: 50 iterations
-22:12:43 - Closing Pool
-22:12:44 - Model fit done!
--------- - Bootstrapped OLS with mean
--------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
-22:12:44 - Model fit done!
--------- - Bootstrapped OLS with median
--------- - Bias: -2336.97, SE: 9221.542, R2: 0.0, RMSEP: 9513.057
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-22:16:48 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: 4.4790875031514866e+51, SE: 6.539160960590572e+53, R2: 0.0, RMSEP: 6.539314359394445e+53
-22:16:48 - Multiprocess Start: 50 iterations
-22:17:45 - Closing Pool
-22:17:46 - Model fit done!
--------- - Bootstrapped OLS with mean
--------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
-22:17:46 - Model fit done!
--------- - Bootstrapped OLS with median
--------- - Bias: -2336.967, SE: 9221.541, R2: 0.0, RMSEP: 9513.057
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-22:26:14 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: 4.4790875031514866e+51, SE: 6.539160960590572e+53, R2: 0.0, RMSEP: 6.539314359394445e+53
-22:26:14 - Multiprocess Start: 50 iterations
-22:27:10 - Closing Pool
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-22:27:56 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: 4.4790875031514866e+51, SE: 6.539160960590572e+53, R2: 0.0, RMSEP: 6.539314359394445e+53
-22:27:56 - Multiprocess Start: 50 iterations
-22:28:59 - Closing Pool
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-22:38:49 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: 4.4790875031514866e+51, SE: 6.539160960590572e+53, R2: 0.0, RMSEP: 6.539314359394445e+53
-22:38:49 - Multiprocess Start: 50 iterations
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-22:39:26 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: 4.4790875031514866e+51, SE: 6.539160960590572e+53, R2: 0.0, RMSEP: 6.539314359394445e+53
-22:39:26 - Multiprocess Start: 50 iterations
-22:40:19 - Closing Pool
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-22:43:12 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: 4.4790875031514866e+51, SE: 6.539160960590572e+53, R2: 0.0, RMSEP: 6.539314359394445e+53
-22:43:15 - Multiprocess Start: 50 iterations
-22:44:12 - Closing Pool
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-22:45:35 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: 4.4790875031514866e+51, SE: 6.539160960590572e+53, R2: 0.0, RMSEP: 6.539314359394445e+53
-22:45:35 - Multiprocess Start: 10 iterations
-22:45:48 - Closing Pool
-22:45:49 - Model fit done!
--------- - Bootstrapped OLS with mean
--------- - Bias: 4.1455919856345784e+281, SE: inf, R2: 0.0, RMSEP: inf
-22:45:49 - Model fit done!
--------- - Bootstrapped OLS with median
--------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-22:48:06 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: 4.4790875031514866e+51, SE: 6.539160960590572e+53, R2: 0.0, RMSEP: 6.539314359394445e+53
-22:48:13 - Multiprocess Start: 10 iterations
-22:48:30 - Closing Pool
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-22:51:32 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: 4.479087503152255e+51, SE: 6.539160960591692e+53, R2: 0.0, RMSEP: 6.539314359395566e+53
-22:51:32 - Multiprocess Start: 10 iterations
-22:51:46 - Closing Pool
-22:51:46 - Model fit done!
--------- - Bootstrapped OLS with mean
--------- - Bias: 4.212550452861913e+258, SE: inf, R2: 0.0, RMSEP: inf
-22:51:46 - Model fit done!
--------- - Bootstrapped OLS with median
--------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-22:52:19 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: 4.479087503152255e+51, SE: 6.539160960591692e+53, R2: 0.0, RMSEP: 6.539314359395566e+53
-22:53:02 - Multiprocess Start: 10 iterations
-22:53:19 - Closing Pool
-22:54:02 - Model fit done!
--------- - Bootstrapped OLS with mean
--------- - Bias: 4.212550452861913e+258, SE: inf, R2: 0.0, RMSEP: inf
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-22:55:21 - Multiprocess Start: 10 iterations
-22:55:40 - Closing Pool
-22:56:15 - Model fit done!
--------- - Bootstrapped OLS with mean
--------- - Bias: 4.212550452861913e+258, SE: inf, R2: 0.0, RMSEP: inf
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-22:58:11 - Multiprocess Start: 100 iterations
-23:00:10 - Closing Pool
-23:00:11 - Model fit done!
--------- - Bootstrapped OLS with mean
--------- - Bias: 7.020917421437175e+257, SE: inf, R2: 0.0, RMSEP: inf
-23:00:11 - Model fit done!
--------- - Bootstrapped OLS with median
--------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-23:02:05 - Multiprocess Start: 100 iterations
-23:04:03 - Closing Pool
-23:04:04 - Model fit done!
--------- - Bootstrapped OLS with mean
--------- - Bias: 7.020917421437175e+257, SE: inf, R2: 0.0, RMSEP: inf
-23:04:04 - Model fit done!
--------- - Bootstrapped OLS with median
--------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-23:05:54 - Multiprocess Start: 100 iterations
-23:07:59 - Closing Pool
-23:07:59 - Model fit done!
--------- - Bootstrapped OLS with mean
--------- - Bias: 4.091513200139676e+275, SE: inf, R2: 0.0, RMSEP: inf
-23:07:59 - Model fit done!
--------- - Bootstrapped OLS with median
--------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-23:08:59 - Multiprocess Start: 3 iterations
-23:09:09 - Closing Pool
-23:10:01 - Model fit done!
--------- - Bootstrapped OLS with mean
--------- - Bias: 1.7562731579625573e+113, SE: 2.564038515121393e+115, R2: 0.0, RMSEP: 2.5640986635788777e+115
-23:10:13 - Model fit done!
--------- - Bootstrapped OLS with median
--------- - Bias: inf, SE: nan, R2: nan, RMSEP: inf
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-23:11:20 - Multiprocess Start: 3 iterations
-23:11:27 - Closing Pool
-23:11:27 - Model fit done!
--------- - Bootstrapped OLS with mean
--------- - Bias: 1.7562731579625573e+113, SE: 2.564038515121393e+115, R2: 0.0, RMSEP: 2.5640986635788777e+115
-23:11:28 - Model fit done!
--------- - Bootstrapped OLS with median
--------- - Bias: 1.7562731579625573e+113, SE: 2.564038515121393e+115, R2: 0.0, RMSEP: 2.5640986635788777e+115
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-23:12:32 - Multiprocess Start: 100 iterations
-23:14:27 - Closing Pool
-23:14:28 - Model fit done!
--------- - Bootstrapped OLS with mean
--------- - Bias: 4.091513185648999e+275, SE: inf, R2: 0.0, RMSEP: inf
-23:14:28 - Model fit done!
--------- - Bootstrapped OLS with median
--------- - Bias: 6.803798049286791e+92, SE: 9.933079127462319e+94, R2: 0.0, RMSEP: 9.933312142443373e+94
-
------- NEW LOGGER 2022-05-10 ----------------------------------------------
-23:15:56 - Model fit done!
--------- - Vanilla OLS with No Aggregation
--------- - Bias: 4.479087503152255e+51, SE: 6.539160960591692e+53, R2: 0.0, RMSEP: 6.539314359395566e+53
-23:15:56 - Multiprocess Start: 100 iterations
-23:17:35 - Closing Pool
-23:17:36 - Model fit done!
--------- - Bootstrapped OLS with mean
--------- - Bias: 4.091513185648999e+275, SE: inf, R2: 0.0, RMSEP: inf
-23:17:36 - Model fit done!
--------- - Bootstrapped OLS with median
--------- - Bias: 6.803798049286791e+92, SE: 9.933079127462319e+94, R2: 0.0, RMSEP: 9.933312142443373e+94
-
------- NEW LOGGER 2022-05-11 ----------------------------------------------
-20:13:27 - Model fit done!
-           Vanilla OLS with mean
-           Bias: -186.0, SE: 32128.7, R2: 0.0, RMSEP: 32129.24
-
------- NEW LOGGER 2022-05-11 ----------------------------------------------
-20:15:37 - Model fit done!
-           Vanilla OLS with mean
-           Bias: -186.0, SE: 32128.7, R2: 0.0, RMSEP: 32129.24
-20:16:16 - Model fit done!
-           Bagging OLS with mean
-           Bias: 221617733666.5, SE: 6836405094598.7, R2: 0.0, RMSEP: 6839996274657.66
-
------- NEW LOGGER 2022-05-11 ----------------------------------------------
-20:17:38 - Model fit done!
-           Vanilla OLS with mean
-           Bias: -186.0, SE: 32128.7, R2: 0.0, RMSEP: 32129.24
-20:18:19 - Model fit done!
-           Bagging OLS with mean
-           Bias: 221616752967.07, SE: 6836374842243.07, R2: 0.0, RMSEP: 6839966006410.38
-
------- NEW LOGGER 2022-05-11 ----------------------------------------------
-20:24:57 - Model fit done!
-           Vanilla OLS with smearing
-           Bias: -2320.77, SE: 9221.24, R2: 0.0, RMSEP: 9508.8
-
------- NEW LOGGER 2022-05-11 ----------------------------------------------
-20:29:15 - Model fit done!
-           Vanilla OLS with smearing
-           Bias: -2320.77, SE: 9221.24, R2: 0.0, RMSEP: 9508.8
-20:29:19 - Model fit done!
-           Bagging OLS with smearing
-           Bias: -2291.89, SE: 9221.5, R2: 0.0, RMSEP: 9502.05
-
------- NEW LOGGER 2022-05-11 ----------------------------------------------
-20:30:16 - Model fit done!
-           Vanilla OLS with smearing
-           Bias: -2320.77, SE: 9221.24, R2: 0.0, RMSEP: 9508.8
-20:37:21 - Model fit done!
-           Bagging OLS with smearing
-           Bias: -2319.74, SE: 9221.39, R2: 0.0, RMSEP: 9508.69
-20:39:38 - Model fit done!
-           Bagging OLS with smearing
-           Bias: -2330.22, SE: 9221.46, R2: 0.0, RMSEP: 9511.33
-
------- NEW LOGGER 2022-05-11 ----------------------------------------------
-20:42:11 - Model fit done!
-           Vanilla OLS with smearing
-           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
-20:47:55 - Model fit done!
-           Bagging OLS with smearing
-           Bias: -2319.744, SE: 9221.386, R2: 0.001, RMSEP: 9508.689
-20:48:53 - Model fit done!
-           Bagging OLS with smearing
-           Bias: -2330.216, SE: 9221.465, R2: 0.003, RMSEP: 9511.326
-20:52:00 - Model fit done!
-           Bagging OLS with no smearing
-           Bias: 1805.906, SE: 17246.074, R2: 0.001, RMSEP: 17340.368
-20:52:54 - Model fit done!
-           Bagging(Tree) with smearing
-           Bias: -2319.08, SE: 9221.461, R2: 0.011, RMSEP: 9508.6
-20:53:47 - Model fit done!
-           Bagging(Tree) with no smearing
-           Bias: 701.444, SE: 9307.443, R2: 0.003, RMSEP: 9333.837
-20:54:54 - Model fit done!
-           KNN_n3 with no smearing
-           Bias: -198.869, SE: 9726.313, R2: 0.007, RMSEP: 9728.346
-
------- NEW LOGGER 2022-05-11 ----------------------------------------------
-21:03:57 - Model fit done!
-           Vanilla OLS with smearing
-           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
-
------- NEW LOGGER 2022-05-11 ----------------------------------------------
-21:48:53 - Model fit done!
-           Vanilla OLS with smearing
-           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
-
------- NEW LOGGER 2022-05-11 ----------------------------------------------
-21:52:09 - Model fit done!
-           Vanilla OLS with smearing
-           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
-21:52:12 - Model fit done!
-           Vanilla OLS with no smearing
-           Bias: -186.003, SE: 32128.703, R2: 0.0, RMSEP: 32129.242
-
------- NEW LOGGER 2022-05-11 ----------------------------------------------
-22:02:04 - Model fit done!
-           Vanilla OLS with smearing
-           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
-22:02:06 - Model fit done!
-           Vanilla OLS with no smearing
-           Bias: -186.003, SE: 32128.703, R2: 0.0, RMSEP: 32129.242
-
------- NEW LOGGER 2022-05-11 ----------------------------------------------
-22:21:47 - Model fit done!
-           OLS with no smearing
-           Bias: -186.003, SE: 32128.703, R2: 0.0, RMSEP: 32129.242
-22:21:49 - Model fit done!
-           OLS with smearing
-           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
-
------- NEW LOGGER 2022-05-11 ----------------------------------------------
-22:22:58 - Model fit done!
-           OLS with no smearing
-           Bias: -186.003, SE: 32128.703, R2: 0.0, RMSEP: 32129.242
-22:23:01 - Model fit done!
-           OLS with smearing
-           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
-22:23:10 - Model fit done!
-           (bootstrapped) OLS with no smearing
-           Bias: -953298790505531.5, SE: 2.9572164416248612e+16, R2: 0.0, RMSEP: 2.95875258655674e+16
-
------- NEW LOGGER 2022-05-11 ----------------------------------------------
-22:26:05 - Model fit done!
-           OLS with no smearing
-           Bias: -186.003, SE: 32128.703, R2: 0.0, RMSEP: 32129.242
-22:26:07 - Model fit done!
-           OLS with smearing
-           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
-22:26:16 - Model fit done!
-           (bootstrapped) OLS with no smearing
-           Bias: -953298790505531.5, SE: 2.9572164416248612e+16, R2: 0.0, RMSEP: 2.95875258655674e+16
-22:26:26 - Model fit done!
-           (bootstrapped) OLS with smearing
-           Bias: inf, SE: nan, R2: nan, RMSEP: inf
-
------- NEW LOGGER 2022-05-11 ----------------------------------------------
-22:28:00 - Model fit done!
-           OLS with no smearing
-           Bias: -186.003, SE: 32128.703, R2: 0.0, RMSEP: 32129.242
-22:28:02 - Model fit done!
-           OLS with smearing
-           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
-22:28:11 - Model fit done!
-           (bootstrapped) OLS with no smearing
-           Bias: -953298790505531.5, SE: 2.9572164416248612e+16, R2: 0.0, RMSEP: 2.95875258655674e+16
-22:28:21 - Model fit done!
-           (bootstrapped) OLS with smearing
-           Bias: -127190590949897.44, SE: 3945563662925888.5, R2: 0.0, RMSEP: 3947613211122303.0
-22:30:59 - Model fit done!
-           Decision Tree with no smearing
-           Bias: 1877.282, SE: 17520.638, R2: 0.001, RMSEP: 17620.924
-22:31:52 - Model fit done!
-           Decision Tree with smearing
-           Bias: -2330.215, SE: 9221.465, R2: 0.003, RMSEP: 9511.326
-
------- NEW LOGGER 2022-05-11 ----------------------------------------------
-22:32:27 - Model fit done!
-           OLS with no smearing
-           Bias: -186.003, SE: 32128.703, R2: 0.0, RMSEP: 32129.242
-22:32:30 - Model fit done!
-           OLS with smearing
-           Bias: -2320.771, SE: 9221.244, R2: 0.001, RMSEP: 9508.802
-22:58:33 - Model fit done!
-           (bootstrapped B: 500) OLS with no smearing
-           Bias: -5955105951536.638, SE: 2298017800763761.0, R2: 0.0, RMSEP: 2298025516810900.5
-23:26:06 - Model fit done!
-           (bootstrapped B: 500) OLS with smearing
-           Bias: -2.314339363352764e+24, SE: 2.1899444459723948e+26, R2: 0.0, RMSEP: 2.1900667325709998e+26
-23:29:33 - Model fit done!
-           Decision Tree with no smearing
-           Bias: 1877.282, SE: 17520.638, R2: 0.001, RMSEP: 17620.924
-23:30:27 - Model fit done!
-           Decision Tree with smearing
-           Bias: -2330.215, SE: 9221.465, R2: 0.003, RMSEP: 9511.326
-04:46:14 - Model fit done!
-           (bootstrapped B: 500) Decision Tree with no smearing
-           Bias: 1827.679, SE: 10492.406, R2: 0.004, RMSEP: 10650.399
-06:26:21 - Model fit done!
-           (bootstrapped B: 500) Decision Tree with smearing
-           Bias: -2326.064, SE: 9221.425, R2: 0.026, RMSEP: 9510.271
-06:26:59 - Model fit done!
-           KNN_n3 with no smearing
-           Bias: -198.869, SE: 9726.313, R2: 0.007, RMSEP: 9728.346
-06:29:44 - Model fit done!
-           KNN_n3 with smearing
-           Bias: -2325.389, SE: 9221.363, R2: 0.012, RMSEP: 9510.046
-
------- NEW LOGGER 2022-05-12 ----------------------------------------------
-19:19:47 - Model fit done!
-           OLS with no smearing
-           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
-19:19:50 - Model fit done!
-           OLS with smearing
-           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
-19:24:59 - Model fit done!
-           (bootstrapped B: 100) OLS with no smearing
-           R2: -6.19818771253357e+22, MSE: 5.270742586509567e+30, RMSE: 2295809788834773.5, MAE: 1522.5418
-
------- NEW LOGGER 2022-05-12 ----------------------------------------------
-22:14:46 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: True
-           R2: -0.0597, MSE: 90114290.694, RMSE: 9492.8547, MAE: 679.6347
-22:14:49 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: False
-           R2: -7.7755, MSE: 746240320.1954, RMSE: 27317.3996, MAE: 1671.2937
-22:14:52 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: True
-           R2: -0.0531, MSE: 89554880.4807, RMSE: 9463.344, MAE: 553.733
-22:14:55 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: False
-           R2: -7.7755, MSE: 746240320.1954, RMSE: 27317.3996, MAE: 1671.2937
-22:14:59 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: True
-           R2: -0.0264, MSE: 87285593.0418, RMSE: 9342.6759, MAE: 686.4905
-22:15:03 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: False
-           R2: -11.009, MSE: 1021208312.0075, RMSE: 31956.3501, MAE: 1947.2046
-22:15:08 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: True
-           R2: -0.0632, MSE: 90412620.3358, RMSE: 9508.5551, MAE: 740.5515
-22:15:11 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: False
-           R2: -11.009, MSE: 1021208312.0075, RMSE: 31956.3501, MAE: 1947.2046
-22:15:16 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: True
-           R2: -0.0632, MSE: 90408549.5723, RMSE: 9508.3411, MAE: 740.4827
-22:15:20 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: False
-           R2: -23.205, MSE: 2058317091.1471, RMSE: 45368.6796, MAE: 2050.498
-22:15:24 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: True
-           R2: -0.0503, MSE: 89311059.0164, RMSE: 9450.4528, MAE: 421.7195
-22:15:28 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: False
-           R2: -23.205, MSE: 2058317091.1471, RMSE: 45368.6796, MAE: 2050.498
-22:15:59 - Model fit done!
-           estimator: Decision Tree ,bootstrap: True ,scaler: None ,smearing: True
-           R2: -0.0631, MSE: 90405763.0197, RMSE: 9508.1945, MAE: 739.883
-22:16:53 - Model fit done!
-           estimator: Decision Tree ,bootstrap: True ,scaler: None ,smearing: False
-           R2: -1.6837, MSE: 228215644.74, RMSE: 15106.8079, MAE: 1166.0
-22:17:12 - Model fit done!
-           estimator: Decision Tree ,bootstrap: False ,scaler: None ,smearing: True
-           R2: -0.0626, MSE: 90357839.4128, RMSE: 9505.6741, MAE: 730.1352
-22:18:06 - Model fit done!
-           estimator: Decision Tree ,bootstrap: False ,scaler: None ,smearing: False
-           R2: -1.6837, MSE: 228215644.74, RMSE: 15106.8079, MAE: 1166.0
-22:18:19 - Model fit done!
-           estimator: Decision Tree ,bootstrap: True ,scaler: None ,smearing: True
-           R2: -0.0622, MSE: 90328521.3231, RMSE: 9504.1318, MAE: 722.661
-22:18:38 - Model fit done!
-           estimator: Decision Tree ,bootstrap: True ,scaler: None ,smearing: False
-           R2: -1.6225, MSE: 223009078.4495, RMSE: 14933.4885, MAE: 1179.0
-22:18:47 - Model fit done!
-           estimator: Decision Tree ,bootstrap: False ,scaler: None ,smearing: True
-           R2: -0.062, MSE: 90305462.1224, RMSE: 9502.9186, MAE: 719.111
-22:19:06 - Model fit done!
-           estimator: Decision Tree ,bootstrap: False ,scaler: None ,smearing: False
-           R2: -1.6225, MSE: 223009078.4495, RMSE: 14933.4885, MAE: 1179.0
-22:19:11 - Model fit done!
-           estimator: Decision Tree ,bootstrap: True ,scaler: None ,smearing: True
-           R2: -0.0617, MSE: 90281346.6826, RMSE: 9501.6497, MAE: 712.5653
-22:19:19 - Model fit done!
-           estimator: Decision Tree ,bootstrap: True ,scaler: None ,smearing: False
-           R2: -2.2222, MSE: 274005485.2486, RMSE: 16553.111, MAE: 1119.0
-22:19:23 - Model fit done!
-           estimator: Decision Tree ,bootstrap: False ,scaler: None ,smearing: True
-           R2: -0.0617, MSE: 90283951.8773, RMSE: 9501.7868, MAE: 714.9626
-22:19:31 - Model fit done!
-           estimator: Decision Tree ,bootstrap: False ,scaler: None ,smearing: False
-           R2: -2.2222, MSE: 274005485.2486, RMSE: 16553.111, MAE: 1119.0
-
------- NEW LOGGER 2022-05-12 ----------------------------------------------
-22:21:39 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: True
-           R2: -0.0597, MSE: 90114290.694, RMSE: 9492.8547, MAE: 679.6347
-22:21:43 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: False
-           R2: -7.7755, MSE: 746240320.1954, RMSE: 27317.3996, MAE: 1671.2937
-
------- NEW LOGGER 2022-05-12 ----------------------------------------------
-22:23:11 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: <class 'sklearn.preprocessing._data.StandardScaler'> ,smearing: True
-           R2: -0.0597, MSE: 90114290.694, RMSE: 9492.8547, MAE: 679.6347
-22:23:16 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: <class 'sklearn.preprocessing._data.StandardScaler'> ,smearing: False
-           R2: -7.7755, MSE: 746240320.1954, RMSE: 27317.3996, MAE: 1671.2937
-22:23:20 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: <class 'sklearn.preprocessing._data.StandardScaler'> ,smearing: True
-           R2: -0.0531, MSE: 89554880.4807, RMSE: 9463.344, MAE: 553.733
-22:23:25 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: <class 'sklearn.preprocessing._data.StandardScaler'> ,smearing: False
-           R2: -7.7755, MSE: 746240320.1954, RMSE: 27317.3996, MAE: 1671.2937
-22:23:29 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: <class 'sklearn.preprocessing._data.MinMaxScaler'> ,smearing: True
-           R2: -0.0264, MSE: 87285593.0418, RMSE: 9342.6759, MAE: 686.4905
-22:23:33 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: <class 'sklearn.preprocessing._data.MinMaxScaler'> ,smearing: False
-           R2: -11.009, MSE: 1021208312.0075, RMSE: 31956.3501, MAE: 1947.2046
-22:23:38 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: <class 'sklearn.preprocessing._data.MinMaxScaler'> ,smearing: True
-           R2: -0.0632, MSE: 90412620.3358, RMSE: 9508.5551, MAE: 740.5515
-22:23:42 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: <class 'sklearn.preprocessing._data.MinMaxScaler'> ,smearing: False
-           R2: -11.009, MSE: 1021208312.0059, RMSE: 31956.3501, MAE: 1947.2046
-
------- NEW LOGGER 2022-05-12 ----------------------------------------------
-22:26:32 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: StandardScaler ,smearing: True
-           R2: -0.0597, MSE: 90114290.694, RMSE: 9492.8547, MAE: 679.6347
-22:26:36 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: StandardScaler ,smearing: False
-           R2: -7.7755, MSE: 746240320.1954, RMSE: 27317.3996, MAE: 1671.2937
-22:26:41 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: StandardScaler ,smearing: True
-           R2: -0.0531, MSE: 89554880.4807, RMSE: 9463.344, MAE: 553.733
-22:26:45 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: StandardScaler ,smearing: False
-           R2: -7.7755, MSE: 746240320.1954, RMSE: 27317.3996, MAE: 1671.2937
-22:26:49 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: MinMaxScaler ,smearing: True
-           R2: -0.0264, MSE: 87285593.0418, RMSE: 9342.6759, MAE: 686.4905
-22:26:54 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: MinMaxScaler ,smearing: False
-           R2: -11.009, MSE: 1021208312.0059, RMSE: 31956.3501, MAE: 1947.2046
-22:26:58 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: MinMaxScaler ,smearing: True
-           R2: -0.0632, MSE: 90412620.3358, RMSE: 9508.5551, MAE: 740.5515
-22:27:03 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: MinMaxScaler ,smearing: False
-           R2: -11.009, MSE: 1021208312.0075, RMSE: 31956.3501, MAE: 1947.2046
-22:27:07 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: True
-           R2: -0.0632, MSE: 90408549.5723, RMSE: 9508.3411, MAE: 740.4827
-22:27:12 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: False
-           R2: -23.205, MSE: 2058317091.1711, RMSE: 45368.6796, MAE: 2050.498
-22:27:17 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: True
-           R2: -0.0503, MSE: 89311059.0164, RMSE: 9450.4528, MAE: 421.7195
-22:27:21 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: False
-           R2: -23.205, MSE: 2058317091.1471, RMSE: 45368.6796, MAE: 2050.498
-22:27:55 - Model fit done!
-           estimator: Decision Tree ,bootstrap: True ,scaler: StandardScaler ,smearing: True
-           R2: -0.0631, MSE: 90405763.0197, RMSE: 9508.1945, MAE: 739.883
-22:28:52 - Model fit done!
-           estimator: Decision Tree ,bootstrap: True ,scaler: StandardScaler ,smearing: False
-           R2: -1.6837, MSE: 228215644.74, RMSE: 15106.8079, MAE: 1166.0
-22:29:14 - Model fit done!
-           estimator: Decision Tree ,bootstrap: False ,scaler: StandardScaler ,smearing: True
-           R2: -0.0626, MSE: 90357839.4128, RMSE: 9505.6741, MAE: 730.1352
-
------- NEW LOGGER 2022-05-12 ----------------------------------------------
-22:37:55 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: standard ,smearing: True
-           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
-22:37:58 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: standard ,smearing: False
-           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
-22:38:02 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: standard ,smearing: True
-           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
-22:38:05 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: standard ,smearing: False
-           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
-22:38:56 - Model fit done!
-           estimator: Decision Tree ,bootstrap: True ,scaler: standard ,smearing: True
-           R2: -0.0638, MSE: 90465318.6146, RMSE: 9511.3258, MAE: 751.9237
-22:41:34 - Model fit done!
-           estimator: Decision Tree ,bootstrap: True ,scaler: standard ,smearing: False
-           R2: -2.536, MSE: 300688347.9601, RMSE: 17340.3676, MAE: 1158.0
-22:42:25 - Model fit done!
-           estimator: Decision Tree ,bootstrap: False ,scaler: standard ,smearing: True
-           R2: -0.0638, MSE: 90465294.5471, RMSE: 9511.3245, MAE: 751.8522
-22:45:06 - Model fit done!
-           estimator: Decision Tree ,bootstrap: False ,scaler: standard ,smearing: False
-           R2: -2.6204, MSE: 307866114.8774, RMSE: 17546.114, MAE: 1162.0
-22:48:54 - Model fit done!
-           estimator: KNN_n3 ,bootstrap: True ,scaler: standard ,smearing: True
-           R2: -0.0636, MSE: 90440973.1738, RMSE: 9510.0459, MAE: 747.2385
-22:49:48 - Model fit done!
-           estimator: KNN_n3 ,bootstrap: True ,scaler: standard ,smearing: False
-           R2: -0.1129, MSE: 94640709.3218, RMSE: 9728.3457, MAE: 915.6667
-
------- NEW LOGGER 2022-05-12 ----------------------------------------------
-22:50:36 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: standard ,smearing: True
-           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
-22:50:40 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: standard ,smearing: False
-           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
-22:50:44 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: standard ,smearing: True
-           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
-22:50:48 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: standard ,smearing: False
-           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
-22:51:43 - Model fit done!
-           estimator: Decision Tree ,bootstrap: True ,scaler: standard ,smearing: True
-           R2: -0.0638, MSE: 90465318.6146, RMSE: 9511.3258, MAE: 751.9237
-22:54:41 - Model fit done!
-           estimator: Decision Tree ,bootstrap: True ,scaler: standard ,smearing: False
-           R2: -2.536, MSE: 300688347.9601, RMSE: 17340.3676, MAE: 1158.0
-22:55:37 - Model fit done!
-           estimator: Decision Tree ,bootstrap: False ,scaler: standard ,smearing: True
-           R2: -0.0638, MSE: 90465294.5471, RMSE: 9511.3245, MAE: 751.8522
-22:59:05 - Model fit done!
-           estimator: Decision Tree ,bootstrap: False ,scaler: standard ,smearing: False
-           R2: -2.6204, MSE: 307866114.8774, RMSE: 17546.114, MAE: 1162.0
-23:02:13 - Model fit done!
-           estimator: KNN_n3 ,bootstrap: True ,scaler: standard ,smearing: True
-           R2: -0.0636, MSE: 90440973.1738, RMSE: 9510.0459, MAE: 747.2385
-23:02:59 - Model fit done!
-           estimator: KNN_n3 ,bootstrap: True ,scaler: standard ,smearing: False
-           R2: -0.1129, MSE: 94640709.3218, RMSE: 9728.3457, MAE: 915.6667
-23:06:15 - Model fit done!
-           estimator: KNN_n3 ,bootstrap: False ,scaler: standard ,smearing: True
-           R2: -0.0636, MSE: 90440973.1738, RMSE: 9510.0459, MAE: 747.2385
-23:07:04 - Model fit done!
-           estimator: KNN_n3 ,bootstrap: False ,scaler: standard ,smearing: False
-           R2: -0.1129, MSE: 94640709.3218, RMSE: 9728.3457, MAE: 915.6667
-23:07:08 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: minmax ,smearing: True
-           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
-23:07:12 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: minmax ,smearing: False
-           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
-23:07:16 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: minmax ,smearing: True
-           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
-23:07:20 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: minmax ,smearing: False
-           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
-23:08:17 - Model fit done!
-           estimator: Decision Tree ,bootstrap: True ,scaler: minmax ,smearing: True
-           R2: -0.0638, MSE: 90465449.4772, RMSE: 9511.3327, MAE: 751.8891
-23:10:53 - Model fit done!
-           estimator: Decision Tree ,bootstrap: True ,scaler: minmax ,smearing: False
-           R2: -2.2767, MSE: 278638584.8931, RMSE: 16692.4709, MAE: 1144.0
-23:11:44 - Model fit done!
-           estimator: Decision Tree ,bootstrap: False ,scaler: minmax ,smearing: True
-           R2: -0.0638, MSE: 90465465.5062, RMSE: 9511.3335, MAE: 751.9561
-23:14:22 - Model fit done!
-           estimator: Decision Tree ,bootstrap: False ,scaler: minmax ,smearing: False
-           R2: -3.0063, MSE: 340681250.809, RMSE: 18457.5527, MAE: 1158.0
-23:17:10 - Model fit done!
-           estimator: KNN_n3 ,bootstrap: True ,scaler: minmax ,smearing: True
-           R2: -0.0636, MSE: 90441823.4229, RMSE: 9510.0906, MAE: 747.1893
-23:17:48 - Model fit done!
-           estimator: KNN_n3 ,bootstrap: True ,scaler: minmax ,smearing: False
-           R2: -0.1312, MSE: 96195366.4894, RMSE: 9807.9237, MAE: 890.0
-23:20:35 - Model fit done!
-           estimator: KNN_n3 ,bootstrap: False ,scaler: minmax ,smearing: True
-           R2: -0.0636, MSE: 90441823.4229, RMSE: 9510.0906, MAE: 747.1893
-23:21:14 - Model fit done!
-           estimator: KNN_n3 ,bootstrap: False ,scaler: minmax ,smearing: False
-           R2: -0.1312, MSE: 96195366.4894, RMSE: 9807.9237, MAE: 890.0
-23:21:16 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: True
-           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
-23:21:19 - Model fit done!
-           estimator: OLS ,bootstrap: True ,scaler: None ,smearing: False
-           R2: -11.1393, MSE: 1032288185.0948, RMSE: 32129.2419, MAE: 1520.5405
-23:21:21 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: True
-           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
-23:21:23 - Model fit done!
-           estimator: OLS ,bootstrap: False ,scaler: None ,smearing: False
-           R2: -11.1393, MSE: 1032288185.0948, RMSE: 32129.2419, MAE: 1520.5405
-23:22:14 - Model fit done!
-           estimator: Decision Tree ,bootstrap: True ,scaler: None ,smearing: True
-           R2: -0.0638, MSE: 90465443.5427, RMSE: 9511.3324, MAE: 751.8426
-23:24:53 - Model fit done!
-           estimator: Decision Tree ,bootstrap: True ,scaler: None ,smearing: False
-           R2: -2.68, MSE: 312931940.075, RMSE: 17689.8824, MAE: 1165.0
-23:25:44 - Model fit done!
-           estimator: Decision Tree ,bootstrap: False ,scaler: None ,smearing: True
-           R2: -0.0638, MSE: 90465404.5887, RMSE: 9511.3303, MAE: 751.8557
-23:28:21 - Model fit done!
-           estimator: Decision Tree ,bootstrap: False ,scaler: None ,smearing: False
-           R2: -3.161, MSE: 353835918.3031, RMSE: 18810.5268, MAE: 1160.0
-23:31:08 - Model fit done!
-           estimator: KNN_n3 ,bootstrap: True ,scaler: None ,smearing: True
-           R2: -0.0635, MSE: 90440228.0596, RMSE: 9510.0067, MAE: 747.0778
-23:31:46 - Model fit done!
-           estimator: KNN_n3 ,bootstrap: True ,scaler: None ,smearing: False
-           R2: -0.167, MSE: 99242102.5847, RMSE: 9962.0331, MAE: 1089.0
-23:34:31 - Model fit done!
-           estimator: KNN_n3 ,bootstrap: False ,scaler: None ,smearing: True
-           R2: -0.0635, MSE: 90440228.0596, RMSE: 9510.0067, MAE: 747.0778
-23:35:09 - Model fit done!
-           estimator: KNN_n3 ,bootstrap: False ,scaler: None ,smearing: False
-           R2: -0.167, MSE: 99242102.5847, RMSE: 9962.0331, MAE: 1089.0
-
------- NEW LOGGER 2022-05-17 ----------------------------------------------
-22:35:19 - Model fit done!
-           estimator: Ordinary Least Squares ,bootstrap: True ,smearing: True
-           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
-22:35:22 - Model fit done!
-           estimator: Ordinary Least Squares ,bootstrap: True ,smearing: False
-           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
-22:35:25 - Model fit done!
-           estimator: Ordinary Least Squares ,bootstrap: False ,smearing: True
-           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
-22:35:27 - Model fit done!
-           estimator: Ordinary Least Squares ,bootstrap: False ,smearing: False
-           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
-22:37:39 - Model fit done!
-           estimator: Decision Tree ,bootstrap: True ,smearing: True
-           R2: -0.0638, MSE: 90465477.3032, RMSE: 9511.3341, MAE: 751.9642
-
------- NEW LOGGER 2022-05-17 ----------------------------------------------
-22:45:50 - Model fit done!
-           data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: True ,smearing: True
-           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
-22:45:52 - Model fit done!
-           data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: True ,smearing: False
-           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
-22:45:54 - Model fit done!
-           data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: False ,smearing: True
-           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
-22:45:56 - Model fit done!
-           data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: False ,smearing: False
-           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
-22:46:50 - Model fit done!
-           data reduction: None ,estimator: Decision Tree ,bootstrap: True ,smearing: True
-           R2: -0.0638, MSE: 90465477.3032, RMSE: 9511.3341, MAE: 751.9642
-22:49:32 - Model fit done!
-           data reduction: None ,estimator: Decision Tree ,bootstrap: True ,smearing: False
-           R2: -2.181, MSE: 270502584.0327, RMSE: 16446.9628, MAE: 1159.0
-22:50:24 - Model fit done!
-           data reduction: None ,estimator: Decision Tree ,bootstrap: False ,smearing: True
-           R2: -0.0638, MSE: 90465412.1653, RMSE: 9511.3307, MAE: 751.824
-22:53:13 - Model fit done!
-           data reduction: None ,estimator: Decision Tree ,bootstrap: False ,smearing: False
-           R2: -3.4371, MSE: 377319013.3037, RMSE: 19424.7011, MAE: 1157.0
-22:55:57 - Model fit done!
-           data reduction: None ,estimator: KNN_n3 ,bootstrap: True ,smearing: True
-           R2: -0.0636, MSE: 90441057.1964, RMSE: 9510.0503, MAE: 747.0022
-22:56:36 - Model fit done!
-           data reduction: None ,estimator: KNN_n3 ,bootstrap: True ,smearing: False
-           R2: -0.1312, MSE: 96195366.4894, RMSE: 9807.9237, MAE: 890.0
-22:59:19 - Model fit done!
-           data reduction: None ,estimator: KNN_n3 ,bootstrap: False ,smearing: True
-           R2: -0.0636, MSE: 90441057.1964, RMSE: 9510.0503, MAE: 747.0022
-22:59:56 - Model fit done!
-           data reduction: None ,estimator: KNN_n3 ,bootstrap: False ,smearing: False
-           R2: -0.1312, MSE: 96195366.4894, RMSE: 9807.9237, MAE: 890.0
-00:08:07 - Model fit done!
-           data reduction: None ,estimator: Random Forest ,bootstrap: True ,smearing: True
-           R2: -0.0638, MSE: 90461167.8476, RMSE: 9511.1076, MAE: 751.3878
-04:42:37 - Model fit done!
-           data reduction: None ,estimator: Random Forest ,bootstrap: True ,smearing: False
-           R2: -0.3952, MSE: 118642564.6629, RMSE: 10892.3168, MAE: 1728.39
-06:10:32 - Model fit done!
-           data reduction: None ,estimator: Random Forest ,bootstrap: False ,smearing: True
-           R2: -0.0638, MSE: 90461173.3916, RMSE: 9511.1079, MAE: 751.5053
-
------- NEW LOGGER 2022-05-18 ----------------------------------------------
-09:00:55 - Model fit 0 of 64 done!
-        data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: True ,smearing: True
-        R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
-09:00:58 - Model fit 1 of 64 done!
-        data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: True ,smearing: False
-        R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
-09:01:01 - Model fit 2 of 64 done!
-        data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: False ,smearing: True
-        R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
-09:01:03 - Model fit 3 of 64 done!
-        data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: False ,smearing: False
-        R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
-
------- NEW LOGGER 2022-05-18 ----------------------------------------------
-09:02:18 - Model fit 0 of 64 done!
-           data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: True ,smearing: True
-           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
-09:02:21 - Model fit 1 of 64 done!
-           data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: True ,smearing: False
-           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
-09:02:24 - Model fit 2 of 64 done!
-           data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: False ,smearing: True
-           R2: -0.0633, MSE: 90417316.351, RMSE: 9508.802, MAE: 742.0508
-09:02:26 - Model fit 3 of 64 done!
-           data reduction: None ,estimator: Ordinary Least Squares ,bootstrap: False ,smearing: False
-           R2: -11.1393, MSE: 1032288185.0944, RMSE: 32129.2419, MAE: 1520.5405
-
------- NEW LOGGER 2022-05-18 ----------------------------------------------
-22:01:08 - Start of create_dataset()
-22:01:08 - Read data from csv files
-22:01:21 - Join Data
-22:01:22 - Write joined
-22:01:25 - End of create_dataset!
-22:01:25 - Start of pre_process()
-22:01:25 - Read Data
-22:01:28 - log transform outcome variable
-22:01:28 - IQR method
-22:01:30 - Calculate Mahalanobis Distance
-22:02:25 - End of data preprocess, saving data
-22:02:28 - End of pre_process_track_listens()
-22:02:31 - Model fit 0 of 64 done!
-           data reduction: None, estimator: Ordinary Least Squares, bootstrap: True, smearing: True
+------ NEW LOGGER 2022-05-26 ----------------------------------------------
+20:35:32 - Model fit 1 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: True, smearing: True
            R2: -0.0721, MSE: 80395500.9652, RMSE: 8966.3538, MAE: 751.7082
-22:02:33 - Model fit 1 of 64 done!
-           data reduction: None, estimator: Ordinary Least Squares, bootstrap: True, smearing: False
+20:35:34 - Model fit 2 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: True, smearing: False
            R2: -26.7923, MSE: 2084190510.3608, RMSE: 45652.9354, MAE: 1562.2822
-22:02:35 - Model fit 2 of 64 done!
-           data reduction: None, estimator: Ordinary Least Squares, bootstrap: False, smearing: True
+20:35:37 - Model fit 3 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: False, smearing: True
            R2: -0.0721, MSE: 80395500.9652, RMSE: 8966.3538, MAE: 751.7082
-22:02:37 - Model fit 3 of 64 done!
-           data reduction: None, estimator: Ordinary Least Squares, bootstrap: False, smearing: False
-           R2: -26.7923, MSE: 2084190510.3608, RMSE: 45652.9354, MAE: 1562.2822
-22:03:26 - Model fit 4 of 64 done!
-           data reduction: None, estimator: Decision Tree, bootstrap: True, smearing: True
-           R2: -0.0727, MSE: 80442733.0166, RMSE: 8968.9873, MAE: 760.1836
-22:06:00 - Model fit 5 of 64 done!
-           data reduction: None, estimator: Decision Tree, bootstrap: True, smearing: False
-           R2: -4.3234, MSE: 399214235.2292, RMSE: 19980.3462, MAE: 1160.0
-22:06:50 - Model fit 6 of 64 done!
-           data reduction: None, estimator: Decision Tree, bootstrap: False, smearing: True
-           R2: -0.0727, MSE: 80442777.0782, RMSE: 8968.9897, MAE: 760.2306
-22:10:46 - Model fit 7 of 64 done!
-           data reduction: None, estimator: Decision Tree, bootstrap: False, smearing: False
-           R2: -6.6007, MSE: 569987309.769, RMSE: 23874.407, MAE: 1175.0
-22:14:07 - Model fit 8 of 64 done!
-           data reduction: None, estimator: KNN_n3, bootstrap: True, smearing: True
-           R2: -0.0724, MSE: 80419402.2677, RMSE: 8967.6866, MAE: 755.8476
-22:14:55 - Model fit 9 of 64 done!
-           data reduction: None, estimator: KNN_n3, bootstrap: True, smearing: False
-           R2: -0.0695, MSE: 80205912.4915, RMSE: 8955.7754, MAE: 924.3333
-22:17:24 - Model fit 10 of 64 done!
-           data reduction: None, estimator: KNN_n3, bootstrap: False, smearing: True
-           R2: -0.0724, MSE: 80419402.2677, RMSE: 8967.6866, MAE: 755.8476
-22:17:59 - Model fit 11 of 64 done!
-           data reduction: None, estimator: KNN_n3, bootstrap: False, smearing: False
-           R2: -0.0695, MSE: 80205912.4915, RMSE: 8955.7754, MAE: 924.3333
-
------- NEW LOGGER 2022-05-18 ----------------------------------------------
-22:41:11 - Model fit 0 of 64 done!
-           data reduction: None, estimator: Ordinary Least Squares, bootstrap: True, smearing: True
-           R2: -0.0721, MSE: 80395500.9652, RMSE: 8966.3538, MAE: 751.7082
-22:41:14 - Model fit 1 of 64 done!
-           data reduction: None, estimator: Ordinary Least Squares, bootstrap: True, smearing: False
-           R2: -26.7923, MSE: 2084190510.3608, RMSE: 45652.9354, MAE: 1562.2822
-22:41:16 - Model fit 2 of 64 done!
-           data reduction: None, estimator: Ordinary Least Squares, bootstrap: False, smearing: True
-           R2: -0.0721, MSE: 80395500.9652, RMSE: 8966.3538, MAE: 751.7082
-
------- NEW LOGGER 2022-05-18 ----------------------------------------------
-22:41:40 - Model fit 0 of 64 done!
-           data reduction: None, estimator: Ordinary Least Squares, bootstrap: True, smearing: True
-           R2: -0.0721, MSE: 80395500.9652, RMSE: 8966.3538, MAE: 751.7082
-22:41:42 - Model fit 1 of 64 done!
-           data reduction: None, estimator: Ordinary Least Squares, bootstrap: True, smearing: False
-           R2: -26.7923, MSE: 2084190510.3608, RMSE: 45652.9354, MAE: 1562.2822
-22:41:44 - Model fit 2 of 64 done!
-           data reduction: None, estimator: Ordinary Least Squares, bootstrap: False, smearing: True
-           R2: -0.0721, MSE: 80395500.9652, RMSE: 8966.3538, MAE: 751.7082
-22:41:46 - Model fit 3 of 64 done!
-           data reduction: None, estimator: Ordinary Least Squares, bootstrap: False, smearing: False
-           R2: -26.7923, MSE: 2084190510.3608, RMSE: 45652.9354, MAE: 1562.2822
-22:42:39 - Model fit 4 of 64 done!
-           data reduction: None, estimator: Decision Tree, bootstrap: True, smearing: True
-           R2: -0.0727, MSE: 80442733.0166, RMSE: 8968.9873, MAE: 760.1836
-22:45:36 - Model fit 5 of 64 done!
-           data reduction: None, estimator: Decision Tree, bootstrap: True, smearing: False
-           R2: -4.3234, MSE: 399214235.2292, RMSE: 19980.3462, MAE: 1160.0
-22:46:25 - Model fit 6 of 64 done!
-           data reduction: None, estimator: Decision Tree, bootstrap: False, smearing: True
-           R2: -0.0727, MSE: 80442777.0782, RMSE: 8968.9897, MAE: 760.2306
-22:49:11 - Model fit 7 of 64 done!
-           data reduction: None, estimator: Decision Tree, bootstrap: False, smearing: False
-           R2: -6.6007, MSE: 569987309.769, RMSE: 23874.407, MAE: 1175.0
-22:51:39 - Model fit 8 of 64 done!
-           data reduction: None, estimator: KNN_n3, bootstrap: True, smearing: True
-           R2: -0.0724, MSE: 80419402.2677, RMSE: 8967.6866, MAE: 755.8476
-22:52:14 - Model fit 9 of 64 done!
-           data reduction: None, estimator: KNN_n3, bootstrap: True, smearing: False
-           R2: -0.0695, MSE: 80205912.4915, RMSE: 8955.7754, MAE: 924.3333
-22:54:42 - Model fit 10 of 64 done!
-           data reduction: None, estimator: KNN_n3, bootstrap: False, smearing: True
-           R2: -0.0724, MSE: 80419402.2677, RMSE: 8967.6866, MAE: 755.8476
-22:55:17 - Model fit 11 of 64 done!
-           data reduction: None, estimator: KNN_n3, bootstrap: False, smearing: False
-           R2: -0.0695, MSE: 80205912.4915, RMSE: 8955.7754, MAE: 924.3333
-23:45:12 - Model fit 12 of 64 done!
-           data reduction: None, estimator: Random Forest, bootstrap: True, smearing: True
-           R2: -0.0726, MSE: 80438598.6865, RMSE: 8968.7568, MAE: 760.0013
-02:23:46 - Model fit 13 of 64 done!
-           data reduction: None, estimator: Random Forest, bootstrap: True, smearing: False
-           R2: -0.7602, MSE: 132003599.5534, RMSE: 11489.2819, MAE: 1743.45
-03:13:59 - Model fit 14 of 64 done!
-           data reduction: None, estimator: Random Forest, bootstrap: False, smearing: True
-           R2: -0.0726, MSE: 80438560.1557, RMSE: 8968.7547, MAE: 759.8619
-05:52:48 - Model fit 15 of 64 done!
-           data reduction: None, estimator: Random Forest, bootstrap: False, smearing: False
-           R2: -0.6689, MSE: 125156080.7988, RMSE: 11187.3179, MAE: 1741.38
-
------- NEW LOGGER 2022-05-19 ----------------------------------------------
-09:04:42 - Model fit 0 of 48 done!
-           data reduction: ipca, estimator: Ordinary Least Squares, bootstrap: True, smearing: True
-           R2: -0.0721, MSE: 80395500.9652, RMSE: 8966.3538, MAE: 751.7082
-09:04:50 - Model fit 1 of 48 done!
-           data reduction: ipca, estimator: Ordinary Least Squares, bootstrap: True, smearing: False
-           R2: -26.7923, MSE: 2084190510.3608, RMSE: 45652.9354, MAE: 1562.2822
-09:04:58 - Model fit 2 of 48 done!
-           data reduction: ipca, estimator: Ordinary Least Squares, bootstrap: False, smearing: True
-           R2: -0.0721, MSE: 80395500.9652, RMSE: 8966.3538, MAE: 751.7082
-09:05:06 - Model fit 3 of 48 done!
-           data reduction: ipca, estimator: Ordinary Least Squares, bootstrap: False, smearing: False
+20:35:39 - Model fit 4 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: False, smearing: False
            R2: -26.7923, MSE: 2084190510.3608, RMSE: 45652.9354, MAE: 1562.2822
 
------- NEW LOGGER 2022-05-19 ----------------------------------------------
-09:07:52 - Model fit 0 of 12 done!
-           data reduction: ipca, estimator: Ordinary Least Squares, bootstrap: True, smearing: True
+------ NEW LOGGER 2022-05-26 ----------------------------------------------
+23:14:15 - Start of create_dataset()
+23:14:15 - Read data from csv files
+23:16:03 - Join Data
+23:16:05 - Write joined
+23:16:09 - End of create_dataset!
+23:16:10 - Start of pre_process_track_listens()
+23:16:10 - Read Data
+23:16:13 - test size of .2
+23:16:19 - 0 cells have missing data
+23:16:20 - mean: 2326.232456397565, skew: 24.797295548817253, kurt: 1089.9536671595145 median: 763.0
+23:16:25 - plot 1 in track listens folder
+23:16:25 - plot 2 in track listens folder
+23:16:26 - 1 rows have 0 track_listens, cannot be np.log(x)
+23:16:27 - log transform outcome variable
+23:16:27 - After np.log() => mean: 6.657756811337761, skew: 0.07578713081775797, kurt: 0.16198503358400984, median: 6.637258031284457
+23:16:28 - plot 3 in track listens folder
+23:16:29 - plot 4 in track listens folder
+23:16:38 - 84415 instances exceed at least one column by IQR, that's 0.9901123648220694
+23:16:38 - On average, an instance fails 21.2319848368181 columns, with std of 19.56132547891326
+23:16:38 - Calculate Mahalanobis Distance
+23:21:30 - 15401 instances fail Mahalanobis on .05, that is 0.18063993994698443 of data
+23:21:31 - End of data preprocess, saving data
+23:21:34 - End of pre_process_track_listens()
+23:21:34 - Start of album date released
+23:21:37 - 36280 missing dates, that is 0.34042074051832527
+23:21:39 - 9450 albums have missing dates, that is 0.6361922714420358
+23:21:43 - test size of .2
+23:21:47 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026, min: 1835, max: 44254
+23:21:47 - mean: 1654306535.1682048, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+23:21:56 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
+23:21:56 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
+23:24:23 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
+23:24:23 - End of data preprocess, saving data
+23:24:25 - End of pre_process_album_date_released()
+23:24:25 - Reducing datasets ...
+23:57:13 - no. cols of X_train for track_listens after lle: 2
+23:59:00 - no. cols of X_train for track_listens after elasticnet: 176
+23:59:04 - no. cols of X_train for track_listens after pca99: 293
+23:59:08 - no. cols of X_train for track_listens after pca95: 160
+00:03:05 - no. cols of X_train for album_date_released after lle: 2
+00:03:57 - no. cols of X_train for album_date_released after elasticnet: 163
+00:04:00 - no. cols of X_train for album_date_released after pca99: 297
+00:04:03 - no. cols of X_train for album_date_released after pca95: 164
+00:04:04 - Reducing datasets done!
+
+------ NEW LOGGER 2022-05-27 ----------------------------------------------
+02:42:10 - Model fit 1 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: True, smearing: True
            R2: -0.0721, MSE: 80395500.9652, RMSE: 8966.3538, MAE: 751.7082
-09:08:53 - Model fit 1 of 12 done!
-           data reduction: ipca, estimator: Decision Tree, bootstrap: True, smearing: True
-           R2: -0.0727, MSE: 80442733.0166, RMSE: 8968.9873, MAE: 760.1836
-09:13:54 - Model fit 2 of 12 done!
-           data reduction: ipca, estimator: KNN_n3, bootstrap: True, smearing: True
-           R2: -0.0724, MSE: 80419402.2677, RMSE: 8967.6866, MAE: 755.8476
-
------- NEW LOGGER 2022-05-19 ----------------------------------------------
-09:18:22 - Model fit 0 of 12 done!
-           data reduction: ipca, estimator: Ordinary Least Squares, bootstrap: True, smearing: True
+02:42:12 - Model fit 2 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: True, smearing: False
+           R2: -26.7923, MSE: 2084190510.3608, RMSE: 45652.9354, MAE: 1562.2822
+02:42:15 - Model fit 3 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: False, smearing: True
            R2: -0.0721, MSE: 80395500.9652, RMSE: 8966.3538, MAE: 751.7082
-09:19:37 - Model fit 1 of 12 done!
-           data reduction: ipca, estimator: Decision Tree, bootstrap: True, smearing: True
-           R2: -0.0727, MSE: 80442733.0166, RMSE: 8968.9873, MAE: 760.1836
-09:23:54 - Model fit 2 of 12 done!
-           data reduction: ipca, estimator: KNN_n3, bootstrap: True, smearing: True
-           R2: -0.0724, MSE: 80419402.2677, RMSE: 8967.6866, MAE: 755.8476
-10:28:25 - Model fit 3 of 12 done!
-           data reduction: ipca, estimator: Random Forest, bootstrap: True, smearing: True
-           R2: -0.0726, MSE: 80438599.6716, RMSE: 8968.7569, MAE: 760.0391
+02:42:17 - Model fit 4 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: False, smearing: False
+           R2: -26.7923, MSE: 2084190510.3608, RMSE: 45652.9354, MAE: 1562.2822
+02:42:41 - Model fit 5 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Decision Tree, bootstrap: True, smearing: True
+           R2: -0.072, MSE: 80393462.8159, RMSE: 8966.2402, MAE: 750.3102
+02:43:07 - Model fit 6 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Decision Tree, bootstrap: True, smearing: False
+           R2: 0.0085, MSE: 74353166.2507, RMSE: 8622.8282, MAE: 1318.5207
+02:43:30 - Model fit 7 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Decision Tree, bootstrap: False, smearing: True
+           R2: -0.072, MSE: 80393462.8159, RMSE: 8966.2402, MAE: 750.3102
+02:43:56 - Model fit 8 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Decision Tree, bootstrap: False, smearing: False
+           R2: 0.0085, MSE: 74353166.2507, RMSE: 8622.8282, MAE: 1318.5207
+02:47:19 - Model fit 9 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: KNN, bootstrap: True, smearing: True
+           R2: -0.0721, MSE: 80399282.3442, RMSE: 8966.5647, MAE: 751.518
+02:48:07 - Model fit 10 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: KNN, bootstrap: True, smearing: False
+           R2: 0.0142, MSE: 73928804.8651, RMSE: 8598.1861, MAE: 1094.3125
+02:51:26 - Model fit 11 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: KNN, bootstrap: False, smearing: True
+           R2: -0.0721, MSE: 80399282.3442, RMSE: 8966.5647, MAE: 751.518
+02:52:17 - Model fit 12 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: KNN, bootstrap: False, smearing: False
+           R2: 0.0142, MSE: 73928804.8651, RMSE: 8598.1861, MAE: 1094.3125
+03:04:18 - Model fit 13 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Random Forest, bootstrap: True, smearing: True
+           R2: -0.072, MSE: 80394617.8856, RMSE: 8966.3046, MAE: 750.5701
+03:18:04 - Model fit 14 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Random Forest, bootstrap: True, smearing: False
+           R2: 0.0214, MSE: 73385531.7995, RMSE: 8566.5356, MAE: 1453.5264
+03:30:32 - Model fit 15 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Random Forest, bootstrap: False, smearing: True
+           R2: -0.072, MSE: 80394617.8856, RMSE: 8966.3046, MAE: 750.5701
+03:44:24 - Model fit 16 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Random Forest, bootstrap: False, smearing: False
+           R2: 0.0214, MSE: 73385531.7995, RMSE: 8566.5356, MAE: 1453.5264
+03:44:25 - Model fit 17 of 80 done!
+           var: track_listens, data reduction: pca99, estimator: Ordinary Least Squares, bootstrap: True, smearing: True
+           R2: -0.0721, MSE: 80395035.4431, RMSE: 8966.3279, MAE: 751.304
+03:44:26 - Model fit 18 of 80 done!
+           var: track_listens, data reduction: pca99, estimator: Ordinary Least Squares, bootstrap: True, smearing: False
+           R2: -0.2722, MSE: 95402610.1696, RMSE: 9767.426, MAE: 1539.6039
+03:44:28 - Model fit 19 of 80 done!
+           var: track_listens, data reduction: pca99, estimator: Ordinary Least Squares, bootstrap: False, smearing: True
+           R2: -0.0721, MSE: 80395035.4431, RMSE: 8966.3279, MAE: 751.304
+03:44:29 - Model fit 20 of 80 done!
+           var: track_listens, data reduction: pca99, estimator: Ordinary Least Squares, bootstrap: False, smearing: False
+           R2: -0.2722, MSE: 95402610.1696, RMSE: 9767.426, MAE: 1539.6039
+03:44:47 - Model fit 21 of 80 done!
+           var: track_listens, data reduction: pca99, estimator: Decision Tree, bootstrap: True, smearing: True
+           R2: -0.072, MSE: 80392096.1915, RMSE: 8966.164, MAE: 750.0741
+03:45:06 - Model fit 22 of 80 done!
+           var: track_listens, data reduction: pca99, estimator: Decision Tree, bootstrap: True, smearing: False
+           R2: 0.0081, MSE: 74387412.0564, RMSE: 8624.8137, MAE: 1453.9572
+03:45:24 - Model fit 23 of 80 done!
+           var: track_listens, data reduction: pca99, estimator: Decision Tree, bootstrap: False, smearing: True
+           R2: -0.072, MSE: 80392096.1915, RMSE: 8966.164, MAE: 750.0741
+03:45:45 - Model fit 24 of 80 done!
+           var: track_listens, data reduction: pca99, estimator: Decision Tree, bootstrap: False, smearing: False
+           R2: 0.0081, MSE: 74387412.0564, RMSE: 8624.8137, MAE: 1453.9572
+03:48:40 - Model fit 25 of 80 done!
+           var: track_listens, data reduction: pca99, estimator: KNN, bootstrap: True, smearing: True
+           R2: -0.0721, MSE: 80399364.2215, RMSE: 8966.5693, MAE: 751.5417
+03:49:21 - Model fit 26 of 80 done!
+           var: track_listens, data reduction: pca99, estimator: KNN, bootstrap: True, smearing: False
+           R2: 0.0152, MSE: 73851344.6564, RMSE: 8593.6805, MAE: 1098.625
+03:52:15 - Model fit 27 of 80 done!
+           var: track_listens, data reduction: pca99, estimator: KNN, bootstrap: False, smearing: True
+           R2: -0.0721, MSE: 80399364.2215, RMSE: 8966.5693, MAE: 751.5417
+03:52:56 - Model fit 28 of 80 done!
+           var: track_listens, data reduction: pca99, estimator: KNN, bootstrap: False, smearing: False
+           R2: 0.0152, MSE: 73851344.6564, RMSE: 8593.6805, MAE: 1098.625
+04:01:21 - Model fit 29 of 80 done!
+           var: track_listens, data reduction: pca99, estimator: Random Forest, bootstrap: True, smearing: True
+           R2: -0.072, MSE: 80393226.6067, RMSE: 8966.227, MAE: 750.3916
+04:10:51 - Model fit 30 of 80 done!
+           var: track_listens, data reduction: pca99, estimator: Random Forest, bootstrap: True, smearing: False
+           R2: 0.0154, MSE: 73837351.1776, RMSE: 8592.8663, MAE: 1565.4003
+04:19:13 - Model fit 31 of 80 done!
+           var: track_listens, data reduction: pca99, estimator: Random Forest, bootstrap: False, smearing: True
+           R2: -0.072, MSE: 80393226.6067, RMSE: 8966.227, MAE: 750.3916
+04:28:42 - Model fit 32 of 80 done!
+           var: track_listens, data reduction: pca99, estimator: Random Forest, bootstrap: False, smearing: False
+           R2: 0.0154, MSE: 73837351.1776, RMSE: 8592.8663, MAE: 1565.4003
+04:28:42 - Model fit 33 of 80 done!
+           var: track_listens, data reduction: pca95, estimator: Ordinary Least Squares, bootstrap: True, smearing: True
+           R2: -0.072, MSE: 80393998.7834, RMSE: 8966.2701, MAE: 750.7048
+04:28:43 - Model fit 34 of 80 done!
+           var: track_listens, data reduction: pca95, estimator: Ordinary Least Squares, bootstrap: True, smearing: False
+           R2: 0.0107, MSE: 74188614.5453, RMSE: 8613.2813, MAE: 1549.9031
+04:28:44 - Model fit 35 of 80 done!
+           var: track_listens, data reduction: pca95, estimator: Ordinary Least Squares, bootstrap: False, smearing: True
+           R2: -0.072, MSE: 80393998.7834, RMSE: 8966.2701, MAE: 750.7048
+04:28:44 - Model fit 36 of 80 done!
+           var: track_listens, data reduction: pca95, estimator: Ordinary Least Squares, bootstrap: False, smearing: False
+           R2: 0.0107, MSE: 74188614.5453, RMSE: 8613.2813, MAE: 1549.9031
+04:28:54 - Model fit 37 of 80 done!
+           var: track_listens, data reduction: pca95, estimator: Decision Tree, bootstrap: True, smearing: True
+           R2: -0.072, MSE: 80391916.3024, RMSE: 8966.1539, MAE: 750.0122
+04:29:04 - Model fit 38 of 80 done!
+           var: track_listens, data reduction: pca95, estimator: Decision Tree, bootstrap: True, smearing: False
+           R2: 0.0091, MSE: 74308511.5876, RMSE: 8620.2385, MAE: 1464.9668
+04:29:14 - Model fit 39 of 80 done!
+           var: track_listens, data reduction: pca95, estimator: Decision Tree, bootstrap: False, smearing: True
+           R2: -0.072, MSE: 80391916.3024, RMSE: 8966.1539, MAE: 750.0122
+04:29:25 - Model fit 40 of 80 done!
+           var: track_listens, data reduction: pca95, estimator: Decision Tree, bootstrap: False, smearing: False
+           R2: 0.0091, MSE: 74308511.5876, RMSE: 8620.2385, MAE: 1464.9668
+04:31:57 - Model fit 41 of 80 done!
+           var: track_listens, data reduction: pca95, estimator: KNN, bootstrap: True, smearing: True
+           R2: -0.0721, MSE: 80398886.6336, RMSE: 8966.5426, MAE: 751.3838
+04:32:32 - Model fit 42 of 80 done!
+           var: track_listens, data reduction: pca95, estimator: KNN, bootstrap: True, smearing: False
+           R2: 0.0149, MSE: 73875620.4773, RMSE: 8595.0928, MAE: 1089.625
+04:35:04 - Model fit 43 of 80 done!
+           var: track_listens, data reduction: pca95, estimator: KNN, bootstrap: False, smearing: True
+           R2: -0.0721, MSE: 80398886.6336, RMSE: 8966.5426, MAE: 751.3838
+04:35:40 - Model fit 44 of 80 done!
+           var: track_listens, data reduction: pca95, estimator: KNN, bootstrap: False, smearing: False
+           R2: 0.0149, MSE: 73875620.4773, RMSE: 8595.0928, MAE: 1089.625
+04:40:15 - Model fit 45 of 80 done!
+           var: track_listens, data reduction: pca95, estimator: Random Forest, bootstrap: True, smearing: True
+           R2: -0.072, MSE: 80393118.6883, RMSE: 8966.221, MAE: 750.3915
+04:45:16 - Model fit 46 of 80 done!
+           var: track_listens, data reduction: pca95, estimator: Random Forest, bootstrap: True, smearing: False
+           R2: 0.016, MSE: 73791231.5291, RMSE: 8590.1823, MAE: 1557.1303
+04:49:48 - Model fit 47 of 80 done!
+           var: track_listens, data reduction: pca95, estimator: Random Forest, bootstrap: False, smearing: True
+           R2: -0.072, MSE: 80393118.6883, RMSE: 8966.221, MAE: 750.3915
+04:54:51 - Model fit 48 of 80 done!
+           var: track_listens, data reduction: pca95, estimator: Random Forest, bootstrap: False, smearing: False
+           R2: 0.016, MSE: 73791231.5291, RMSE: 8590.1823, MAE: 1557.1303
+04:54:51 - Model fit 49 of 80 done!
+           var: track_listens, data reduction: elasticnet, estimator: Ordinary Least Squares, bootstrap: True, smearing: True
+           R2: -0.072, MSE: 80394675.5239, RMSE: 8966.3078, MAE: 751.304
+04:54:52 - Model fit 50 of 80 done!
+           var: track_listens, data reduction: elasticnet, estimator: Ordinary Least Squares, bootstrap: True, smearing: False
+           R2: -0.5299, MSE: 114731477.4248, RMSE: 10711.278, MAE: 1526.8266
+04:54:52 - Model fit 51 of 80 done!
+           var: track_listens, data reduction: elasticnet, estimator: Ordinary Least Squares, bootstrap: False, smearing: True
+           R2: -0.072, MSE: 80394675.5239, RMSE: 8966.3078, MAE: 751.304
+04:54:53 - Model fit 52 of 80 done!
+           var: track_listens, data reduction: elasticnet, estimator: Ordinary Least Squares, bootstrap: False, smearing: False
+           R2: -0.5299, MSE: 114731477.4248, RMSE: 10711.278, MAE: 1526.8266
+04:55:03 - Model fit 53 of 80 done!
+           var: track_listens, data reduction: elasticnet, estimator: Decision Tree, bootstrap: True, smearing: True
+           R2: -0.072, MSE: 80392906.9271, RMSE: 8966.2092, MAE: 750.7493
+04:55:13 - Model fit 54 of 80 done!
+           var: track_listens, data reduction: elasticnet, estimator: Decision Tree, bootstrap: True, smearing: False
+           R2: 0.0132, MSE: 74000464.135, RMSE: 8602.3522, MAE: 1391.7637
+04:55:24 - Model fit 55 of 80 done!
+           var: track_listens, data reduction: elasticnet, estimator: Decision Tree, bootstrap: False, smearing: True
+           R2: -0.072, MSE: 80392906.9271, RMSE: 8966.2092, MAE: 750.7493
+04:55:34 - Model fit 56 of 80 done!
+           var: track_listens, data reduction: elasticnet, estimator: Decision Tree, bootstrap: False, smearing: False
+           R2: 0.0132, MSE: 74000464.135, RMSE: 8602.3522, MAE: 1391.7637
+04:58:12 - Model fit 57 of 80 done!
+           var: track_listens, data reduction: elasticnet, estimator: KNN, bootstrap: True, smearing: True
+           R2: -0.0721, MSE: 80400151.0959, RMSE: 8966.6131, MAE: 751.5825
+04:58:48 - Model fit 58 of 80 done!
+           var: track_listens, data reduction: elasticnet, estimator: KNN, bootstrap: True, smearing: False
+           R2: 0.0111, MSE: 74162287.5385, RMSE: 8611.7529, MAE: 1121.6875
+05:01:20 - Model fit 59 of 80 done!
+           var: track_listens, data reduction: elasticnet, estimator: KNN, bootstrap: False, smearing: True
+           R2: -0.0721, MSE: 80400151.0959, RMSE: 8966.6131, MAE: 751.5825
+05:01:56 - Model fit 60 of 80 done!
+           var: track_listens, data reduction: elasticnet, estimator: KNN, bootstrap: False, smearing: False
+           R2: 0.0111, MSE: 74162287.5385, RMSE: 8611.7529, MAE: 1121.6875
+05:06:28 - Model fit 61 of 80 done!
+           var: track_listens, data reduction: elasticnet, estimator: Random Forest, bootstrap: True, smearing: True
+           R2: -0.072, MSE: 80394196.4156, RMSE: 8966.2811, MAE: 750.493
+05:11:24 - Model fit 62 of 80 done!
+           var: track_listens, data reduction: elasticnet, estimator: Random Forest, bootstrap: True, smearing: False
+           R2: 0.0217, MSE: 73361367.9714, RMSE: 8565.1251, MAE: 1481.7376
+05:15:57 - Model fit 63 of 80 done!
+           var: track_listens, data reduction: elasticnet, estimator: Random Forest, bootstrap: False, smearing: True
+           R2: -0.072, MSE: 80394196.4156, RMSE: 8966.2811, MAE: 750.493
+05:20:49 - Model fit 64 of 80 done!
+           var: track_listens, data reduction: elasticnet, estimator: Random Forest, bootstrap: False, smearing: False
+           R2: 0.0217, MSE: 73361367.9714, RMSE: 8565.1251, MAE: 1481.7376
+05:20:49 - Model fit 65 of 80 done!
+           var: track_listens, data reduction: lle, estimator: Ordinary Least Squares, bootstrap: True, smearing: True
+           R2: -0.0719, MSE: 80386511.9778, RMSE: 8965.8526, MAE: 747.8404
+05:20:49 - Model fit 66 of 80 done!
+           var: track_listens, data reduction: lle, estimator: Ordinary Least Squares, bootstrap: True, smearing: False
+           R2: -0.0001, MSE: 75002191.5585, RMSE: 8660.3806, MAE: 1747.193
+05:20:49 - Model fit 67 of 80 done!
+           var: track_listens, data reduction: lle, estimator: Ordinary Least Squares, bootstrap: False, smearing: True
+           R2: -0.0719, MSE: 80386511.9778, RMSE: 8965.8526, MAE: 747.8404
+05:20:49 - Model fit 68 of 80 done!
+           var: track_listens, data reduction: lle, estimator: Ordinary Least Squares, bootstrap: False, smearing: False
+           R2: -0.0001, MSE: 75002191.5585, RMSE: 8660.3806, MAE: 1747.193
+05:20:49 - Model fit 69 of 80 done!
+           var: track_listens, data reduction: lle, estimator: Decision Tree, bootstrap: True, smearing: True
+           R2: -0.0719, MSE: 80387110.1764, RMSE: 8965.8859, MAE: 749.0201
+05:20:50 - Model fit 70 of 80 done!
+           var: track_listens, data reduction: lle, estimator: Decision Tree, bootstrap: True, smearing: False
+           R2: -0.0001, MSE: 75002501.8444, RMSE: 8660.3985, MAE: 1726.6063
+05:20:50 - Model fit 71 of 80 done!
+           var: track_listens, data reduction: lle, estimator: Decision Tree, bootstrap: False, smearing: True
+           R2: -0.0719, MSE: 80387110.1764, RMSE: 8965.8859, MAE: 749.0201
+05:20:50 - Model fit 72 of 80 done!
+           var: track_listens, data reduction: lle, estimator: Decision Tree, bootstrap: False, smearing: False
+           R2: -0.0001, MSE: 75002501.8444, RMSE: 8660.3985, MAE: 1726.6063
+05:20:50 - Model fit 73 of 80 done!
+           var: track_listens, data reduction: lle, estimator: KNN, bootstrap: True, smearing: True
+           R2: -0.0721, MSE: 80395148.4207, RMSE: 8966.3342, MAE: 750.0709
+05:20:51 - Model fit 74 of 80 done!
+           var: track_listens, data reduction: lle, estimator: KNN, bootstrap: True, smearing: False
+           R2: -0.0352, MSE: 77629624.4033, RMSE: 8810.7675, MAE: 1310.0
+05:20:51 - Model fit 75 of 80 done!
+           var: track_listens, data reduction: lle, estimator: KNN, bootstrap: False, smearing: True
+           R2: -0.0721, MSE: 80395148.4207, RMSE: 8966.3342, MAE: 750.0709
+05:20:51 - Model fit 76 of 80 done!
+           var: track_listens, data reduction: lle, estimator: KNN, bootstrap: False, smearing: False
+           R2: -0.0352, MSE: 77629624.4033, RMSE: 8810.7675, MAE: 1310.0
+05:20:54 - Model fit 77 of 80 done!
+           var: track_listens, data reduction: lle, estimator: Random Forest, bootstrap: True, smearing: True
+           R2: -0.0719, MSE: 80387144.2405, RMSE: 8965.8878, MAE: 748.5216
+05:20:57 - Model fit 78 of 80 done!
+           var: track_listens, data reduction: lle, estimator: Random Forest, bootstrap: True, smearing: False
+           R2: 0.0008, MSE: 74928092.2004, RMSE: 8656.1014, MAE: 1714.0681
+05:21:00 - Model fit 79 of 80 done!
+           var: track_listens, data reduction: lle, estimator: Random Forest, bootstrap: False, smearing: True
+           R2: -0.0719, MSE: 80387144.2405, RMSE: 8965.8878, MAE: 748.5216
+05:21:03 - Model fit 80 of 80 done!
+           var: track_listens, data reduction: lle, estimator: Random Forest, bootstrap: False, smearing: False
+           R2: 0.0008, MSE: 74928092.2004, RMSE: 8656.1014, MAE: 1714.0681
+05:21:04 - Input contains NaN, infinity or a value too large for dtype('float64').
+05:21:04 - Album dates: Following params did not work
+05:21:04 - ('no_datared', ('Ordinary Least Squares', LinearRegression()), True, True)
+05:21:06 - Model fit 2 of 80 done!
+           var: album date_released, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: True, square: False
+           R2: -47.9182, MSE: 145468990.6819, RMSE: 12061.0526, MAE: 886.751
+05:21:08 - Input contains NaN, infinity or a value too large for dtype('float64').
+05:21:08 - Album dates: Following params did not work
+05:21:08 - ('no_datared', ('Ordinary Least Squares', LinearRegression()), False, True)
+05:21:09 - Model fit 4 of 80 done!
+           var: album date_released, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: False, square: False
+           R2: -47.9182, MSE: 145468990.6819, RMSE: 12061.0526, MAE: 886.751
+05:21:26 - Model fit 5 of 80 done!
+           var: album date_released, data reduction: no_datared, estimator: Decision Tree, bootstrap: True, square: True
+           R2: 0.0696, MSE: 2766835.973, RMSE: 1663.3809, MAE: 866.8069
+05:21:42 - Model fit 6 of 80 done!
+           var: album date_released, data reduction: no_datared, estimator: Decision Tree, bootstrap: True, square: False
+           R2: 0.067, MSE: 2774538.7665, RMSE: 1665.6947, MAE: 860.4373
+05:21:59 - Model fit 7 of 80 done!
+           var: album date_released, data reduction: no_datared, estimator: Decision Tree, bootstrap: False, square: True
+           R2: 0.0696, MSE: 2766835.973, RMSE: 1663.3809, MAE: 866.8069
+05:22:15 - Model fit 8 of 80 done!
+           var: album date_released, data reduction: no_datared, estimator: Decision Tree, bootstrap: False, square: False
+           R2: 0.067, MSE: 2774538.7665, RMSE: 1665.6947, MAE: 860.4373
+05:22:36 - Model fit 9 of 80 done!
+           var: album date_released, data reduction: no_datared, estimator: KNN, bootstrap: True, square: True
+           R2: 0.1177, MSE: 2623696.4397, RMSE: 1619.7828, MAE: 831.549
+05:22:57 - Model fit 10 of 80 done!
+           var: album date_released, data reduction: no_datared, estimator: KNN, bootstrap: True, square: False
+           R2: 0.123, MSE: 2607838.3942, RMSE: 1614.8803, MAE: 837.0625
+05:23:18 - Model fit 11 of 80 done!
+           var: album date_released, data reduction: no_datared, estimator: KNN, bootstrap: False, square: True
+           R2: 0.1177, MSE: 2623696.4397, RMSE: 1619.7828, MAE: 831.549
+05:23:39 - Model fit 12 of 80 done!
+           var: album date_released, data reduction: no_datared, estimator: KNN, bootstrap: False, square: False
+           R2: 0.123, MSE: 2607838.3942, RMSE: 1614.8803, MAE: 837.0625
+05:31:21 - Model fit 13 of 80 done!
+           var: album date_released, data reduction: no_datared, estimator: Random Forest, bootstrap: True, square: True
+           R2: 0.0917, MSE: 2700965.7725, RMSE: 1643.4615, MAE: 849.783
+05:39:05 - Model fit 14 of 80 done!
+           var: album date_released, data reduction: no_datared, estimator: Random Forest, bootstrap: True, square: False
+           R2: 0.0946, MSE: 2692416.3566, RMSE: 1640.8584, MAE: 856.8122
+05:46:47 - Model fit 15 of 80 done!
+           var: album date_released, data reduction: no_datared, estimator: Random Forest, bootstrap: False, square: True
+           R2: 0.0917, MSE: 2700965.7725, RMSE: 1643.4615, MAE: 849.783
+05:54:33 - Model fit 16 of 80 done!
+           var: album date_released, data reduction: no_datared, estimator: Random Forest, bootstrap: False, square: False
+           R2: 0.0946, MSE: 2692416.3566, RMSE: 1640.8584, MAE: 856.8122
+05:54:34 - Input contains NaN, infinity or a value too large for dtype('float64').
+05:54:34 - Album dates: Following params did not work
+05:54:34 - ('pca99', ('Ordinary Least Squares', LinearRegression()), True, True)
+05:54:35 - Model fit 18 of 80 done!
+           var: album date_released, data reduction: pca99, estimator: Ordinary Least Squares, bootstrap: True, square: False
+           R2: -1.4342, MSE: 7238630.2647, RMSE: 2690.4703, MAE: 873.0291
+05:54:35 - Input contains NaN, infinity or a value too large for dtype('float64').
+05:54:35 - Album dates: Following params did not work
+05:54:35 - ('pca99', ('Ordinary Least Squares', LinearRegression()), False, True)
+05:54:36 - Model fit 20 of 80 done!
+           var: album date_released, data reduction: pca99, estimator: Ordinary Least Squares, bootstrap: False, square: False
+           R2: -1.4342, MSE: 7238630.2647, RMSE: 2690.4703, MAE: 873.0291
+05:54:47 - Model fit 21 of 80 done!
+           var: album date_released, data reduction: pca99, estimator: Decision Tree, bootstrap: True, square: True
+           R2: 0.0287, MSE: 2888336.8946, RMSE: 1699.5108, MAE: 896.7964
+05:54:58 - Model fit 22 of 80 done!
+           var: album date_released, data reduction: pca99, estimator: Decision Tree, bootstrap: True, square: False
+           R2: 0.0299, MSE: 2884949.9231, RMSE: 1698.514, MAE: 908.2703
+05:55:10 - Model fit 23 of 80 done!
+           var: album date_released, data reduction: pca99, estimator: Decision Tree, bootstrap: False, square: True
+           R2: 0.0287, MSE: 2888336.8946, RMSE: 1699.5108, MAE: 896.7964
+05:55:21 - Model fit 24 of 80 done!
+           var: album date_released, data reduction: pca99, estimator: Decision Tree, bootstrap: False, square: False
+           R2: 0.0299, MSE: 2884949.9231, RMSE: 1698.514, MAE: 908.2703
+05:55:39 - Model fit 25 of 80 done!
+           var: album date_released, data reduction: pca99, estimator: KNN, bootstrap: True, square: True
+           R2: 0.1204, MSE: 2615555.0932, RMSE: 1617.2678, MAE: 829.8879
+05:55:56 - Model fit 26 of 80 done!
+           var: album date_released, data reduction: pca99, estimator: KNN, bootstrap: True, square: False
+           R2: 0.1262, MSE: 2598447.6598, RMSE: 1611.9701, MAE: 833.0625
+05:56:13 - Model fit 27 of 80 done!
+           var: album date_released, data reduction: pca99, estimator: KNN, bootstrap: False, square: True
+           R2: 0.1204, MSE: 2615555.0932, RMSE: 1617.2678, MAE: 829.8879
+05:56:31 - Model fit 28 of 80 done!
+           var: album date_released, data reduction: pca99, estimator: KNN, bootstrap: False, square: False
+           R2: 0.1262, MSE: 2598447.6598, RMSE: 1611.9701, MAE: 833.0625
+06:01:28 - Model fit 29 of 80 done!
+           var: album date_released, data reduction: pca99, estimator: Random Forest, bootstrap: True, square: True
+           R2: 0.045, MSE: 2839977.2381, RMSE: 1685.2232, MAE: 887.7453
+06:06:26 - Model fit 30 of 80 done!
+           var: album date_released, data reduction: pca99, estimator: Random Forest, bootstrap: True, square: False
+           R2: 0.0466, MSE: 2835018.1769, RMSE: 1683.7512, MAE: 893.9848
+06:11:23 - Model fit 31 of 80 done!
+           var: album date_released, data reduction: pca99, estimator: Random Forest, bootstrap: False, square: True
+           R2: 0.045, MSE: 2839977.2381, RMSE: 1685.2232, MAE: 887.7453
+06:16:23 - Model fit 32 of 80 done!
+           var: album date_released, data reduction: pca99, estimator: Random Forest, bootstrap: False, square: False
+           R2: 0.0466, MSE: 2835018.1769, RMSE: 1683.7512, MAE: 893.9848
+06:16:23 - Model fit 33 of 80 done!
+           var: album date_released, data reduction: pca95, estimator: Ordinary Least Squares, bootstrap: True, square: True
+           R2: 0.0376, MSE: 2862045.0161, RMSE: 1691.758, MAE: 864.4999
+06:16:24 - Model fit 34 of 80 done!
+           var: album date_released, data reduction: pca95, estimator: Ordinary Least Squares, bootstrap: True, square: False
+           R2: 0.0501, MSE: 2824866.1869, RMSE: 1680.7338, MAE: 874.3312
+06:16:24 - Model fit 35 of 80 done!
+           var: album date_released, data reduction: pca95, estimator: Ordinary Least Squares, bootstrap: False, square: True
+           R2: 0.0376, MSE: 2862045.0161, RMSE: 1691.758, MAE: 864.4999
+06:16:24 - Model fit 36 of 80 done!
+           var: album date_released, data reduction: pca95, estimator: Ordinary Least Squares, bootstrap: False, square: False
+           R2: 0.0501, MSE: 2824866.1869, RMSE: 1680.7338, MAE: 874.3312
+06:16:30 - Model fit 37 of 80 done!
+           var: album date_released, data reduction: pca95, estimator: Decision Tree, bootstrap: True, square: True
+           R2: 0.0289, MSE: 2887802.5335, RMSE: 1699.3536, MAE: 897.4193
+06:16:36 - Model fit 38 of 80 done!
+           var: album date_released, data reduction: pca95, estimator: Decision Tree, bootstrap: True, square: False
+           R2: 0.0302, MSE: 2883900.6427, RMSE: 1698.2051, MAE: 908.2919
+06:16:42 - Model fit 39 of 80 done!
+           var: album date_released, data reduction: pca95, estimator: Decision Tree, bootstrap: False, square: True
+           R2: 0.0289, MSE: 2887802.5335, RMSE: 1699.3536, MAE: 897.4193
+06:16:48 - Model fit 40 of 80 done!
+           var: album date_released, data reduction: pca95, estimator: Decision Tree, bootstrap: False, square: False
+           R2: 0.0302, MSE: 2883900.6427, RMSE: 1698.2051, MAE: 908.2919
+06:17:03 - Model fit 41 of 80 done!
+           var: album date_released, data reduction: pca95, estimator: KNN, bootstrap: True, square: True
+           R2: 0.1193, MSE: 2619026.3708, RMSE: 1618.3406, MAE: 830.2139
+06:17:18 - Model fit 42 of 80 done!
+           var: album date_released, data reduction: pca95, estimator: KNN, bootstrap: True, square: False
+           R2: 0.1247, MSE: 2602984.9165, RMSE: 1613.3769, MAE: 834.3125
+06:17:33 - Model fit 43 of 80 done!
+           var: album date_released, data reduction: pca95, estimator: KNN, bootstrap: False, square: True
+           R2: 0.1193, MSE: 2619026.3708, RMSE: 1618.3406, MAE: 830.2139
+06:17:49 - Model fit 44 of 80 done!
+           var: album date_released, data reduction: pca95, estimator: KNN, bootstrap: False, square: False
+           R2: 0.1247, MSE: 2602984.9165, RMSE: 1613.3769, MAE: 834.3125
+06:20:30 - Model fit 45 of 80 done!
+           var: album date_released, data reduction: pca95, estimator: Random Forest, bootstrap: True, square: True
+           R2: 0.0441, MSE: 2842518.4878, RMSE: 1685.977, MAE: 888.5988
+06:23:15 - Model fit 46 of 80 done!
+           var: album date_released, data reduction: pca95, estimator: Random Forest, bootstrap: True, square: False
+           R2: 0.0465, MSE: 2835300.3377, RMSE: 1683.835, MAE: 895.7757
+06:25:58 - Model fit 47 of 80 done!
+           var: album date_released, data reduction: pca95, estimator: Random Forest, bootstrap: False, square: True
+           R2: 0.0441, MSE: 2842518.4878, RMSE: 1685.977, MAE: 888.5988
+06:28:42 - Model fit 48 of 80 done!
+           var: album date_released, data reduction: pca95, estimator: Random Forest, bootstrap: False, square: False
+           R2: 0.0465, MSE: 2835300.3377, RMSE: 1683.835, MAE: 895.7757
+06:28:43 - Input contains NaN, infinity or a value too large for dtype('float64').
+06:28:43 - Album dates: Following params did not work
+06:28:43 - ('elasticnet', ('Ordinary Least Squares', LinearRegression()), True, True)
+06:28:43 - Model fit 50 of 80 done!
+           var: album date_released, data reduction: elasticnet, estimator: Ordinary Least Squares, bootstrap: True, square: False
+           R2: -31.0139, MSE: 95200377.6646, RMSE: 9757.0681, MAE: 880.4763
+06:28:43 - Input contains NaN, infinity or a value too large for dtype('float64').
+06:28:43 - Album dates: Following params did not work
+06:28:43 - ('elasticnet', ('Ordinary Least Squares', LinearRegression()), False, True)
+06:28:44 - Model fit 52 of 80 done!
+           var: album date_released, data reduction: elasticnet, estimator: Ordinary Least Squares, bootstrap: False, square: False
+           R2: -31.0139, MSE: 95200377.6646, RMSE: 9757.0681, MAE: 880.4763
+06:28:49 - Model fit 53 of 80 done!
+           var: album date_released, data reduction: elasticnet, estimator: Decision Tree, bootstrap: True, square: True
+           R2: 0.064, MSE: 2783373.4403, RMSE: 1668.3445, MAE: 882.3632
+06:28:55 - Model fit 54 of 80 done!
+           var: album date_released, data reduction: elasticnet, estimator: Decision Tree, bootstrap: True, square: False
+           R2: 0.0579, MSE: 2801493.5805, RMSE: 1673.7663, MAE: 900.8085
+06:29:00 - Model fit 55 of 80 done!
+           var: album date_released, data reduction: elasticnet, estimator: Decision Tree, bootstrap: False, square: True
+           R2: 0.064, MSE: 2783373.4403, RMSE: 1668.3445, MAE: 882.3632
+06:29:05 - Model fit 56 of 80 done!
+           var: album date_released, data reduction: elasticnet, estimator: Decision Tree, bootstrap: False, square: False
+           R2: 0.0579, MSE: 2801493.5805, RMSE: 1673.7663, MAE: 900.8085
+06:29:21 - Model fit 57 of 80 done!
+           var: album date_released, data reduction: elasticnet, estimator: KNN, bootstrap: True, square: True
+           R2: 0.1372, MSE: 2565712.0997, RMSE: 1601.784, MAE: 813.8121
+06:29:36 - Model fit 58 of 80 done!
+           var: album date_released, data reduction: elasticnet, estimator: KNN, bootstrap: True, square: False
+           R2: 0.1434, MSE: 2547347.3531, RMSE: 1596.0412, MAE: 822.0
+06:29:51 - Model fit 59 of 80 done!
+           var: album date_released, data reduction: elasticnet, estimator: KNN, bootstrap: False, square: True
+           R2: 0.1372, MSE: 2565712.0997, RMSE: 1601.784, MAE: 813.8121
+06:30:06 - Model fit 60 of 80 done!
+           var: album date_released, data reduction: elasticnet, estimator: KNN, bootstrap: False, square: False
+           R2: 0.1434, MSE: 2547347.3531, RMSE: 1596.0412, MAE: 822.0
+06:32:39 - Model fit 61 of 80 done!
+           var: album date_released, data reduction: elasticnet, estimator: Random Forest, bootstrap: True, square: True
+           R2: 0.0802, MSE: 2735336.0649, RMSE: 1653.8851, MAE: 873.4679
+06:35:11 - Model fit 62 of 80 done!
+           var: album date_released, data reduction: elasticnet, estimator: Random Forest, bootstrap: True, square: False
+           R2: 0.0817, MSE: 2730785.89, RMSE: 1652.509, MAE: 877.1358
+06:37:41 - Model fit 63 of 80 done!
+           var: album date_released, data reduction: elasticnet, estimator: Random Forest, bootstrap: False, square: True
+           R2: 0.0802, MSE: 2735336.0649, RMSE: 1653.8851, MAE: 873.4679
+06:40:13 - Model fit 64 of 80 done!
+           var: album date_released, data reduction: elasticnet, estimator: Random Forest, bootstrap: False, square: False
+           R2: 0.0817, MSE: 2730785.89, RMSE: 1652.509, MAE: 877.1358
+06:40:13 - Model fit 65 of 80 done!
+           var: album date_released, data reduction: lle, estimator: Ordinary Least Squares, bootstrap: True, square: True
+           R2: -0.0006, MSE: 2975519.1059, RMSE: 1724.9693, MAE: 907.6963
+06:40:13 - Model fit 66 of 80 done!
+           var: album date_released, data reduction: lle, estimator: Ordinary Least Squares, bootstrap: True, square: False
+           R2: -0.0, MSE: 2973748.1622, RMSE: 1724.4559, MAE: 921.1508
+06:40:13 - Model fit 67 of 80 done!
+           var: album date_released, data reduction: lle, estimator: Ordinary Least Squares, bootstrap: False, square: True
+           R2: -0.0006, MSE: 2975519.1059, RMSE: 1724.9693, MAE: 907.6963
+06:40:13 - Model fit 68 of 80 done!
+           var: album date_released, data reduction: lle, estimator: Ordinary Least Squares, bootstrap: False, square: False
+           R2: -0.0, MSE: 2973748.1622, RMSE: 1724.4559, MAE: 921.1508
+06:40:14 - Model fit 69 of 80 done!
+           var: album date_released, data reduction: lle, estimator: Decision Tree, bootstrap: True, square: True
+           R2: 0.002, MSE: 2967745.7549, RMSE: 1722.7146, MAE: 910.31
+06:40:14 - Model fit 70 of 80 done!
+           var: album date_released, data reduction: lle, estimator: Decision Tree, bootstrap: True, square: False
+           R2: 0.0028, MSE: 2965403.0661, RMSE: 1722.0346, MAE: 926.1262
+06:40:14 - Model fit 71 of 80 done!
+           var: album date_released, data reduction: lle, estimator: Decision Tree, bootstrap: False, square: True
+           R2: 0.002, MSE: 2967745.7549, RMSE: 1722.7146, MAE: 910.31
+06:40:14 - Model fit 72 of 80 done!
+           var: album date_released, data reduction: lle, estimator: Decision Tree, bootstrap: False, square: False
+           R2: 0.0028, MSE: 2965403.0661, RMSE: 1722.0346, MAE: 926.1262
+06:40:14 - Model fit 73 of 80 done!
+           var: album date_released, data reduction: lle, estimator: KNN, bootstrap: True, square: True
+           R2: -0.0446, MSE: 3106327.3265, RMSE: 1762.4776, MAE: 957.9505
+06:40:14 - Model fit 74 of 80 done!
+           var: album date_released, data reduction: lle, estimator: KNN, bootstrap: True, square: False
+           R2: -0.053, MSE: 3131299.3093, RMSE: 1769.5478, MAE: 968.0625
+06:40:14 - Model fit 75 of 80 done!
+           var: album date_released, data reduction: lle, estimator: KNN, bootstrap: False, square: True
+           R2: -0.0446, MSE: 3106327.3265, RMSE: 1762.4776, MAE: 957.9505
+06:40:14 - Model fit 76 of 80 done!
+           var: album date_released, data reduction: lle, estimator: KNN, bootstrap: False, square: False
+           R2: -0.053, MSE: 3131299.3093, RMSE: 1769.5478, MAE: 968.0625
+06:40:17 - Model fit 77 of 80 done!
+           var: album date_released, data reduction: lle, estimator: Random Forest, bootstrap: True, square: True
+           R2: 0.0016, MSE: 2968831.2083, RMSE: 1723.0297, MAE: 910.2181
+06:40:19 - Model fit 78 of 80 done!
+           var: album date_released, data reduction: lle, estimator: Random Forest, bootstrap: True, square: False
+           R2: 0.0023, MSE: 2966830.7734, RMSE: 1722.4491, MAE: 923.514
+06:40:21 - Model fit 79 of 80 done!
+           var: album date_released, data reduction: lle, estimator: Random Forest, bootstrap: False, square: True
+           R2: 0.0016, MSE: 2968831.2083, RMSE: 1723.0297, MAE: 910.2181
+06:40:23 - Model fit 80 of 80 done!
+           var: album date_released, data reduction: lle, estimator: Random Forest, bootstrap: False, square: False
+           R2: 0.0023, MSE: 2966830.7734, RMSE: 1722.4491, MAE: 923.514
 
------- NEW LOGGER 2022-05-19 ----------------------------------------------
-12:18:58 - Model fit 1 of 8 done!
-           data reduction: mutual_information, estimator: Ordinary Least Squares, bootstrap: True, smearing: True
+------ NEW LOGGER 2022-05-27 ----------------------------------------------
+09:14:09 - 
+09:14:09 - Album dates: Following params did not work
+09:14:09 - ('elasticnet', ('Ordinary Least Squares', LinearRegression()), True, True)
+
+------ NEW LOGGER 2022-05-27 ----------------------------------------------
+09:14:14 - Model fit 1 of 1 done!
+           var: album date_released, data reduction: elasticnet, estimator: Ordinary Least Squares, bootstrap: True, square: True
+           R2: -0.8518, MSE: 5506674.3933, RMSE: 2346.6304, MAE: 867.7148
+
+------ NEW LOGGER 2022-05-27 ----------------------------------------------
+09:25:33 - 
+09:25:33 - Album dates: Following params did not work
+09:25:33 - ('elasticnet', ('Ordinary Least Squares', LinearRegression()), True, True)
+
+------ NEW LOGGER 2022-05-27 ----------------------------------------------
+09:30:37 - 
+09:30:37 - album_date released bag Following params did not work
+09:30:37 - ('no_datared', ('Ordinary Least Squares', LinearRegression()), True, True)
+09:31:17 - 
+09:31:17 - album_date released bag Following params did not work
+09:31:17 - ('no_datared', ('Ordinary Least Squares', LinearRegression()), True, False)
+09:31:21 - 
+09:31:21 - album_date released bag Following params did not work
+09:31:21 - ('no_datared', ('Ordinary Least Squares', LinearRegression()), False, True)
+09:31:25 - 
+09:31:25 - album_date released bag Following params did not work
+09:31:25 - ('no_datared', ('Ordinary Least Squares', LinearRegression()), False, False)
+09:31:41 - 
+09:31:41 - album_date released bag Following params did not work
+09:31:41 - ('no_datared', ('Decision Tree', DecisionTreeRegressor(min_samples_leaf=700, min_samples_split=1300)), True, True)
+
+------ NEW LOGGER 2022-05-27 ----------------------------------------------
+09:41:32 - 
+09:41:32 - album_date released bag Following params did not work
+09:41:32 - ('no_datared', ('Ordinary Least Squares', LinearRegression()), True, True)
+09:42:05 - 
+09:42:05 - album_date released bag Following params did not work
+09:42:05 - ('no_datared', ('Ordinary Least Squares', LinearRegression()), True, False)
+09:42:12 - 
+09:42:12 - album_date released bag Following params did not work
+09:42:12 - ('no_datared', ('Ordinary Least Squares', LinearRegression()), False, True)
+
+------ NEW LOGGER 2022-05-27 ----------------------------------------------
+09:54:14 - 
+09:54:14 - album_date released bag Following params did not work
+09:54:14 - ('no_datared', ('Ordinary Least Squares', LinearRegression()), True, True)
+
+------ NEW LOGGER 2022-05-27 ----------------------------------------------
+09:57:17 - 
+09:57:17 - album_date released bag Following params did not work
+09:57:17 - ('no_datared', ('Ordinary Least Squares', LinearRegression()), True, True)
+
+------ NEW LOGGER 2022-05-27 ----------------------------------------------
+10:02:02 - 
+10:02:02 - album_date released bag Following params did not work
+10:02:02 - ('no_datared', ('Ordinary Least Squares', LinearRegression()), True, True)
+
+------ NEW LOGGER 2022-05-27 ----------------------------------------------
+10:02:09 - name 'use_smearing' is not defined
+10:02:09 - album_date released bag Following params did not work
+10:02:09 - ('no_datared', ('Ordinary Least Squares', LinearRegression()), True, True)
+
+------ NEW LOGGER 2022-05-27 ----------------------------------------------
+10:02:40 - Model fit 1 of 80 done!
+           var: album date_released bagged, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: True, square: True
+           R2: -0.1842, MSE: 3521369.8265, RMSE: 1876.5313, MAE: 826.8308
+
+------ NEW LOGGER 2022-05-27 ----------------------------------------------
+10:03:57 - Model fit 1 of 80 done!
+           var: album date_released bagged, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: True, square: True
+           R2: -0.1842, MSE: 3521369.8265, RMSE: 1876.5313, MAE: 826.8308
+10:03:59 - Model fit 2 of 80 done!
+           var: album date_released bagged, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: True, square: False
+           R2: -46.9899, MSE: 142708715.6659, RMSE: 11946.0753, MAE: 842.3878
+10:04:01 - Model fit 3 of 80 done!
+           var: album date_released bagged, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: False, square: True
+           R2: -0.1842, MSE: 3521369.8265, RMSE: 1876.5313, MAE: 826.8308
+10:04:03 - Model fit 4 of 80 done!
+           var: album date_released bagged, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: False, square: False
+           R2: -46.9899, MSE: 142708715.6659, RMSE: 11946.0753, MAE: 842.3878
+10:04:16 - Model fit 5 of 80 done!
+           var: album date_released bagged, data reduction: no_datared, estimator: Decision Tree, bootstrap: True, square: True
+           R2: 0.0953, MSE: 2690382.0974, RMSE: 1640.2384, MAE: 831.3137
+10:04:28 - Model fit 6 of 80 done!
+           var: album date_released bagged, data reduction: no_datared, estimator: Decision Tree, bootstrap: True, square: False
+           R2: 0.0995, MSE: 2677792.0479, RMSE: 1636.3961, MAE: 835.648
+10:04:42 - Model fit 7 of 80 done!
+           var: album date_released bagged, data reduction: no_datared, estimator: Decision Tree, bootstrap: False, square: True
+           R2: 0.0953, MSE: 2690382.0974, RMSE: 1640.2384, MAE: 831.3137
+10:04:56 - Model fit 8 of 80 done!
+           var: album date_released bagged, data reduction: no_datared, estimator: Decision Tree, bootstrap: False, square: False
+           R2: 0.0995, MSE: 2677792.0479, RMSE: 1636.3961, MAE: 835.648
+10:05:16 - Model fit 9 of 80 done!
+           var: album date_released bagged, data reduction: no_datared, estimator: KNN, bootstrap: True, square: True
+           R2: 0.1531, MSE: 2518319.0786, RMSE: 1586.9213, MAE: 802.1792
+10:05:35 - Model fit 10 of 80 done!
+           var: album date_released bagged, data reduction: no_datared, estimator: KNN, bootstrap: True, square: False
+           R2: 0.164, MSE: 2486027.4174, RMSE: 1576.7141, MAE: 805.0938
+10:05:57 - Model fit 11 of 80 done!
+           var: album date_released bagged, data reduction: no_datared, estimator: KNN, bootstrap: False, square: True
+           R2: 0.1531, MSE: 2518319.0786, RMSE: 1586.9213, MAE: 802.1792
+10:06:19 - Model fit 12 of 80 done!
+           var: album date_released bagged, data reduction: no_datared, estimator: KNN, bootstrap: False, square: False
+           R2: 0.164, MSE: 2486027.4174, RMSE: 1576.7141, MAE: 805.0938
+
+------ NEW LOGGER 2022-05-27 ----------------------------------------------
+10:18:44 - Start of create_dataset()
+10:18:44 - Read data from csv files
+10:19:01 - Join Data
+10:19:01 - Write joined
+10:19:05 - End of create_dataset!
+10:19:05 - Start of pre_process_track_listens()
+10:19:05 - Read Data
+10:19:05 - test size of .2
+10:19:06 - 0 cells have missing data
+10:19:06 - mean: 2326.232456397565, skew: 24.797295548817253, kurt: 1089.9536671595145 median: 763.0
+10:19:07 - plot 1 in track listens folder
+10:19:07 - plot 2 in track listens folder
+10:19:07 - 1 rows have 0 track_listens, cannot be np.log(x)
+10:19:08 - log transform outcome variable
+10:19:08 - After np.log() => mean: 6.657756811337761, skew: 0.07578713081775797, kurt: 0.16198503358400984, median: 6.637258031284457
+10:19:08 - plot 3 in track listens folder
+10:19:08 - plot 4 in track listens folder
+10:19:11 - 84415 instances exceed at least one column by IQR, that's 0.9901123648220694
+10:19:11 - On average, an instance fails 21.2319848368181 columns, with std of 19.56132547891326
+10:19:11 - Calculate Mahalanobis Distance
+10:20:17 - 15401 instances fail Mahalanobis on .05, that is 0.18063993994698443 of data
+10:20:17 - End of data preprocess, saving data
+10:20:19 - End of pre_process_track_listens()
+10:20:19 - Start of album date released
+10:20:20 - 36280 missing dates, that is 0.34042074051832527
+10:20:21 - 9450 albums have missing dates, that is 0.6361922714420358
+10:20:22 - test size of .2
+10:20:23 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026, min: 1835, max: 44254
+10:20:23 - mean: 1654306535.1682048, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+10:20:25 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
+10:20:25 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
+10:20:58 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
+10:20:58 - End of data preprocess, saving data
+10:20:59 - End of pre_process_album_date_released()
+10:20:59 - Reducing datasets ...
+10:34:10 - no. cols of X_train for track_listens after lle: 2
+10:35:55 - no. cols of X_train for track_listens after elasticnet: 176
+10:36:00 - no. cols of X_train for track_listens after pca99: 293
+10:36:05 - no. cols of X_train for track_listens after pca95: 160
+10:40:01 - no. cols of X_train for album_date_released after lle: 2
+10:40:51 - no. cols of X_train for album_date_released after elasticnet: 163
+10:40:54 - no. cols of X_train for album_date_released after pca99: 297
+10:40:57 - no. cols of X_train for album_date_released after pca95: 164
+10:40:58 - Reducing datasets done!
+10:41:00 - Model fit 1 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: True, smearing: True
            R2: -0.0721, MSE: 80395500.9652, RMSE: 8966.3538, MAE: 751.7082
-12:24:49 - Model fit 2 of 8 done!
-           data reduction: mutual_information, estimator: Decision Tree, bootstrap: True, smearing: True
-           R2: -0.0727, MSE: 80442733.0166, RMSE: 8968.9873, MAE: 760.1836
-12:32:46 - Model fit 3 of 8 done!
-           data reduction: mutual_information, estimator: KNN_n3, bootstrap: True, smearing: True
-           R2: -0.0724, MSE: 80419402.2677, RMSE: 8967.6866, MAE: 755.8476
-13:42:20 - Model fit 4 of 8 done!
-           data reduction: mutual_information, estimator: Random Forest, bootstrap: True, smearing: True
-           R2: -0.0726, MSE: 80438599.6716, RMSE: 8968.7569, MAE: 760.0391
+10:41:03 - Model fit 2 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: True, smearing: False
+           R2: -26.7923, MSE: 2084190510.3608, RMSE: 45652.9354, MAE: 1562.2822
+10:41:05 - Model fit 3 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: False, smearing: True
+           R2: -0.0721, MSE: 80395500.9652, RMSE: 8966.3538, MAE: 751.7082
+10:41:07 - Model fit 4 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: False, smearing: False
+           R2: -26.7923, MSE: 2084190510.3608, RMSE: 45652.9354, MAE: 1562.2822
+10:41:34 - Model fit 5 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Decision Tree, bootstrap: True, smearing: True
+           R2: -0.072, MSE: 80393462.8159, RMSE: 8966.2402, MAE: 750.3102
+10:42:01 - Model fit 6 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Decision Tree, bootstrap: True, smearing: False
+           R2: 0.0085, MSE: 74353166.2507, RMSE: 8622.8282, MAE: 1318.5207
+10:42:25 - Model fit 7 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Decision Tree, bootstrap: False, smearing: True
+           R2: -0.072, MSE: 80393462.8159, RMSE: 8966.2402, MAE: 750.3102
+10:42:51 - Model fit 8 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Decision Tree, bootstrap: False, smearing: False
+           R2: 0.0085, MSE: 74353166.2507, RMSE: 8622.8282, MAE: 1318.5207
+10:46:17 - Model fit 9 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: KNN, bootstrap: True, smearing: True
+           R2: -0.0721, MSE: 80399282.3442, RMSE: 8966.5647, MAE: 751.518
+10:47:06 - Model fit 10 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: KNN, bootstrap: True, smearing: False
+           R2: 0.0142, MSE: 73928804.8651, RMSE: 8598.1861, MAE: 1094.3125
+10:50:35 - Model fit 11 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: KNN, bootstrap: False, smearing: True
+           R2: -0.0721, MSE: 80399282.3442, RMSE: 8966.5647, MAE: 751.518
+10:51:24 - Model fit 12 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: KNN, bootstrap: False, smearing: False
+           R2: 0.0142, MSE: 73928804.8651, RMSE: 8598.1861, MAE: 1094.3125
+11:25:44 - Model fit 13 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Random Forest, bootstrap: True, smearing: True
+           R2: -0.0726, MSE: 80438623.2842, RMSE: 8968.7582, MAE: 759.8865
+13:01:07 - Model fit 14 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Random Forest, bootstrap: True, smearing: False
+           R2: -0.6726, MSE: 125429331.3334, RMSE: 11199.5237, MAE: 1781.135
+13:32:15 - Model fit 15 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Random Forest, bootstrap: False, smearing: True
+           R2: -0.0726, MSE: 80438623.2842, RMSE: 8968.7582, MAE: 759.8865
 
------- NEW LOGGER 2022-05-22 ----------------------------------------------
-09:48:33 - Start of album date released
-09:48:41 - Start of album date released
+------ NEW LOGGER 2022-05-27 ----------------------------------------------
+13:42:02 - Reducing datasets ...
 
------- NEW LOGGER 2022-05-22 ----------------------------------------------
-09:56:37 - Start of album date released
-
------- NEW LOGGER 2022-05-22 ----------------------------------------------
-10:14:22 - Start of album date released
-10:14:23 - 36280 missing dates, that is 0.34042074051832527
-
------- NEW LOGGER 2022-05-22 ----------------------------------------------
-10:29:12 - Start of album date released
-10:29:12 - 36280 missing dates, that is 0.34042074051832527
-
------- NEW LOGGER 2022-05-22 ----------------------------------------------
-10:33:39 - Start of album date released
-10:33:39 - 36280 missing dates, that is 0.34042074051832527
-
------- NEW LOGGER 2022-05-22 ----------------------------------------------
-10:42:42 - Start of album date released
-10:42:43 - 36280 missing dates, that is 0.34042074051832527
-
------- NEW LOGGER 2022-05-22 ----------------------------------------------
-10:43:44 - Start of album date released
-10:43:45 - 36280 missing dates, that is 0.34042074051832527
-
------- NEW LOGGER 2022-05-22 ----------------------------------------------
-10:44:36 - Start of album date released
-10:44:37 - 36280 missing dates, that is 0.34042074051832527
-
------- NEW LOGGER 2022-05-22 ----------------------------------------------
-10:45:37 - Start of album date released
-10:45:38 - 36280 missing dates, that is 0.34042074051832527
-
------- NEW LOGGER 2022-05-22 ----------------------------------------------
-10:48:54 - Start of album date released
-10:48:55 - 36280 missing dates, that is 0.34042074051832527
-
------- NEW LOGGER 2022-05-22 ----------------------------------------------
-10:49:46 - Start of album date released
-10:49:47 - 36280 missing dates, that is 0.34042074051832527
-
------- NEW LOGGER 2022-05-22 ----------------------------------------------
-10:51:28 - Start of album date released
-10:51:29 - 36280 missing dates, that is 0.34042074051832527
-
------- NEW LOGGER 2022-05-22 ----------------------------------------------
-10:52:17 - Start of album date released
-10:52:17 - 36280 missing dates, that is 0.34042074051832527
-10:55:39 - test size of .2
-
------- NEW LOGGER 2022-05-22 ----------------------------------------------
-10:56:11 - Start of album date released
-10:56:12 - 36280 missing dates, that is 0.34042074051832527
-
------- NEW LOGGER 2022-05-22 ----------------------------------------------
-10:59:39 - Start of album date released
-10:59:40 - 36280 missing dates, that is 0.34042074051832527
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-18:53:02 - Start of album date released
-18:53:08 - 36280 missing dates, that is 0.34042074051832527
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-18:59:52 - Start of album date released
-18:59:52 - 36280 missing dates, that is 0.34042074051832527
-18:59:53 - 9450 albums have missing dates, that is 0.6361922714420358
-18:59:57 - test size of .2
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-19:00:36 - Start of album date released
-19:00:37 - 36280 missing dates, that is 0.34042074051832527
-19:00:37 - 9450 albums have missing dates, that is 0.6361922714420358
-19:01:09 - test size of .2
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-20:44:36 - Start of album date released
-20:44:37 - 36280 missing dates, that is 0.34042074051832527
-20:44:38 - 9450 albums have missing dates, that is 0.6361922714420358
-20:44:40 - test size of .2
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-20:53:27 - Start of album date released
-20:53:28 - 36280 missing dates, that is 0.34042074051832527
-20:53:29 - 9450 albums have missing dates, that is 0.6361922714420358
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-20:54:31 - Start of album date released
-20:54:33 - 36280 missing dates, that is 0.34042074051832527
-20:54:33 - 9450 albums have missing dates, that is 0.6361922714420358
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-20:55:18 - Start of album date released
-20:55:19 - 36280 missing dates, that is 0.34042074051832527
-20:55:20 - 9450 albums have missing dates, that is 0.6361922714420358
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-21:00:24 - Start of album date released
-21:00:25 - 36280 missing dates, that is 0.34042074051832527
-21:00:26 - 9450 albums have missing dates, that is 0.6361922714420358
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-21:13:11 - Start of album date released
-21:13:12 - 36280 missing dates, that is 0.34042074051832527
-21:13:13 - 9450 albums have missing dates, that is 0.6361922714420358
-21:13:30 - test size of .2
-21:16:25 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-21:30:35 - Start of album date released
-21:30:36 - 36280 missing dates, that is 0.34042074051832527
-21:30:36 - 9450 albums have missing dates, that is 0.6361922714420358
-21:30:38 - test size of .2
-21:30:39 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
-21:30:39 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-21:39:59 - Start of album date released
-21:40:00 - 36280 missing dates, that is 0.34042074051832527
-21:40:01 - 9450 albums have missing dates, that is 0.6361922714420358
-21:40:02 - test size of .2
-21:40:03 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
-21:40:03 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-21:45:11 - Start of album date released
-21:45:12 - 36280 missing dates, that is 0.34042074051832527
-21:45:12 - 9450 albums have missing dates, that is 0.6361922714420358
-21:45:13 - test size of .2
-21:45:14 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
-21:45:14 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-21:48:18 - Start of album date released
-21:48:19 - 36280 missing dates, that is 0.34042074051832527
-21:48:19 - 9450 albums have missing dates, that is 0.6361922714420358
-21:48:20 - test size of .2
-21:48:21 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
-21:48:21 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-21:52:17 - Start of album date released
-21:52:17 - 36280 missing dates, that is 0.34042074051832527
-21:52:18 - 9450 albums have missing dates, that is 0.6361922714420358
-21:52:19 - test size of .2
-21:52:20 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
-21:52:20 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-21:53:28 - Start of pre_process_track_listens()
-21:53:28 - Read Data
-21:53:29 - test size of .2
-21:53:29 - 0 cells have missing data
-21:53:29 - mean: 2326.232456397565, skew: 24.797295548817253, kurt: 1089.9536671595145
-21:53:30 - plot 1 in track listens folder
-21:53:30 - plot 2 in track listens folder
-21:53:30 - 1 rows have 0 track_listens, cannot be np.log(x)
-21:53:30 - log transform outcome variable
-21:53:30 - After np.log() => mean: 6.657756811337761, skew: 0.07578713081775797, kurt: 0.16198503358400984
-21:53:30 - plot 3 in track listens folder
-21:53:31 - plot 4 in track listens folder
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-21:54:46 - Start of album date released
-21:54:46 - 36280 missing dates, that is 0.34042074051832527
-21:54:47 - 9450 albums have missing dates, that is 0.6361922714420358
-21:54:48 - test size of .2
-21:54:49 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
-21:54:49 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-21:56:10 - Start of album date released
-21:56:11 - 36280 missing dates, that is 0.34042074051832527
-21:56:11 - 9450 albums have missing dates, that is 0.6361922714420358
-21:56:12 - test size of .2
-21:56:13 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
-21:56:13 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-21:56:51 - Start of album date released
-21:56:52 - 36280 missing dates, that is 0.34042074051832527
-21:56:52 - 9450 albums have missing dates, that is 0.6361922714420358
-21:56:54 - test size of .2
-21:56:55 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
-21:56:55 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
-21:56:57 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
-21:56:57 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-22:00:44 - Start of album date released
-22:00:45 - 36280 missing dates, that is 0.34042074051832527
-22:00:45 - 9450 albums have missing dates, that is 0.6361922714420358
-22:00:47 - test size of .2
-22:00:48 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
-22:00:48 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
-22:00:50 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
-22:00:50 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
-22:01:19 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-22:02:36 - Start of album date released
-22:02:37 - 36280 missing dates, that is 0.34042074051832527
-22:02:37 - 9450 albums have missing dates, that is 0.6361922714420358
-22:02:38 - test size of .2
-22:02:39 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
-22:02:39 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
-22:02:41 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
-22:02:41 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
-22:03:09 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-22:04:26 - Start of album date released
-22:04:27 - 36280 missing dates, that is 0.34042074051832527
-22:04:28 - 9450 albums have missing dates, that is 0.6361922714420358
-22:04:29 - test size of .2
-22:04:30 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
-22:04:30 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
-22:04:32 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
-22:04:32 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
-22:05:00 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-22:07:27 - Start of album date released
-22:07:27 - 36280 missing dates, that is 0.34042074051832527
-22:07:28 - 9450 albums have missing dates, that is 0.6361922714420358
-22:07:29 - test size of .2
-22:07:30 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
-22:07:30 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
-22:07:32 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
-22:07:32 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
-22:08:00 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-22:09:27 - Start of album date released
-22:09:28 - 36280 missing dates, that is 0.34042074051832527
-22:09:28 - 9450 albums have missing dates, that is 0.6361922714420358
-22:09:29 - test size of .2
-22:09:31 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
-22:09:31 - mean: 40637.79934204677, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
-22:09:32 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
-22:09:32 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
-22:10:03 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-22:12:06 - Start of album date released
-22:12:07 - 36280 missing dates, that is 0.34042074051832527
-22:12:07 - 9450 albums have missing dates, that is 0.6361922714420358
-22:12:08 - test size of .2
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-22:14:26 - Start of album date released
-22:14:27 - 36280 missing dates, that is 0.34042074051832527
-22:14:27 - 9450 albums have missing dates, that is 0.6361922714420358
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-22:16:19 - Start of album date released
-22:16:19 - 36280 missing dates, that is 0.34042074051832527
-22:16:20 - 9450 albums have missing dates, that is 0.6361922714420358
-22:16:21 - test size of .2
-22:16:22 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
-22:16:22 - mean: 1654306535.1682048, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
-22:16:24 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
-22:16:24 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
-22:16:53 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
-22:17:48 - End of data preprocess, saving data
-22:17:50 - End of pre_process_track_listens()
-
------- NEW LOGGER 2022-05-23 ----------------------------------------------
-22:18:30 - Start of pre_process_track_listens()
-22:18:30 - Read Data
-22:18:30 - test size of .2
-22:18:31 - 0 cells have missing data
-22:18:31 - mean: 2326.232456397565, skew: 24.797295548817253, kurt: 1089.9536671595145
-22:18:31 - plot 1 in track listens folder
-22:18:31 - plot 2 in track listens folder
-22:18:31 - 1 rows have 0 track_listens, cannot be np.log(x)
-22:18:31 - log transform outcome variable
-22:18:31 - After np.log() => mean: 6.657756811337761, skew: 0.07578713081775797, kurt: 0.16198503358400984
-22:18:32 - plot 3 in track listens folder
-22:18:32 - plot 4 in track listens folder
-22:18:33 - 84415 instances exceed at least one column by IQR, that's 0.9901123648220694
-22:18:33 - On average, an instance fails 21.2319848368181 columns, with std of 19.56132547891326
-22:18:33 - Calculate Mahalanobis Distance
-22:19:35 - 15401 instances fail Mahalanobis on .05, that is 0.18063993994698443 of data
-22:19:35 - End of data preprocess, saving data
-22:19:37 - End of pre_process_track_listens()
-22:19:37 - Start of album date released
-22:19:38 - 36280 missing dates, that is 0.34042074051832527
-22:19:38 - 9450 albums have missing dates, that is 0.6361922714420358
-22:19:39 - test size of .2
-22:19:40 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026
-22:19:40 - mean: 1654306535.1682048, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
-22:19:42 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
-22:19:42 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
-22:20:11 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
-22:20:30 - End of data preprocess, saving data
-22:20:31 - End of pre_process_album_date_released()
-
------- NEW LOGGER 2022-05-24 ----------------------------------------------
-23:16:11 - min_samples_leaf didn't run
-23:16:37 - max depth didn't run
-23:18:08 - min_samples_split didn't work
+------ NEW LOGGER 2022-05-27 ----------------------------------------------
+13:45:33 - Start of create_dataset()
+13:45:33 - Read data from csv files
+13:45:47 - Join Data
+13:45:47 - Write joined
+13:45:51 - End of create_dataset!
+13:45:51 - Start of pre_process_track_listens()
+13:45:51 - Read Data
+13:45:51 - test size of .2
+13:45:52 - 0 cells have missing data
+13:45:52 - mean: 2326.232456397565, skew: 24.797295548817253, kurt: 1089.9536671595145 median: 763.0
+13:45:52 - plot 1 in track listens folder
+13:45:52 - plot 2 in track listens folder
+13:45:52 - 1 rows have 0 track_listens, cannot be np.log(x)
+13:45:52 - log transform outcome variable
+13:45:53 - After np.log() => mean: 6.657756811337761, skew: 0.07578713081775797, kurt: 0.16198503358400984, median: 6.637258031284457
+13:45:53 - plot 3 in track listens folder
+13:45:53 - plot 4 in track listens folder
+13:45:54 - 84415 instances exceed at least one column by IQR, that's 0.9901123648220694
+13:45:54 - On average, an instance fails 21.2319848368181 columns, with std of 19.56132547891326
+13:45:54 - Calculate Mahalanobis Distance
+13:46:56 - 15401 instances fail Mahalanobis on .05, that is 0.18063993994698443 of data
+13:46:56 - End of data preprocess, saving data
+13:46:59 - End of pre_process_track_listens()
+13:46:59 - Start of album date released
+13:46:59 - 36280 missing dates, that is 0.34042074051832527
+13:47:00 - 9450 albums have missing dates, that is 0.6361922714420358
+13:47:01 - test size of .2
+13:47:02 - mean: 40637.79934204677, median: 40905.0, std: 1695.8183286390445, skewness: -3.4738703992032938, kurt: 40.93918044537026, min: 1835, max: 44254
+13:47:02 - mean: 1654306535.1682048, median: 1673219025.0, std: 128833202.33963765, skewness: -2.00432341656745, kurt: 10.129736135020558
+13:47:03 - 55669 instances exceed at least one column by IQR, that's 0.9899350938027919
+13:47:03 - On average, an instance fails 21.271533528534732 columns, with std of 19.808667100600346
+13:47:37 - 10442 instances fail Mahalanobis on .05, that is 0.18568507157464212 of data
+13:47:37 - End of data preprocess, saving data
+13:47:38 - End of pre_process_album_date_released()
+13:47:38 - Reducing datasets ...
+14:01:17 - no. cols of X_train for track_listens after lle: 2
+14:03:15 - no. cols of X_train for track_listens after elasticnet: 176
+14:03:20 - no. cols of X_train for track_listens after pca99: 293
+14:03:26 - no. cols of X_train for track_listens after pca95: 160
+14:07:37 - no. cols of X_train for album_date_released after lle: 2
+14:08:35 - no. cols of X_train for album_date_released after elasticnet: 154
+14:08:38 - no. cols of X_train for album_date_released after pca99: 297
+14:08:41 - no. cols of X_train for album_date_released after pca95: 164
+14:08:42 - Reducing datasets done!
+14:08:44 - Model fit 1 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: True, smearing: True
+           R2: -0.0721, MSE: 80395500.9652, RMSE: 8966.3538, MAE: 751.7082
+14:08:47 - Model fit 2 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: True, smearing: False
+           R2: -26.7923, MSE: 2084190510.3608, RMSE: 45652.9354, MAE: 1562.2822
+14:08:49 - Model fit 3 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: False, smearing: True
+           R2: -0.0721, MSE: 80395500.9652, RMSE: 8966.3538, MAE: 751.7082
+14:08:52 - Model fit 4 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Ordinary Least Squares, bootstrap: False, smearing: False
+           R2: -26.7923, MSE: 2084190510.3608, RMSE: 45652.9354, MAE: 1562.2822
+14:09:20 - Model fit 5 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Decision Tree, bootstrap: True, smearing: True
+           R2: -0.072, MSE: 80393462.8159, RMSE: 8966.2402, MAE: 750.3102
+14:09:50 - Model fit 6 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Decision Tree, bootstrap: True, smearing: False
+           R2: 0.0085, MSE: 74353166.2507, RMSE: 8622.8282, MAE: 1318.5207
+14:10:18 - Model fit 7 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Decision Tree, bootstrap: False, smearing: True
+           R2: -0.072, MSE: 80393462.8159, RMSE: 8966.2402, MAE: 750.3102
+14:10:49 - Model fit 8 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Decision Tree, bootstrap: False, smearing: False
+           R2: 0.0085, MSE: 74353166.2507, RMSE: 8622.8282, MAE: 1318.5207
+14:14:16 - Model fit 9 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: KNN, bootstrap: True, smearing: True
+           R2: -0.0721, MSE: 80399282.3442, RMSE: 8966.5647, MAE: 751.518
+14:15:06 - Model fit 10 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: KNN, bootstrap: True, smearing: False
+           R2: 0.0142, MSE: 73928804.8651, RMSE: 8598.1861, MAE: 1094.3125
+14:18:39 - Model fit 11 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: KNN, bootstrap: False, smearing: True
+           R2: -0.0721, MSE: 80399282.3442, RMSE: 8966.5647, MAE: 751.518
+14:19:28 - Model fit 12 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: KNN, bootstrap: False, smearing: False
+           R2: 0.0142, MSE: 73928804.8651, RMSE: 8598.1861, MAE: 1094.3125
+14:54:57 - Model fit 13 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Random Forest, bootstrap: True, smearing: True
+           R2: -0.0726, MSE: 80438623.2842, RMSE: 8968.7582, MAE: 759.8865
+16:44:23 - Model fit 14 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Random Forest, bootstrap: True, smearing: False
+           R2: -0.6726, MSE: 125429331.3334, RMSE: 11199.5237, MAE: 1781.135
+17:15:56 - Model fit 15 of 80 done!
+           var: track_listens, data reduction: no_datared, estimator: Random Forest, bootstrap: False, smearing: True
+           R2: -0.0726, MSE: 80438623.2842, RMSE: 8968.7582, MAE: 759.8865
